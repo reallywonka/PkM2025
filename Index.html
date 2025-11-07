@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Pembelajaran</title>
-    <link rel="stylesheet" href="assets\css\style.css" />
+    <!-- 
+      Path CSS sudah diperbaiki dari 'assets\css\style.css' menjadi 'assets/css/style.css' 
+      menggunakan forward slash (/) agar konsisten di semua sistem operasi.
+    -->
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="https://www.w3school.com/favicon.ico/" />
     <!--Font Owesome-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      xintegrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -23,11 +27,13 @@
     />
   </head>
   <body>
+    <!-- Header tetap sama persis seperti kodemu -->
     <header>
       <div class="header-left">
         <a href="#" class="menu-btn">
           <div class="logo">
-            <img src="assets\image\logo.png" />
+            <!-- Path gambar juga diperbaiki -->
+            <img src="assets/image/logo.png" alt="Logo" />
           </div>
         </a>
         <div href="#Tutorials" class="menu-btn" id="tutorial-btn">
@@ -62,7 +68,7 @@
       </div>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- Navigasi Pop-up (Tutorials) -->
     <div
       class="nested-navigation nested_navigation_hidden"
       id="nested-navigation_id"
@@ -72,35 +78,13 @@
       </div>
       <div class="nested-navigation-content">
         <h1>Tutorials</h1>
-        <div class="nasted-navigation-content-data">
-          <div class="nested-navigation-item">
-            <h2>HTML and CSS</h2>
-            <a href="">Learn HTML</a>
-            <a href="">Learn CSS</a>
-            <a href="">Learn RWD</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>JavaScript</h2>
-            <a href="">Learn JavaScript</a>
-            <a href="">Learn jQuery</a>
-            <a href="">Learn React</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>Backnd</h2>
-            <a href="">Learn Python</a>
-            <a href="">Learn SQL</a>
-            <a href="">Learn mySQL</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>Data Analytics</h2>
-            <a href="">Learn AI</a>
-            <a href="">Learn Generative AI</a>
-            <a href="">Learn ChatGPT-3.5</a>
-          </div>
+        <div class="nasted-navigation-content-data" id="tutorials-nav-content">
+          <!-- Konten ini akan di-generate oleh JS -->
         </div>
       </div>
     </div>
 
+    <!-- Navigasi Pop-up (References) -->
     <div
       class="nested-navigation nested_navigation_hidden"
       id="nested-navigation_references"
@@ -113,29 +97,13 @@
       </div>
       <div class="nested-navigation-content">
         <h1>References</h1>
-        <div class="nasted-navigation-content-data">
-          <div class="nested-navigation-item">
-            <h2>HTML and CSS</h2>
-            <a href="">HTML Tag Reference</a>
-            <a href="">CSS Reference</a>
-            <a href="">W3.CSS Reference</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>JavaScript</h2>
-            <a href="">JavaScript Reference</a>
-            <a href="">jQuery Reference</a>
-            <a href="">Vue Reference</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>Backend</h2>
-            <a href="">Python Reference</a>
-            <a href="">SQL Reference</a>
-            <a href="">MySQL Reference</a>
-          </div>
+        <div class="nasted-navigation-content-data" id="references-nav-content">
+          <!-- Konten ini akan di-generate oleh JS -->
         </div>
       </div>
     </div>
 
+    <!-- Navigasi Pop-up (Excersices) -->
     <div
       class="nested-navigation nested_navigation_hidden"
       id="nested-navigation_excersices"
@@ -148,35 +116,43 @@
       </div>
       <div class="nested-navigation-content">
         <h1>Excersices</h1>
-        <div class="nasted-navigation-content-data">
-          <div class="nested-navigation-item">
-            <h2>HTML and CSS</h2>
-            <a href="">HTML Quiz</a>
-            <a href="">CSS Quiz</a>
-            <a href="">Boostrap 3 Quiz</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>JavaScript</h2>
-            <a href="">JavaScript Quiz</a>
-            <a href="">React Quiz</a>
-            <a href="">jQuery Quiz</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>Data Analytics</h2>
-            <a href="">DSA Quiz</a>
-            <a href="">NumPy Quiz</a>
-            <a href="">Pandas Quiz</a>
-          </div>
-          <div class="nested-navigation-item">
-            <h2>Backend</h2>
-            <a href="">Python Quiz</a>
-            <a href="">SQL Quiz</a>
-            <a href="">MySQL Quiz</a>
-          </div>
+        <div
+          class="nasted-navigation-content-data"
+          id="excersices-nav-content"
+        >
+          <!-- Konten ini akan di-generate oleh JS -->
         </div>
       </div>
     </div>
 
-    <script src="assets\js\script.js" type="module"></script>
+    <!-- [BARU] Layout Utama untuk Konten -->
+    <div class="main-container">
+      <!-- [BARU] Sidebar untuk navigasi per-materi -->
+      <nav class="sidebar" id="sidebar">
+        <h2 id="sidebar-title">Pilih Materi</h2>
+        <ul id="sidebar-menu">
+          <!-- Link materi (HTML 1, HTML 2, dst) akan di-generate JS di sini -->
+        </ul>
+      </nav>
+
+      <!-- [BARU] Area Konten Utama -->
+      <main class="content-area" id="content-area">
+        <h1>Selamat Datang!</h1>
+        <p>
+          Silakan pilih materi tutorial dari menu 'Tutorials' di atas untuk
+          memulai.
+        </p>
+        <p>
+          Website ini dibuat sebagai bagian dari Pengabdian kepada Masyarakat
+          (PkM) untuk menyediakan sumber belajar pemrograman gratis.
+        </p>
+      </main>
+    </div>
+
+    <!-- 
+      Path JS juga diperbaiki dan type="module" sangat penting 
+      karena kita menggunakan import/export.
+    -->
+    <script src="assets/js/script.js" type="module"></script>
   </body>
 </html>

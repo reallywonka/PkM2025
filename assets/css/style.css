@@ -6,6 +6,8 @@
   --bs-white: #ffffff;
 
   --bs-neowhite: #e7e9eb;
+  --sidebar-bg: #f1f1f1;
+  --border-color: #dcdcdc;
 }
 * {
   box-sizing: border-box;
@@ -14,8 +16,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "source sans 3", sans-serif;
+  font-family: "Roboto", "source sans 3", sans-serif;
   width: 100%;
+  background-color: var(--bs-white);
 }
 
 header {
@@ -25,6 +28,10 @@ header {
   padding: 0px 20px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 /**** utility class ****/
@@ -56,6 +63,7 @@ header {
 }
 .logo img {
   width: 100%;
+  object-fit: contain; /* Memastikan logo tidak terdistorsi */
 }
 
 /**** header-left ****/
@@ -75,6 +83,8 @@ header {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+  border: none;
+  background: none;
 }
 .header-left .menu-btn.text-white {
   color: var(--bs-white);
@@ -121,18 +131,28 @@ header {
 }
 
 /**** nested-navigation ****/
+/* PERBAIKAN: 'display: none' dihapus dari sini 
+  agar JS bisa mengontrol tampilannya.
+*/
 .nested-navigation {
   background-color: var(--bs-black);
   color: white;
-  position: relative;
+  position: absolute; /* Mengubah dari relative ke absolute */
+  top: 80px; /* Muncul di bawah header */
+  left: 0;
+  width: 100%;
   padding-bottom: 50px;
+  z-index: 99;
+  /* display: none; <-- DIHAPUS */
+}
+
+/* PERBAIKAN: Hanya kelas ini yang mengontrol 
+  apakah navigasi tersembunyi atau tidak.
+*/
+.nested_navigation_hidden {
   display: none;
 }
-@media all and (min-width: 850px) {
-  .nested-navigation {
-    display: block;
-  }
-}
+
 .nested-navigation-close-btn {
   position: absolute;
   right: 0;
@@ -169,18 +189,110 @@ header {
   color: var(--bs-yellow);
   margin-top: 30px;
 }
-.nested-navigation-item a {
+.nested-navigation-item a,
+.nested-navigation-item .nav-topic-btn {
+  /* [BARU] Menambahkan .nav-topic-btn */
   display: block;
   color: white;
   font-size: 18px;
   text-decoration: none;
   font-weight: 550;
   padding: 5px 7px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
 }
-.nested-navigation-item a:hover {
+.nested-navigation-item a:hover,
+.nested-navigation-item .nav-topic-btn:hover {
   background-color: var(--bs-neowhite);
   color: var(--bs-black);
 }
-.nested_navigation_hidden {
-  display: none;
+
+/* [BARU] Layout Konten Utama */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(
+    100vh - 80px
+  ); /* Tinggi penuh dikurangi header */
+}
+
+/* [BARU] Styling Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  height: 100%;
+  overflow-y: auto; /* Bisa di-scroll jika materi banyak */
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-top: 0;
+  color: var(--bs-black);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ddd;
+}
+
+.sidebar ul li a.active {
+  background-color: var(--bs-black);
+  color: var(--bs-white);
+}
+
+/* [BARU] Styling Area Konten */
+.content-area {
+  flex-grow: 1; /* Mengisi sisa ruang */
+  padding: 30px;
+  height: 100%;
+  overflow-y: auto; /* Konten bisa di-scroll */
+  line-height: 1.6;
+}
+
+/* [BARU] Styling untuk konten di dalam materi */
+.content-area h1 {
+  color: var(--bs-black);
+  border-bottom: 2px solid var(--bs-yellow);
+  padding-bottom: 10px;
+}
+
+.content-area p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.content-area pre {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.content-area code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
