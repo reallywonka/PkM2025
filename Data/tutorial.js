@@ -146,6 +146,12 @@ selektor {
           </ul>
         `,
       },
+
+
+
+      /*
+        ^^^^^ BATAS MATERI BARU - JS ^^^^^
+      */
     ],
   },
   javascript: {

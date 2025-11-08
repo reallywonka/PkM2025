@@ -1,6 +1,3 @@
-/*
-  File ini berisi konten HTML untuk halaman beranda (homepage).
-*/
 export const homeContent = `
 <style>
   /* Style khusus untuk halaman beranda */

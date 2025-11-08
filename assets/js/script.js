@@ -1,14 +1,7 @@
-/*
-  PERHATIKAN: Path import sudah diperbaiki (menggunakan ../../)
-*/
 import { tutorials } from "../../Data/tutorial.js";
 import { References } from "../../Data/References.js";
 import { Excersices } from "../../Data/excersices.js";
 import { homeContent } from "../../Data/home.js";
-
-/* Mengambil semua elemen DOM yang kita butuhkan,
-  baik yang lama maupun yang baru.
-*/
 
 // Elemen Header & Navigasi Pop-up
 const NestedNavigation = document.getElementById("nested-navigation_id");
@@ -33,21 +26,17 @@ const nestedNavigationCloseBtnExcs = document.getElementById(
   "nested-navigation-close-Btn-excs"
 );
 
-// [BARU] Elemen Konten Utama
+// Elemen Konten Utama
 const sidebar = document.getElementById("sidebar");
 const sidebarTitle = document.getElementById("sidebar-title");
 const sidebarMenu = document.getElementById("sidebar-menu");
 const contentArea = document.getElementById("content-area");
 
-// [BARU] Elemen untuk generate menu di pop-up
+// Elemen untuk generate menu di pop-up
 const tutorialsNavContent = document.getElementById("tutorials-nav-content");
 const referencesNavContent = document.getElementById("references-nav-content");
 const excersicesNavContent = document.getElementById("excersices-nav-content");
 
-/*
-  Logika Lama (milikmu) untuk tombol header (Tutorials, Refs, Excs).
-  Logika ini sudah benar dan kita pertahankan.
-*/
 tutorialEL.addEventListener("click", () => {
   const isOpening = NestedNavigation.classList.contains(
     "nested_navigation_hidden"
@@ -103,11 +92,7 @@ function closeAllPanels() {
   excersicesEL.classList.remove("bg-black", "text-white");
 }
 
-/*
-  --- [LOGIKA BARU] Dimulai dari sini ---
-*/
-
-// [BARU] Fungsi untuk me-render konten materi ke area utama
+// Fungsi untuk me-render konten materi ke area utama
 function renderContent(topicKey, lessonId) {
   try {
     const lesson = tutorials[topicKey].lessons.find((l) => l.id === lessonId);
@@ -125,7 +110,7 @@ function renderContent(topicKey, lessonId) {
   }
 }
 
-// [BARU] Fungsi untuk mengisi sidebar berdasarkan topik yang dipilih
+// Fungsi untuk mengisi sidebar berdasarkan topik yang dipilih
 function renderSidebar(topicKey) {
   const topic = tutorials[topicKey];
   if (!topic) {
@@ -164,7 +149,7 @@ function updateActiveSidebarLink(activeLessonId) {
   }
 }
 
-// [BARU] Event listener untuk sidebar (menggunakan event delegation)
+// Event listener untuk sidebar (menggunakan event delegation)
 sidebarMenu.addEventListener("click", (e) => {
   e.preventDefault(); // Mencegah URL berubah dengan #hash
 
@@ -175,7 +160,7 @@ sidebarMenu.addEventListener("click", (e) => {
   }
 });
 
-// [BARU] Fungsi untuk generate menu di pop-up header
+// Fungsi untuk generate menu di pop-up header
 function generateNavMenus() {
   // 1. Generate Menu Tutorials
   // 'tutorials' adalah object, kita perlu ambil keys-nya (html, css, js)
@@ -237,7 +222,7 @@ function generateNavMenus() {
   });
 }
 
-// [BARU] Event listener untuk tombol di dalam pop-up menu tutorials
+// Event listener untuk tombol di dalam pop-up menu tutorials
 tutorialsNavContent.addEventListener("click", (e) => {
   const target = e.target.closest(".nav-topic-btn, .nav-lesson-link");
   if (!target) return;
@@ -263,9 +248,9 @@ tutorialsNavContent.addEventListener("click", (e) => {
   closeAllPanels(); // Tutup pop-up setelah diklik
 });
 
-// [BARU] Inisialisasi saat halaman dimuat
+// Inisialisasi saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
-  // [BARU] Logika Light/Dark Mode
+  // Logika Light/Dark Mode
   const lightDarkBtn = document.getElementById("light-dark-toggle");
   const currentTheme = localStorage.getItem("theme");
   // Cek tema yang tersimpan saat halaman dimuat
