@@ -19,6 +19,7 @@ body {
   font-family: "Roboto", "source sans 3", sans-serif;
   width: 100%;
   background-color: var(--bs-white);
+  color: var(--bs-black);
 }
 
 header {
@@ -80,14 +81,14 @@ header {
   padding: 0px 15px;
   font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: var(--bs-black);
   text-decoration: none;
   cursor: pointer;
   border: none;
   background: none;
 }
 .header-left .menu-btn.text-white {
-  color: var(--bs-white);
+  color: var(--bs-black);
 }
 .header-left .menu-btn:hover {
   background-color: rgb(200, 197, 197);
@@ -107,8 +108,22 @@ header {
   transform: rotate(180deg);
 }
 .LightDark:hover {
-  color: rgb(200, 197, 197);
+  color: inherit; /* Matikan aturan hover lama */
 }
+#light-dark-toggle {
+  color: var(--bs-black); /* Ambil warna dari variabel */
+  padding: 5px 8px; /* Beri sedikit padding agar area klik lebih besar */
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+#light-dark-toggle:hover {
+  background-color: var(--bs-neowhite); /* Efek hover light mode */
+}
+/* Aturan hover untuk Dark Mode */
+body.dark-mode #light-dark-toggle:hover {
+  background-color: var(--sidebar-bg); /* Efek hover dark mode */
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -213,9 +228,7 @@ header {
 .main-container {
   display: flex;
   flex-direction: row;
-  height: calc(
-    100vh - 80px
-  ); /* Tinggi penuh dikurangi header */
+  height: calc(100vh - 80px); /* Tinggi penuh dikurangi header */
 }
 
 /* [BARU] Styling Sidebar */
@@ -246,7 +259,7 @@ header {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #333;
+  color: var(--bs-black);
   border-radius: 5px;
   font-weight: 500;
 }
@@ -282,8 +295,8 @@ header {
 }
 
 .content-area pre {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   padding: 15px;
   overflow-x: auto;
@@ -292,7 +305,81 @@ header {
 
 .content-area code {
   font-family: "Courier New", Courier, monospace;
-  background-color: #f4f4f4;
+  background-color: var(--bs-sidebar-bg);
   padding: 2px 4px;
   border-radius: 3px;
+}
+
+/* [BARU] Tema Dark Mode */
+body.dark-mode {
+  --bs-black: #e7e9eb;
+  --bs-white: #282a35;
+  --bs-neowhite: #4a4c5a;
+  --sidebar-bg: #3a3c4a;
+  --border-color: #555761;
+}
+
+/* [BARU] Aturan tambahan untuk dark mode */
+body.dark-mode .logo img {
+  filter: invert(1); /* Membalik warna logo untuk dark mode */
+}
+
+body.dark-mode .header-left .menu-btn:hover {
+  background-color: #555761; /* Warna hover yang lebih gelap */
+}
+
+body.dark-mode .sidebar ul li a:hover {
+  background-color: #555761; /* Warna hover yang lebih gelap */
+}
+
+body.dark-mode .sidebar ul li a.active {
+  background-color: var(--bs-black); /* Teks terang */
+  color: #282a35; /* Background gelap (dibalik) */
+}
+
+/*
+  Tambahkan kode ini di bagian PALING BAWAH 
+  dari file style.css Anda
+*/
+
+/* [BARU] Perbaikan Teks Pop-up untuk Dark Mode */
+body.dark-mode .nested-navigation {
+  color: var(--bs-white); /* var(--bs-white) sekarang jadi gelap (#282a35) */
+}
+
+body.dark-mode .nested-navigation h1,
+body.dark-mode .nested-navigation h2 {
+  /* Judul kuningnya kita ganti jadi gelap juga */
+  color: var(--bs-white);
+}
+
+body.dark-mode .nested-navigation-item a,
+body.dark-mode .nested-navigation-item .nav-topic-btn {
+  /* Link-nya juga kita paksa jadi gelap */
+  color: var(--bs-white);
+}
+
+/* Perbaikan untuk Tombol Close (X) */
+body.dark-mode .nested-navigation-close-btn button {
+  color: var(--bs-white);
+}
+
+body.dark-mode .nested-navigation-close-btn button:hover {
+  background-color: var(--bs-white); /* jadi background gelap */
+  color: var(--bs-black); /* jadi teks terang */
+}
+
+/* [BARU] Perbaikan Tombol Header di Dark Mode */
+body.dark-mode .header-right a.bg-pink,
+body.dark-mode .header-right a.bg-yellow {
+  color: var(--bs-black);
+  background-color: var(--sidebar-bg); /* Ini adalah warna abu-abu gelap */
+}
+/* [BARU] Efek Hover Tombol Header di Dark Mode */
+body.dark-mode .header-right a.bg-pink:hover,
+body.dark-mode .header-right a.bg-yellow:hover {
+  background-color: var(
+    --bs-neowhite
+  ); /* Warna abu-abu yang sedikit lebih terang */
+  opacity: 1; /* Kita pakai background, jadi matikan opacity */
 }

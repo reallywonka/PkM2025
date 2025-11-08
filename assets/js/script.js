@@ -4,6 +4,7 @@
 import { tutorials } from "../../Data/tutorial.js";
 import { References } from "../../Data/References.js";
 import { Excersices } from "../../Data/excersices.js";
+import { homeContent } from "../../Data/home.js";
 
 /* Mengambil semua elemen DOM yang kita butuhkan,
   baik yang lama maupun yang baru.
@@ -155,7 +156,7 @@ function updateActiveSidebarLink(activeLessonId) {
   document
     .querySelectorAll("#sidebar-menu a")
     .forEach((link) => link.classList.remove("active"));
-  
+
   // Tambahkan kelas 'active' ke link yang diklik
   const activeLink = document.getElementById(`link-${activeLessonId}`);
   if (activeLink) {
@@ -166,7 +167,7 @@ function updateActiveSidebarLink(activeLessonId) {
 // [BARU] Event listener untuk sidebar (menggunakan event delegation)
 sidebarMenu.addEventListener("click", (e) => {
   e.preventDefault(); // Mencegah URL berubah dengan #hash
-  
+
   if (e.target.tagName === "A") {
     const topicKey = e.target.dataset.topic;
     const lessonId = e.target.dataset.lesson;
@@ -179,15 +180,15 @@ function generateNavMenus() {
   // 1. Generate Menu Tutorials
   // 'tutorials' adalah object, kita perlu ambil keys-nya (html, css, js)
   const tutorialTopics = Object.keys(tutorials);
-  
+
   // Buat satu 'item' (kolom) untuk setiap topik
-  tutorialTopics.forEach(topicKey => {
+  tutorialTopics.forEach((topicKey) => {
     const topicData = tutorials[topicKey];
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'nested-navigation-item';
-    
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "nested-navigation-item";
+
     let linksHTML = `<h2>${topicData.title}</h2>`;
-    
+
     // Tombol 'Learn' utama untuk topik itu
     linksHTML += `
       <button 
@@ -196,86 +197,108 @@ function generateNavMenus() {
       >
         Learn ${topicData.title}
       </button>`;
-    
-    // (Opsional) Kamu bisa tambahkan link ke 2-3 materi pertama di sini
-    topicData.lessons.slice(0, 2).forEach(lesson => {
-       linksHTML += `
-         <a href="#" 
-           class="nav-lesson-link" 
-           data-topic="${topicKey}" 
-           data-lesson="${lesson.id}"
-         >
-           ${lesson.title}
-         </a>`;
-    });
-    
+
     itemDiv.innerHTML = linksHTML;
     tutorialsNavContent.appendChild(itemDiv);
   });
 
   // 2. Generate Menu References (Ini pakai struktur datamu yang lama, tapi di-generate)
-  Object.keys(References).forEach(key => {
-    if (key === 'name') return;
+  Object.keys(References).forEach((key) => {
+    if (key === "name") return;
     const category = References[key];
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'nested-navigation-item';
-    
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "nested-navigation-item";
+
     let linksHTML = `<h2>${category.name}</h2>`;
-    category.menu.slice(0, 3).forEach(item => { // Ambil 3 pertama
+    category.menu.slice(0, 3).forEach((item) => {
+      // Ambil 3 pertama
       linksHTML += `<a href="${item.link}" target="_blank">${item.title}</a>`;
     });
-    
+
     itemDiv.innerHTML = linksHTML;
     referencesNavContent.appendChild(itemDiv);
   });
-  
+
   // 3. Generate Menu Excersices (Sama seperti References)
-  Object.keys(Excersices).forEach(key => {
-    if (key === 'name') return;
+  Object.keys(Excersices).forEach((key) => {
+    if (key === "name") return;
     const category = Excersices[key];
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'nested-navigation-item';
-    
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "nested-navigation-item";
+
     let linksHTML = `<h2>${category.name}</h2>`;
-    category.menu.slice(0, 3).forEach(item => { // Ambil 3 pertama
+    category.menu.slice(0, 3).forEach((item) => {
+      // Ambil 3 pertama
       linksHTML += `<a href="${item.link}" target="_blank">${item.title}</a>`;
     });
-    
+
     itemDiv.innerHTML = linksHTML;
     excersicesNavContent.appendChild(itemDiv);
   });
 }
 
 // [BARU] Event listener untuk tombol di dalam pop-up menu tutorials
-tutorialsNavContent.addEventListener('click', (e) => {
-  const target = e.target.closest('.nav-topic-btn, .nav-lesson-link');
+tutorialsNavContent.addEventListener("click", (e) => {
+  const target = e.target.closest(".nav-topic-btn, .nav-lesson-link");
   if (!target) return;
-  
+
   e.preventDefault();
   const topicKey = target.dataset.topic;
-  
+
   // Jika klik 'Learn HTML', 'Learn CSS', dll.
-  if (target.classList.contains('nav-topic-btn')) {
+  if (target.classList.contains("nav-topic-btn")) {
     renderSidebar(topicKey);
     // Muat materi pertama dari topik itu
     const firstLessonId = tutorials[topicKey].lessons[0].id;
     renderContent(topicKey, firstLessonId);
   }
-  
+
   // Jika klik link materi spesifik (misal: 'HTML Elemen')
-  if (target.classList.contains('nav-lesson-link')) {
+  if (target.classList.contains("nav-lesson-link")) {
     const lessonId = target.dataset.lesson;
     renderSidebar(topicKey); // Tetap render sidebar
     renderContent(topicKey, lessonId); // Muat materi yang diklik
   }
-  
+
   closeAllPanels(); // Tutup pop-up setelah diklik
 });
 
-
 // [BARU] Inisialisasi saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
+  // [BARU] Logika Light/Dark Mode
+  const lightDarkBtn = document.getElementById("light-dark-toggle");
+  const currentTheme = localStorage.getItem("theme");
+  // Cek tema yang tersimpan saat halaman dimuat
+  if (currentTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+  // Tambahkan listener ke tombol
+  lightDarkBtn.addEventListener("click", () => {
+    // Toggle kelas .dark-mode di <body>
+    document.body.classList.toggle("dark-mode");
+    // Periksa apakah dark mode AKTIF atau TIDAK, lalu simpan ke localStorage
+    let theme = "light";
+    if (document.body.classList.contains("dark-mode")) {
+      theme = "dark";
+    }
+    localStorage.setItem("theme", theme);
+  });
+
+  const logoBtn = document.getElementById("logo-btn");
+  logoBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // Mencegah link '#' me-refresh halaman
+    // Sembunyikan sidebar
+    sidebar.style.display = "none";
+    // Muat konten beranda (homeContent sudah diimpor di atas)
+    contentArea.innerHTML = homeContent;
+    // Tutup semua pop-up jika ada yang terbuka
+    closeAllPanels();
+  });
+
+  // Kode baru untuk memuat beranda
   generateNavMenus(); // Generate semua menu di header
-  renderSidebar("html"); // Tampilkan sidebar HTML sebagai default
-  renderContent("html", "html-intro"); // Tampilkan materi pertama HTML
+  // Sembunyikan sidebar saat di beranda
+  sidebar.style.display = "none";
+  // Muat konten beranda yang kita impor
+  contentArea.innerHTML = homeContent;
 });
