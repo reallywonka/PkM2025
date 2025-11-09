@@ -282,6 +282,12 @@ p {
           </pre>
         `,
       },
+
+
+
+      /*
+        ^^^^^ BATAS MATERI BARU - JS ^^^^^
+      */
     ],
   },
   javascript: {
