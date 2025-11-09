@@ -64,7 +64,7 @@ header {
 }
 .logo img {
   width: 100%;
-  object-fit: contain; /* Memastikan logo tidak terdistorsi */
+  object-fit: contain;
 }
 
 /**** header-left ****/
@@ -108,20 +108,19 @@ header {
   transform: rotate(180deg);
 }
 .LightDark:hover {
-  color: inherit; /* Matikan aturan hover lama */
+  color: inherit;
 }
 #light-dark-toggle {
-  color: var(--bs-black); /* Ambil warna dari variabel */
-  padding: 5px 8px; /* Beri sedikit padding agar area klik lebih besar */
+  color: var(--bs-black);
+  padding: 5px 8px;
   border-radius: 5px;
   transition: background-color 0.2s;
 }
 #light-dark-toggle:hover {
-  background-color: var(--bs-neowhite); /* Efek hover light mode */
+  background-color: var(--bs-neowhite);
 }
-/* Aturan hover untuk Dark Mode */
 body.dark-mode #light-dark-toggle:hover {
-  background-color: var(--sidebar-bg); /* Efek hover dark mode */
+  background-color: var(--sidebar-bg);
 }
 
 .header-right {
@@ -146,24 +145,17 @@ body.dark-mode #light-dark-toggle:hover {
 }
 
 /**** nested-navigation ****/
-/* PERBAIKAN: 'display: none' dihapus dari sini 
-  agar JS bisa mengontrol tampilannya.
-*/
 .nested-navigation {
   background-color: var(--bs-black);
   color: white;
-  position: absolute; /* Mengubah dari relative ke absolute */
-  top: 80px; /* Muncul di bawah header */
+  position: absolute;
+  top: 80px;
   left: 0;
   width: 100%;
   padding-bottom: 50px;
   z-index: 99;
-  /* display: none; <-- DIHAPUS */
 }
 
-/* PERBAIKAN: Hanya kelas ini yang mengontrol 
-  apakah navigasi tersembunyi atau tidak.
-*/
 .nested_navigation_hidden {
   display: none;
 }
@@ -206,7 +198,6 @@ body.dark-mode #light-dark-toggle:hover {
 }
 .nested-navigation-item a,
 .nested-navigation-item .nav-topic-btn {
-  /* [BARU] Menambahkan .nav-topic-btn */
   display: block;
   color: white;
   font-size: 18px;
@@ -224,19 +215,17 @@ body.dark-mode #light-dark-toggle:hover {
   color: var(--bs-black);
 }
 
-/* [BARU] Layout Konten Utama */
 .main-container {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 80px); /* Tinggi penuh dikurangi header */
+  height: calc(100vh - 80px);
 }
 
-/* [BARU] Styling Sidebar */
 .sidebar {
   width: 250px;
   background-color: var(--sidebar-bg);
   height: 100%;
-  overflow-y: auto; /* Bisa di-scroll jika materi banyak */
+  overflow-y: auto;
   padding: 20px;
   border-right: 1px solid var(--border-color);
 }
@@ -273,16 +262,14 @@ body.dark-mode #light-dark-toggle:hover {
   color: var(--bs-white);
 }
 
-/* [BARU] Styling Area Konten */
 .content-area {
-  flex-grow: 1; /* Mengisi sisa ruang */
+  flex-grow: 1;
   padding: 30px;
   height: 100%;
-  overflow-y: auto; /* Konten bisa di-scroll */
+  overflow-y: auto;
   line-height: 1.6;
 }
 
-/* [BARU] Styling untuk konten di dalam materi */
 .content-area h1 {
   color: var(--bs-black);
   border-bottom: 2px solid var(--bs-yellow);
@@ -310,7 +297,6 @@ body.dark-mode #light-dark-toggle:hover {
   border-radius: 3px;
 }
 
-/* [BARU] Tema Dark Mode */
 body.dark-mode {
   --bs-black: #e7e9eb;
   --bs-white: #282a35;
@@ -319,67 +305,137 @@ body.dark-mode {
   --border-color: #555761;
 }
 
-/* [BARU] Aturan tambahan untuk dark mode */
 body.dark-mode .logo img {
-  filter: invert(1); /* Membalik warna logo untuk dark mode */
+  filter: invert(1);
 }
 
 body.dark-mode .header-left .menu-btn:hover {
-  background-color: #555761; /* Warna hover yang lebih gelap */
+  background-color: #555761;
 }
 
 body.dark-mode .sidebar ul li a:hover {
-  background-color: #555761; /* Warna hover yang lebih gelap */
+  background-color: #555761;
 }
 
 body.dark-mode .sidebar ul li a.active {
-  background-color: var(--bs-black); /* Teks terang */
-  color: #282a35; /* Background gelap (dibalik) */
+  background-color: var(--bs-black);
+  color: #282a35;
 }
 
-/*
-  Tambahkan kode ini di bagian PALING BAWAH 
-  dari file style.css Anda
-*/
-
-/* [BARU] Perbaikan Teks Pop-up untuk Dark Mode */
 body.dark-mode .nested-navigation {
-  color: var(--bs-white); /* var(--bs-white) sekarang jadi gelap (#282a35) */
+  color: var(--bs-white);
 }
 
 body.dark-mode .nested-navigation h1,
 body.dark-mode .nested-navigation h2 {
-  /* Judul kuningnya kita ganti jadi gelap juga */
   color: var(--bs-white);
 }
 
 body.dark-mode .nested-navigation-item a,
 body.dark-mode .nested-navigation-item .nav-topic-btn {
-  /* Link-nya juga kita paksa jadi gelap */
   color: var(--bs-white);
 }
 
-/* Perbaikan untuk Tombol Close (X) */
 body.dark-mode .nested-navigation-close-btn button {
   color: var(--bs-white);
 }
 
 body.dark-mode .nested-navigation-close-btn button:hover {
-  background-color: var(--bs-white); /* jadi background gelap */
-  color: var(--bs-black); /* jadi teks terang */
+  background-color: var(--bs-white);
+  color: var(--bs-black);
 }
 
-/* [BARU] Perbaikan Tombol Header di Dark Mode */
 body.dark-mode .header-right a.bg-pink,
 body.dark-mode .header-right a.bg-yellow {
   color: var(--bs-black);
-  background-color: var(--sidebar-bg); /* Ini adalah warna abu-abu gelap */
+  background-color: var(--sidebar-bg);
 }
-/* [BARU] Efek Hover Tombol Header di Dark Mode */
 body.dark-mode .header-right a.bg-pink:hover,
 body.dark-mode .header-right a.bg-yellow:hover {
   background-color: var(
     --bs-neowhite
-  ); /* Warna abu-abu yang sedikit lebih terang */
-  opacity: 1; /* Kita pakai background, jadi matikan opacity */
+  );
+  opacity: 1;
+}
+
+.content-area .content-box {
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  line-height: 1.7;
+  border: 1px solid transparent;
+}
+
+.content-area .info-box {
+  background-color: #e7f3fe;
+  border-color: #b3d7ff;
+  color: #004a99;
+}
+
+.content-area .tip-box {
+  background-color: var(--bs-yellow);
+  border-color: #e6db74;
+  color: #333;
+}
+
+.content-area .warning-box {
+  background-color: #ffebeB;
+  border-color: #ffc2c2;
+  color: #8c1010;
+}
+
+.content-area .content-box h3 {
+  margin-top: 0;
+  font-weight: 700;
+  color: inherit;
+}
+.content-area .content-box ul,
+.content-area .content-box p {
+  margin-bottom: 0;
+}
+
+.content-area .example-box {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.content-area .example-box-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+  background-color: var(
+    --bs-neowhite
+  );
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.content-area .example-box pre {
+  margin: 0;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+body.dark-mode .content-area .info-box {
+  background-color: #2a3b50;
+  border-color: #3c5a7d;
+  color: #cbe1ff;
+}
+
+body.dark-mode .content-area .tip-box {
+  background-color: #4f4b23;
+  border-color: #7a733f;
+  color: var(--bs-yellow);
+}
+
+body.dark-mode .content-area .warning-box {
+  background-color: #4d2a2a;
+  border-color: #7c4f4f;
+  color: #ffdddd;
+}
+
+body.dark-mode .content-area .example-box-header {
+  background-color: #282a35;
 }

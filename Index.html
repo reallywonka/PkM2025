@@ -4,13 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Pembelajaran</title>
-    <!-- 
-      Path CSS sudah diperbaiki dari 'assets\css\style.css' menjadi 'assets/css/style.css' 
-      menggunakan forward slash (/) agar konsisten di semua sistem operasi.
-    -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="https://www.w3school.com/favicon.ico/" />
-    <!--Font Owesome-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -18,7 +13,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,12 +21,10 @@
     />
   </head>
   <body>
-    <!-- Header tetap sama persis seperti kodemu -->
     <header>
       <div class="header-left">
         <a href="#" class="menu-btn" id="logo-btn">
           <div class="logo">
-            <!-- Path gambar juga diperbaiki -->
             <img src="assets/image/logo.png" alt="Logo" />
           </div>
         </a>
@@ -54,18 +46,6 @@
         <div class="DarkMode" id="light-dark-toggle">
           <i class="fa-solid fa-circle-half-stroke"></i>
         </div>
-        <div class="Translate">
-          <i class="fa-solid fa-earth-asia"></i>
-        </div>
-        <div class="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <a href="#upgrade" class="btn btn-lunk bg-black" id="upgrade-btn"
-          >Upgrade</a
-        >
-        <a href="#GetCertified" class="btn btn-lunk bg-pink">Get Certified</a>
-        <a href="#FreeWebsite" class="btn btn-lunk bg-yellow">Free Website</a>
-      </div>
     </header>
 
     <!-- Navigasi Pop-up (Tutorials) -->
@@ -122,9 +102,9 @@
       </div>
     </div>
 
-    <!-- [BARU] Layout Utama untuk Konten -->
+    <!-- Layout Utama untuk Konten -->
     <div class="main-container">
-      <!-- [BARU] Sidebar untuk navigasi per-materi -->
+      <!-- Sidebar untuk navigasi per-materi -->
       <nav class="sidebar" id="sidebar">
         <h2 id="sidebar-title">Pilih Materi</h2>
         <ul id="sidebar-menu">
@@ -132,7 +112,7 @@
         </ul>
       </nav>
 
-      <!-- [BARU] Area Konten Utama -->
+      <!-- Area Konten Utama -->
       <main class="content-area" id="content-area">
         <h1>Selamat Datang!</h1>
         <p>
@@ -146,10 +126,6 @@
       </main>
     </div>
 
-    <!-- 
-      Path JS juga diperbaiki dan type="module" sangat penting 
-      karena kita menggunakan import/export.
-    -->
     <script src="assets/js/script.js" type="module"></script>
   </body>
 </html>

@@ -1,304 +1,441 @@
-/*
-  PERHATIKAN: Path import sudah diperbaiki (menggunakan ../../)
-*/
-import { tutorials } from "../../Data/tutorial.js";
-import { References } from "../../Data/References.js";
-import { Excersices } from "../../Data/excersices.js";
-import { homeContent } from "../../Data/home.js";
+:root {
+  --bs-black: #282a35;
+  --bs-pink: #ffc0c7;
+  --bs-yellow: #fff4a3;
 
-/* Mengambil semua elemen DOM yang kita butuhkan,
-  baik yang lama maupun yang baru.
-*/
+  --bs-white: #ffffff;
 
-// Elemen Header & Navigasi Pop-up
-const NestedNavigation = document.getElementById("nested-navigation_id");
-const tutorialEL = document.getElementById("tutorial-btn");
-const nestedNavigationCloseBtn = document.getElementById(
-  "nested-navigation-close-Btn"
-);
+  --bs-neowhite: #e7e9eb;
+  --sidebar-bg: #f1f1f1;
+  --border-color: #dcdcdc;
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "source sans 3", sans-serif;
+  width: 100%;
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+}
 
-const NestedNavigationRefs = document.getElementById(
-  "nested-navigation_references"
-);
-const referencesEL = document.getElementById("references-btn");
-const nestedNavigationCloseBtnRefs = document.getElementById(
-  "nested-navigation-close-Btn-refs"
-);
+header {
+  height: 80px;
+  background-color: var(--bs-white);
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-const NestedNavigationExcs = document.getElementById(
-  "nested-navigation_excersices"
-);
-const excersicesEL = document.getElementById("excersices-btn");
-const nestedNavigationCloseBtnExcs = document.getElementById(
-  "nested-navigation-close-Btn-excs"
-);
+/**** utility class ****/
+.btn {
+  padding: 10px;
+  cursor: pointer;
+}
+.bg-black {
+  background-color: var(--bs-black);
+  color: var(--bs-white);
+}
+.bg-pink {
+  background-color: var(--bs-pink);
+  color: var(--bs-black);
+}
+.bg-yellow {
+  background-color: var(--bs-yellow);
+  color: var(--bs-black);
+}
+.text-white {
+  color: var(--bs-white);
+}
 
-// [BARU] Elemen Konten Utama
-const sidebar = document.getElementById("sidebar");
-const sidebarTitle = document.getElementById("sidebar-title");
-const sidebarMenu = document.getElementById("sidebar-menu");
-const contentArea = document.getElementById("content-area");
+/**** logo ****/
+.logo {
+  width: 80px;
+  padding: 0px 5px;
+  margin-right: 5px;
+}
+.logo img {
+  width: 100%;
+  object-fit: contain;
+}
 
-// [BARU] Elemen untuk generate menu di pop-up
-const tutorialsNavContent = document.getElementById("tutorials-nav-content");
-const referencesNavContent = document.getElementById("references-nav-content");
-const excersicesNavContent = document.getElementById("excersices-nav-content");
+/**** header-left ****/
+.header-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header-left .menu-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 0px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bs-black);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.header-left .menu-btn.text-white {
+  color: var(--bs-black);
+}
+.header-left .menu-btn:hover {
+  background-color: rgb(200, 197, 197);
+}
+.header-left .menu-btn:first-child {
+  padding: 0;
+}
+.header-left .menu-btn:first-child:hover {
+  background-color: transparent;
+}
+.fa-solid {
+  padding: 0px 3px;
+}
 
-/*
-  Logika Lama (milikmu) untuk tombol header (Tutorials, Refs, Excs).
-  Logika ini sudah benar dan kita pertahankan.
-*/
-tutorialEL.addEventListener("click", () => {
-  const isOpening = NestedNavigation.classList.contains(
-    "nested_navigation_hidden"
+/**** header-right ****/
+.LightDark {
+  transform: rotate(180deg);
+}
+.LightDark:hover {
+  color: inherit;
+}
+#light-dark-toggle {
+  color: var(--bs-black);
+  padding: 5px 8px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+#light-dark-toggle:hover {
+  background-color: var(--bs-neowhite);
+}
+body.dark-mode #light-dark-toggle:hover {
+  background-color: var(--sidebar-bg);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 18px;
+}
+.header-right a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 60px;
+  padding: 10px 20px;
+}
+.header-right a:last-child {
+  padding: 10px 45px;
+}
+.header-right a:hover {
+  opacity: 0.8;
+}
+
+/**** nested-navigation ****/
+.nested-navigation {
+  background-color: var(--bs-black);
+  color: white;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  padding-bottom: 50px;
+  z-index: 99;
+}
+
+.nested_navigation_hidden {
+  display: none;
+}
+
+.nested-navigation-close-btn {
+  position: absolute;
+  right: 0;
+}
+.nested-navigation-close-btn button {
+  font-size: 30px;
+  padding: 30px;
+  background-color: transparent;
+  border: none;
+  color: var(--bs-white);
+  cursor: pointer;
+}
+.nested-navigation-close-btn button:hover {
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+}
+.nested-navigation-content {
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+}
+.nested-navigation-content h1 {
+  margin: 0;
+  color: var(--bs-yellow);
+}
+.nasted-navigation-content-data {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+}
+.nested-navigation-item {
+  margin-right: 20px;
+}
+.nested-navigation-item h2 {
+  color: var(--bs-yellow);
+  margin-top: 30px;
+}
+.nested-navigation-item a,
+.nested-navigation-item .nav-topic-btn {
+  display: block;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 550;
+  padding: 5px 7px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+}
+.nested-navigation-item a:hover,
+.nested-navigation-item .nav-topic-btn:hover {
+  background-color: var(--bs-neowhite);
+  color: var(--bs-black);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 80px);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-top: 0;
+  color: var(--bs-black);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--bs-black);
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ddd;
+}
+
+.sidebar ul li a.active {
+  background-color: var(--bs-black);
+  color: var(--bs-white);
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 30px;
+  height: 100%;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.content-area h1 {
+  color: var(--bs-black);
+  border-bottom: 2px solid var(--bs-yellow);
+  padding-bottom: 10px;
+}
+
+.content-area p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.content-area pre {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 15px;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.content-area code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--bs-sidebar-bg);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+body.dark-mode {
+  --bs-black: #e7e9eb;
+  --bs-white: #282a35;
+  --bs-neowhite: #4a4c5a;
+  --sidebar-bg: #3a3c4a;
+  --border-color: #555761;
+}
+
+body.dark-mode .logo img {
+  filter: invert(1);
+}
+
+body.dark-mode .header-left .menu-btn:hover {
+  background-color: #555761;
+}
+
+body.dark-mode .sidebar ul li a:hover {
+  background-color: #555761;
+}
+
+body.dark-mode .sidebar ul li a.active {
+  background-color: var(--bs-black);
+  color: #282a35;
+}
+
+body.dark-mode .nested-navigation {
+  color: var(--bs-white);
+}
+
+body.dark-mode .nested-navigation h1,
+body.dark-mode .nested-navigation h2 {
+  color: var(--bs-white);
+}
+
+body.dark-mode .nested-navigation-item a,
+body.dark-mode .nested-navigation-item .nav-topic-btn {
+  color: var(--bs-white);
+}
+
+body.dark-mode .nested-navigation-close-btn button {
+  color: var(--bs-white);
+}
+
+body.dark-mode .nested-navigation-close-btn button:hover {
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+}
+
+body.dark-mode .header-right a.bg-pink,
+body.dark-mode .header-right a.bg-yellow {
+  color: var(--bs-black);
+  background-color: var(--sidebar-bg);
+}
+body.dark-mode .header-right a.bg-pink:hover,
+body.dark-mode .header-right a.bg-yellow:hover {
+  background-color: var(
+    --bs-neowhite
   );
-  closeAllPanels();
-  if (isOpening) {
-    tutorialEL.classList.add("bg-black", "text-white");
-    NestedNavigation.classList.remove("nested_navigation_hidden");
-  }
-});
+  opacity: 1;
+}
 
-nestedNavigationCloseBtn.addEventListener("click", () => {
-  closeAllPanels();
-});
+.content-area .content-box {
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  line-height: 1.7;
+  border: 1px solid transparent;
+}
 
-referencesEL.addEventListener("click", () => {
-  const isOpening = NestedNavigationRefs.classList.contains(
-    "nested_navigation_hidden"
+.content-area .info-box {
+  background-color: #e7f3fe;
+  border-color: #b3d7ff;
+  color: #004a99;
+}
+
+.content-area .tip-box {
+  background-color: var(--bs-yellow);
+  border-color: #e6db74;
+  color: #333;
+}
+
+.content-area .warning-box {
+  background-color: #ffebeB;
+  border-color: #ffc2c2;
+  color: #8c1010;
+}
+
+.content-area .content-box h3 {
+  margin-top: 0;
+  font-weight: 700;
+  color: inherit;
+}
+.content-area .content-box ul,
+.content-area .content-box p {
+  margin-bottom: 0;
+}
+
+.content-area .example-box {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.content-area .example-box-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+  background-color: var(
+    --bs-neowhite
   );
-  closeAllPanels();
-  if (isOpening) {
-    referencesEL.classList.add("bg-black", "text-white");
-    NestedNavigationRefs.classList.remove("nested_navigation_hidden");
-  }
-});
-
-nestedNavigationCloseBtnRefs.addEventListener("click", () => {
-  closeAllPanels();
-});
-
-excersicesEL.addEventListener("click", () => {
-  const isOpening = NestedNavigationExcs.classList.contains(
-    "nested_navigation_hidden"
-  );
-  closeAllPanels();
-  if (isOpening) {
-    excersicesEL.classList.add("bg-black", "text-white");
-    NestedNavigationExcs.classList.remove("nested_navigation_hidden");
-  }
-});
-
-nestedNavigationCloseBtnExcs.addEventListener("click", () => {
-  closeAllPanels();
-});
-
-function closeAllPanels() {
-  NestedNavigation.classList.add("nested_navigation_hidden");
-  NestedNavigationRefs.classList.add("nested_navigation_hidden");
-  NestedNavigationExcs.classList.add("nested_navigation_hidden");
-
-  tutorialEL.classList.remove("bg-black", "text-white");
-  referencesEL.classList.remove("bg-black", "text-white");
-  excersicesEL.classList.remove("bg-black", "text-white");
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.content-area .example-box pre {
+  margin: 0;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
-/*
-  --- [LOGIKA BARU] Dimulai dari sini ---
-*/
-
-// [BARU] Fungsi untuk me-render konten materi ke area utama
-function renderContent(topicKey, lessonId) {
-  try {
-    const lesson = tutorials[topicKey].lessons.find((l) => l.id === lessonId);
-    if (lesson) {
-      contentArea.innerHTML = lesson.content;
-      // Update link aktif di sidebar
-      updateActiveSidebarLink(lessonId);
-    } else {
-      contentArea.innerHTML = "<h1>Materi tidak ditemukan</h1>";
-    }
-  } catch (e) {
-    console.error("Error rendering content:", e);
-    contentArea.innerHTML =
-      "<h1>Terjadi kesalahan</h1><p>Gagal memuat materi.</p>";
-  }
+body.dark-mode .content-area .info-box {
+  background-color: #2a3b50;
+  border-color: #3c5a7d;
+  color: #cbe1ff;
 }
 
-// [BARU] Fungsi untuk mengisi sidebar berdasarkan topik yang dipilih
-function renderSidebar(topicKey) {
-  const topic = tutorials[topicKey];
-  if (!topic) {
-    sidebar.style.display = "none"; // Sembunyikan sidebar jika topik tidak ada
-    return;
-  }
-
-  sidebar.style.display = "block"; // Tampilkan sidebar
-  sidebarTitle.textContent = `Materi ${topic.title}`;
-  sidebarMenu.innerHTML = ""; // Kosongkan menu sebelumnya
-
-  topic.lessons.forEach((lesson) => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = `#${lesson.id}`;
-    a.textContent = lesson.title;
-    a.dataset.topic = topicKey; // Simpan info topik
-    a.dataset.lesson = lesson.id; // Simpan info lesson id
-    a.id = `link-${lesson.id}`; // ID unik untuk styling 'active'
-    li.appendChild(a);
-    sidebarMenu.appendChild(li);
-  });
+body.dark-mode .content-area .tip-box {
+  background-color: #4f4b23;
+  border-color: #7a733f;
+  color: var(--bs-yellow);
 }
 
-// [BARU] Fungsi untuk menandai link sidebar yang sedang aktif
-function updateActiveSidebarLink(activeLessonId) {
-  // Hapus kelas 'active' dari semua link
-  document
-    .querySelectorAll("#sidebar-menu a")
-    .forEach((link) => link.classList.remove("active"));
-
-  // Tambahkan kelas 'active' ke link yang diklik
-  const activeLink = document.getElementById(`link-${activeLessonId}`);
-  if (activeLink) {
-    activeLink.classList.add("active");
-  }
+body.dark-mode .content-area .warning-box {
+  background-color: #4d2a2a;
+  border-color: #7c4f4f;
+  color: #ffdddd;
 }
 
-// [BARU] Event listener untuk sidebar (menggunakan event delegation)
-sidebarMenu.addEventListener("click", (e) => {
-  e.preventDefault(); // Mencegah URL berubah dengan #hash
-
-  if (e.target.tagName === "A") {
-    const topicKey = e.target.dataset.topic;
-    const lessonId = e.target.dataset.lesson;
-    renderContent(topicKey, lessonId);
-  }
-});
-
-// [BARU] Fungsi untuk generate menu di pop-up header
-function generateNavMenus() {
-  // 1. Generate Menu Tutorials
-  // 'tutorials' adalah object, kita perlu ambil keys-nya (html, css, js)
-  const tutorialTopics = Object.keys(tutorials);
-
-  // Buat satu 'item' (kolom) untuk setiap topik
-  tutorialTopics.forEach((topicKey) => {
-    const topicData = tutorials[topicKey];
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "nested-navigation-item";
-
-    let linksHTML = `<h2>${topicData.title}</h2>`;
-
-    // Tombol 'Learn' utama untuk topik itu
-    linksHTML += `
-      <button 
-        class="nav-topic-btn" 
-        data-topic="${topicKey}"
-      >
-        Learn ${topicData.title}
-      </button>`;
-
-    itemDiv.innerHTML = linksHTML;
-    tutorialsNavContent.appendChild(itemDiv);
-  });
-
-  // 2. Generate Menu References (Ini pakai struktur datamu yang lama, tapi di-generate)
-  Object.keys(References).forEach((key) => {
-    if (key === "name") return;
-    const category = References[key];
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "nested-navigation-item";
-
-    let linksHTML = `<h2>${category.name}</h2>`;
-    category.menu.slice(0, 3).forEach((item) => {
-      // Ambil 3 pertama
-      linksHTML += `<a href="${item.link}" target="_blank">${item.title}</a>`;
-    });
-
-    itemDiv.innerHTML = linksHTML;
-    referencesNavContent.appendChild(itemDiv);
-  });
-
-  // 3. Generate Menu Excersices (Sama seperti References)
-  Object.keys(Excersices).forEach((key) => {
-    if (key === "name") return;
-    const category = Excersices[key];
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "nested-navigation-item";
-
-    let linksHTML = `<h2>${category.name}</h2>`;
-    category.menu.slice(0, 3).forEach((item) => {
-      // Ambil 3 pertama
-      linksHTML += `<a href="${item.link}" target="_blank">${item.title}</a>`;
-    });
-
-    itemDiv.innerHTML = linksHTML;
-    excersicesNavContent.appendChild(itemDiv);
-  });
+body.dark-mode .content-area .example-box-header {
+  background-color: #282a35;
 }
-
-// [BARU] Event listener untuk tombol di dalam pop-up menu tutorials
-tutorialsNavContent.addEventListener("click", (e) => {
-  const target = e.target.closest(".nav-topic-btn, .nav-lesson-link");
-  if (!target) return;
-
-  e.preventDefault();
-  const topicKey = target.dataset.topic;
-
-  // Jika klik 'Learn HTML', 'Learn CSS', dll.
-  if (target.classList.contains("nav-topic-btn")) {
-    renderSidebar(topicKey);
-    // Muat materi pertama dari topik itu
-    const firstLessonId = tutorials[topicKey].lessons[0].id;
-    renderContent(topicKey, firstLessonId);
-  }
-
-  // Jika klik link materi spesifik (misal: 'HTML Elemen')
-  if (target.classList.contains("nav-lesson-link")) {
-    const lessonId = target.dataset.lesson;
-    renderSidebar(topicKey); // Tetap render sidebar
-    renderContent(topicKey, lessonId); // Muat materi yang diklik
-  }
-
-  closeAllPanels(); // Tutup pop-up setelah diklik
-});
-
-// [BARU] Inisialisasi saat halaman dimuat
-document.addEventListener("DOMContentLoaded", () => {
-  // [BARU] Logika Light/Dark Mode
-  const lightDarkBtn = document.getElementById("light-dark-toggle");
-  const currentTheme = localStorage.getItem("theme");
-  // Cek tema yang tersimpan saat halaman dimuat
-  if (currentTheme === "dark") {
-    document.body.classList.add("dark-mode");
-  }
-  // Tambahkan listener ke tombol
-  lightDarkBtn.addEventListener("click", () => {
-    // Toggle kelas .dark-mode di <body>
-    document.body.classList.toggle("dark-mode");
-    // Periksa apakah dark mode AKTIF atau TIDAK, lalu simpan ke localStorage
-    let theme = "light";
-    if (document.body.classList.contains("dark-mode")) {
-      theme = "dark";
-    }
-    localStorage.setItem("theme", theme);
-  });
-
-  const logoBtn = document.getElementById("logo-btn");
-  logoBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // Mencegah link '#' me-refresh halaman
-    // Sembunyikan sidebar
-    sidebar.style.display = "none";
-    // Muat konten beranda (homeContent sudah diimpor di atas)
-    contentArea.innerHTML = homeContent;
-    // Tutup semua pop-up jika ada yang terbuka
-    closeAllPanels();
-  });
-
-  // Kode baru untuk memuat beranda
-  generateNavMenus(); // Generate semua menu di header
-  // Sembunyikan sidebar saat di beranda
-  sidebar.style.display = "none";
-  // Muat konten beranda yang kita impor
-  contentArea.innerHTML = homeContent;
-});
