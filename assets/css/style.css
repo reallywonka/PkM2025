@@ -448,8 +448,8 @@ body.dark-mode .header-right a.bg-pink:hover,
 body.dark-mode .header-right a.bg-yellow:hover {
   background-color: var(
     --bs-neowhite
-  ); /* Warna abu-abu yang sedikit lebih terang */
-  opacity: 1; /* Kita pakai background, jadi matikan opacity */
+  );
+  opacity: 1;
 }
 
 /* ======================================================
