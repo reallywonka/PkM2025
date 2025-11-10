@@ -1,6 +1,20 @@
-import { tutorials } from "../../Data/tutorial.js";
+// [DIUBAH] Import file data yang sudah dipisah
+import { html } from "../../Data/HTML_tutorial.js";
+import { css } from "../../Data/CSS_tutorial.js";
+import { javascript } from "../../Data/JS_tutorial.js";
+import { design } from "../../Data/UIUX_tutorial.js";
+
 import { References } from "../../Data/References.js";
 import { Excersices } from "../../Data/excersices.js";
+
+// [BARU] Gabungkan semua data tutorial yang terpisah ke dalam satu objek
+// Ini agar sisa kode yang memakai 'tutorials' tidak perlu diubah
+const tutorials = {
+  html: html,
+  css: css,
+  javascript: javascript,
+  design: design,
+};
 
 // [DIUBAH] Kita bungkus SEMUA kode di dalam event listener ini
 // Ini memastikan HTML sudah dimuat penuh sebelum kita mencari elemen
@@ -110,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // [KEMBALI KE VERSI SIMPEL] Fungsi ini tidak lagi membuat tombol next/prev
   function renderContent(topicKey, lessonId) {
     try {
       const lesson = tutorials[topicKey].lessons.find((l) => l.id === lessonId);
@@ -163,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function generateNavMenus() {
+    // Gunakan 'tutorials' yang sudah digabung
     const tutorialTopics = Object.keys(tutorials);
 
     tutorialTopics.forEach((topicKey) => {
@@ -262,6 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const topicKey = e.target.dataset.topic;
       const lessonId = e.target.dataset.lesson;
       renderContent(topicKey, lessonId);
+      // [DIUBAH] Tambahkan scroll ke atas
+      contentArea.scrollTo(0, 0);
     }
   });
 
@@ -319,8 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sembunyikan sidebar saat pertama kali memuat (karena ini beranda)
   sidebar.style.display = "none";
 
-  // Event listener untuk tombol "Mulai Belajar" di beranda
-  // [DIUBAH] Event listener ini sekarang menangani tombol "Mulai Belajar" DAN 4 kartu materi
+  // [KEMBALI KE VERSI SIMPEL] Event listener ini tidak lagi mencari .nav-btn
   contentArea.addEventListener("click", (e) => {
     if (
       e.target.id === "home-start-btn" ||
