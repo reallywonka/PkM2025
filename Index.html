@@ -99,10 +99,13 @@
 
       .tech-item:hover {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        transform: translateY(-3px);
       }
 
       body.dark-mode .tech-item:hover {
         box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+        transform: translateY(-3px);
       }
 
       .tech-item i {
@@ -260,33 +263,32 @@
             </button>
           </div>
 
-          <h2>Apa yang Akan Dipelajari?</h2>
+<h2>Apa yang Akan Dipelajari?</h2>
 
-          <div class="tech-grid">
-            <div class="tech-item">
-              <i class="fa-brands fa-html5"></i>
-              <h3>HTML</h3>
-              <p>Struktur dasar dan pondasi dari semua halaman web.</p>
-            </div>
-            <div class="tech-item">
-              <i class="fa-brands fa-css3-alt"></i>
-              <h3>CSS</h3>
-              <p>Cara mempercantik dan mendesain tampilan website Anda.</p>
-            </div>
-            <div class="tech-item">
-              <i class="fa-brands fa-js"></i>
-              <h3>JavaScript</h3>
-              <p>Membuat website menjadi interaktif dan dinamis.</p>
-            </div>
-            <div class="tech-item">
-              <i class="fa-solid fa-palette"></i>
-              <h3>UI/UX</h3>
-              <p>Prinsip desain agar website mudah dan nyaman digunakan.</p>
-            </div>
-          </div>
+<div class="tech-grid">
+  <div class="tech-item" data-topic="html">
+    <i class="fa-brands fa-html5"></i>
+    <h3>HTML</h3>
+    <p>Struktur dasar dan pondasi dari semua halaman web.</p>
+  </div>
+  <div class="tech-item" data-topic="css">
+    <i class="fa-brands fa-css3-alt"></i>
+    <h3>CSS</h3>
+    <p>Cara mempercantik dan mendesain tampilan website Anda.</p>
+  </div>
+  <div class="tech-item" data-topic="javascript">
+    <i class="fa-brands fa-js"></i>
+    <h3>JavaScript</h3>
+    <p>Membuat website menjadi interaktif dan dinamis.</p>
+  </div>
+  <div class="tech-item" data-topic="design">
+    <i class="fa-solid fa-palette"></i>
+    <h3>UI/UX</h3>
+    <p>Prinsip desain agar website mudah dan nyaman digunakan.</p>
+  </div>
+</div>
 
-          <hr />
-
+<hr />
           <h2>Fitur Utama</h2>
           <div class="features">
             <div class="feature-item">

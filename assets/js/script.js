@@ -36,8 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Elemen untuk generate menu di pop-up
   const tutorialsNavContent = document.getElementById("tutorials-nav-content");
-  const referencesNavContent = document.getElementById("references-nav-content");
-  const excersicesNavContent = document.getElementById("excersices-nav-content");
+  const referencesNavContent = document.getElementById(
+    "references-nav-content"
+  );
+  const excersicesNavContent = document.getElementById(
+    "excersices-nav-content"
+  );
 
   // Variabel untuk menyimpan HTML beranda
   let staticHomeContent = "";
@@ -219,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   nestedNavigationCloseBtn.addEventListener("click", () => {
-    closeAllPAnels();
+    closeAllPanels();
   });
 
   referencesEL.addEventListener("click", () => {
@@ -316,6 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sidebar.style.display = "none";
 
   // Event listener untuk tombol "Mulai Belajar" di beranda
+  // [DIUBAH] Event listener ini sekarang menangani tombol "Mulai Belajar" DAN 4 kartu materi
   contentArea.addEventListener("click", (e) => {
     if (
       e.target.id === "home-start-btn" ||
@@ -323,6 +328,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       e.preventDefault();
       tutorialEL.click(); // Simulasikan klik pada menu 'Tutorials'
+    }
+
+    const clickedCard = e.target.closest(".tech-item[data-topic]");
+    if (clickedCard) {
+      e.preventDefault();
+      const topicKey = clickedCard.dataset.topic;
+      if (tutorials[topicKey]) {
+        renderSidebar(topicKey);
+        const firstLessonId = tutorials[topicKey].lessons[0].id;
+        renderContent(topicKey, firstLessonId);
+      }
     }
   });
 

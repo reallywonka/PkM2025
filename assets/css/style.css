@@ -352,9 +352,7 @@ body.dark-mode .header-right a.bg-yellow {
 }
 body.dark-mode .header-right a.bg-pink:hover,
 body.dark-mode .header-right a.bg-yellow:hover {
-  background-color: var(
-    --bs-neowhite
-  );
+  background-color: var(--bs-neowhite);
   opacity: 1;
 }
 
@@ -379,7 +377,7 @@ body.dark-mode .header-right a.bg-yellow:hover {
 }
 
 .content-area .warning-box {
-  background-color: #ffebeB;
+  background-color: #ffebeb;
   border-color: #ffc2c2;
   color: #8c1010;
 }
@@ -405,9 +403,7 @@ body.dark-mode .header-right a.bg-yellow:hover {
   padding: 10px 15px;
   border-bottom: 1px solid var(--border-color);
   font-weight: 600;
-  background-color: var(
-    --bs-neowhite
-  );
+  background-color: var(--bs-neowhite);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -440,22 +436,17 @@ body.dark-mode .content-area .example-box-header {
   background-color: #282a35;
 }
 
-
-
 /* TOMBOL COPY */
 /* [BARU] Perbaikan Tombol Header di Dark Mode */
 body.dark-mode .header-right a.bg-pink:hover,
 body.dark-mode .header-right a.bg-yellow:hover {
-  background-color: var(
-    --bs-neowhite
-  );
+  background-color: var(--bs-neowhite);
   opacity: 1;
 }
 
 /* ======================================================
-   [BARU] STYLE UNTUK TOMBOL COPY KODE
+  [BARU] STYLE UNTUK TOMBOL COPY KODE
   ======================================================
-*/
 
 /* [BARU] Wrapper untuk blok kode */
 .code-block-wrapper {
