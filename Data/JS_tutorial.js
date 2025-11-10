@@ -26,8 +26,7 @@ export const javascript = {
           <pre>
 // HTML: &lt;p id="demo"&gt;&lt;/p&gt;
 // JS:
-document.getElementById("demo").innerHTML = "Halo JavaScript!";
-          </pre>
+document.getElementById("demo").innerHTML = "Halo JavaScript!";</pre>
           
           <h3>2. Menulis ke Konsol Browser (<code>console.log</code>)</h3>
           <p>Untuk tujuan debugging, Anda dapat menggunakan metode <code>console.log()</code> untuk menampilkan data di konsol browser.</p>
@@ -36,14 +35,12 @@ document.getElementById("demo").innerHTML = "Halo JavaScript!";
 let a = 5;
 let b = 10;
 let c = a + b;
-console.log(c); // Akan menampilkan 15 di konsol
-          </pre>
+console.log(c); // Akan menampilkan 15 di konsol </pre>
           
           <h3>3. Menulis ke Peringatan (<code>alert</code>)</h3>
           <p>Anda dapat menggunakan kotak peringatan (alert) untuk menampilkan data:</p>
           <pre>
-alert("Selamat datang di website kami!");
-          </pre>
+alert("Selamat datang di website kami!"); </pre>
         `,
     },
     {
@@ -64,24 +61,21 @@ alert("Selamat datang di website kami!");
           <pre>
 let umur = 17;
 umur = 18; // Nilai bisa diubah
-console.log(umur); // Output: 18
-          </pre>
+console.log(umur); // Output: 18 </pre>
 
           <h3>Contoh <code>const</code></h3>
           <p>Gunakan <code>const</code> jika nilai variabel tidak akan pernah berubah. Ini mencegah perubahan yang tidak disengaja.</p>
           <pre>
 const tanggalLahir = "1 Januari 2005";
 // tanggalLahir = "2 Februari 2006"; // Ini akan menyebabkan error!
-console.log(tanggalLahir); // Output: 1 Januari 2005
-          </pre>
+console.log(tanggalLahir); // Output: 1 Januari 2005 </pre>
           
           <h3>Penamaan Variabel</h3>
           <p>Nama variabel di JavaScript (dan kebanyakan bahasa lain) biasanya menggunakan <strong>camelCase</strong>.</p>
           <pre>
 let namaSaya = "Budi"; // Benar (camelCase)
 let hobi_saya = "Memancing"; // (snake_case, umum di Python tapi jarang di JS)
-let NamaSaya = "Ani"; // (PascalCase, biasanya untuk Class)
-          </pre>
+let NamaSaya = "Ani"; // (PascalCase, biasanya untuk Class) </pre>
         `,
     },
     {
@@ -97,16 +91,14 @@ let NamaSaya = "Ani"; // (PascalCase, biasanya untuk Class)
           
           <p><strong>Contoh di HTML:</strong></p>
           <pre>
-&lt;button onclick="tampilkanPesan()"&gt;Klik Saya!&lt;/button&gt;
-          </pre>
+&lt;button onclick="tampilkanPesan()"&gt;Klik Saya!&lt;/button&gt; </pre>
           
           <p><strong>Contoh di JavaScript:</strong></p>
           <pre>
 // Fungsi ini akan dipanggil saat tombol diklik
 function tampilkanPesan() {
   alert("Anda baru saja mengklik tombol!");
-}
-          </pre>
+} </pre>
           
           <h3>Contoh Event Lainnya:</h3>
           <ul>
@@ -152,8 +144,7 @@ gambar.src = "gambar-baru.jpg";
 // Properti CSS diubah menjadi camelCase (misal: background-color -> backgroundColor)
 judul.style.color = "blue";
 judul.style.fontSize = "24px";
-judul.style.backgroundColor = "#f1f1f1";
-          </pre>
+judul.style.backgroundColor = "#f1f1f1"; </pre>
         `,
     },
     {
@@ -174,8 +165,7 @@ function sapaPengguna() {
 
 // Memanggil fungsi (agar berjalan)
 sapaPengguna();
-sapaPengguna(); // Bisa dipanggil lagi
-          </pre>
+sapaPengguna(); // Bisa dipanggil lagi </pre>
 
           <h3>Fungsi dengan Parameter</h3>
           <p>Anda dapat mengirim nilai (disebut <strong>parameter</strong> atau argumen) ke dalam fungsi. Ini membuat fungsi lebih dinamis.</p>
@@ -187,8 +177,7 @@ function sapaNama(nama) {
 
 // Memanggil fungsi dengan nilai parameter
 sapaNama("Budi"); // Output: Halo, Budi! Apa kabar?
-sapaNama("Ani");  // Output: Halo, Ani! Apa kabar?
-          </pre>
+sapaNama("Ani");  // Output: Halo, Ani! Apa kabar? </pre>
           
           <h3>Fungsi yang Mengembalikan Nilai (<code>return</code>)</h3>
           <p>Fungsi juga dapat mengembalikan nilai kembali ke kode yang memanggilnya menggunakan kata kunci <code>return</code>.</p>
@@ -202,8 +191,7 @@ function tambah(angka1, angka2) {
 let hasilPenjumlahan = tambah(5, 3);
 
 console.log(hasilPenjumlahan); // Output: 8
-console.log(tambah(10, 10));  // Output: 20
-          </pre>
+console.log(tambah(10, 10));  // Output: 20 </pre>
         `,
     },
     {
@@ -227,8 +215,7 @@ let x = 10;
 let y = 3;
 console.log(x + y); // Output: 13
 console.log(x * y); // Output: 30
-console.log(x % y); // Output: 1 (Karena 10 dibagi 3 sisa 1)
-          </pre>
+console.log(x % y); // Output: 1 (Karena 10 dibagi 3 sisa 1) </pre>
           
           <h3>2. Assignment Operators (Penugasan)</h3>
           <p>Digunakan untuk memberikan nilai ke variabel.</p>
@@ -240,8 +227,7 @@ console.log(x % y); // Output: 1 (Karena 10 dibagi 3 sisa 1)
           <pre>
 let umur = 20;
 umur += 1; // Sekarang umur menjadi 21
-console.log(umur);
-          </pre>
+console.log(umur); </pre>
           
           <h3>3. Comparison Operators (Perbandingan)</h3>
           <p>Digunakan dalam logika untuk membandingkan dua nilai. Hasilnya selalu <strong>boolean</strong> (<code>true</code> atau <code>false</code>).</p>
@@ -260,8 +246,7 @@ let nilai = 100;
 console.log(nilai > 90);   // Output: true
 console.log(nilai === 100); // Output: true
 console.log(nilai === "100"); // Output: false (karena tipe data beda, angka vs teks)
-console.log(nilai == "100");  // Output: true (karena nilai dianggap sama)
-          </pre>
+console.log(nilai == "100");  // Output: true (karena nilai dianggap sama) </pre>
         `,
     },
     {
@@ -279,8 +264,7 @@ let jam = 10;
 if (jam < 12) {
   console.log("Selamat pagi!");
 }
-// Output: Selamat pagi!
-          </pre>
+// Output: Selamat pagi! </pre>
 
           <h3>Pernyataan <code>if...else</code></h3>
           <p>Gunakan <code>else</code> untuk menjalankan blok kode alternatif jika kondisi pertama bernilai <code>false</code>.</p>
@@ -292,8 +276,7 @@ if (nilaiUjian >= 75) {
 } else {
   console.log("Anda Gagal (Remedial).");
 }
-// Output: Anda Gagal (Remedial).
-          </pre>
+// Output: Anda Gagal (Remedial). </pre>
           
           <h3>Pernyataan <code>if...else if...else</code></h3>
           <p>Gunakan <code>else if</code> untuk menentukan kondisi baru jika kondisi pertama salah.</p>
@@ -309,8 +292,7 @@ if (nilaiHuruf === "A") {
 } else {
   console.log("Perlu belajar lagi.");
 }
-// Output: Luar biasa!
-          </pre>
+// Output: Luar biasa! </pre>
         `,
     },
   ],

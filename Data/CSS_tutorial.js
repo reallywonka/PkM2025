@@ -22,21 +22,20 @@ export const css = {
           <pre>
 selektor {
   properti: nilai;
-}
-          </pre>
+}</pre>
           <ul>
             <li><strong>Selektor</strong> menunjuk ke elemen HTML yang ingin kamu gayai (Contoh: <code>h1</code>, <code>p</code>, <code>.nama-class</code>).</li>
             <li><strong>Blok deklarasi</strong> berisi satu atau lebih deklarasi yang dipisahkan oleh titik koma.</li>
             <li>Setiap deklarasi mencakup <strong>nama properti</strong> CSS dan sebuah <strong>nilai</strong>, dipisahkan oleh titik dua.</li>
           </ul>
           <h3>Contoh:</h3>
+          
           <pre>
 /* Memilih semua elemen <p> dan membuatnya merah */
 p {
   color: red;
   font-size: 16px;
-}
-          </pre>
+}</pre>
         `,
     },
     {
@@ -58,8 +57,7 @@ p {
 &lt;body&gt;
   ...
 &lt;/body&gt;
-&lt;/html&gt;
-          </pre>
+&lt;/html&gt;</pre>
           
           <h3>2. Internal CSS</h3>
           <p>Stylesheet internal dapat digunakan jika satu halaman HTML memiliki gaya yang unik.</p>
@@ -74,16 +72,14 @@ p {
       color: maroon;
     }
   &lt;/style&gt;
-&lt;/head&gt;
-          </pre>
+&lt;/head&gt;</pre>
 
           <h3>3. Inline CSS</h3>
           <p>Gaya inline digunakan untuk menerapkan gaya unik ke satu elemen. Cara ini <strong>tidak direkomendasikan</strong> karena mencampurkan konten (HTML) dan presentasi (CSS).</p>
           <pre>
 &lt;h1 style="color:blue; text-align:center;"&gt;
   Ini adalah heading biru.
-&lt;/h1&gt;
-          </pre>
+&lt;/h1&gt;</pre>
         `,
     },
     {
@@ -119,8 +115,7 @@ p {
 /* Memilih semua elemen dengan class="highlight" */
 .highlight {
   background-color: yellow;
-}
-          </pre>
+} </pre>
         `,
     },
     {
@@ -142,8 +137,7 @@ h1 {
 }
 p {
   color: navy;
-}
-          </pre>
+}</pre>
 
           <h3>2. HEX (Hexadecimal)</h3>
           <p>Ini adalah cara paling umum. Nilai HEX adalah representasi RGB (Red, Green, Blue) yang diawali dengan tanda pagar <code>#</code>.</p>
@@ -160,8 +154,7 @@ p {
 /* #FFFFFF (Putih) */
 body {
   background-color: #FFFFFF;
-}
-          </pre>
+}</pre>
           
           <h3>3. RGB (Red, Green, Blue)</h3>
           <p>Cara ini mendefinisikan warna menggunakan fungsi <code>rgb()</code> dengan nilai intensitas Merah, Hijau, dan Biru, masing-masing dari 0 hingga 255.</p>
@@ -173,15 +166,13 @@ h1 {
 /* rgb(0, 0, 0) (Hitam) */
 p {
   color: rgb(0, 0, 0);
-}
-          </pre>
+}</pre>
           <p>Kita juga bisa menambahkan nilai <strong>Alpha</strong> (transparansi) menggunakan <code>rgba()</code>. Nilai alpha berkisar dari 0.0 (transparan penuh) hingga 1.0 (solid).</p>
           <pre>
 /* Merah dengan 50% transparansi */
 div {
   background-color: rgba(255, 0, 0, 0.5);
-}
-          </pre>
+}</pre>
         `,
     },
     {
@@ -196,16 +187,14 @@ div {
           <pre>
 body {
   background-color: #f1f1f1;
-}
-          </pre>
+}</pre>
 
           <h3><code>background-image</code></h3>
           <p>Properti ini digunakan untuk mengatur gambar sebagai latar belakang. Gunakan <code>url()</code> untuk menunjuk ke lokasi gambar.</p>
           <pre>
 body {
   background-image: url("images/pattern.png");
-}
-          </pre>
+}</pre>
 
           <h3><code>background-repeat</code></h3>
           <p>Secara default, gambar latar akan diulang (repeat) secara horizontal dan vertikal. Properti ini mengontrol perilaku tersebut.</p>
@@ -219,8 +208,7 @@ body {
 body {
   background-image: url("images/logo.png");
   background-repeat: no-repeat;
-}
-          </pre>
+}</pre>
           
           <h3><code>background-position</code></h3>
           <p>Digunakan untuk mengatur posisi awal gambar latar belakang. Nilai umumnya adalah <code>left</code>, <code>right</code>, <code>center</code>, <code>top</code>, <code>bottom</code>, atau kombinasi keduanya (misal: <code>center top</code>).</p>
@@ -229,8 +217,7 @@ body {
   background-image: url("images/logo.png");
   background-repeat: no-repeat;
   background-position: center top;
-}
-          </pre>
+}</pre>
         `,
     },
     {
@@ -271,8 +258,7 @@ div.box-saya {
   margin: 15px;
   
   background-color: lightblue;
-}
-          </pre>
+}</pre>
           <p><strong>Penting:</strong> Saat Anda mengatur <code>width</code> dan <code>height</code>, itu hanya berlaku untuk area <strong>Content</strong>. Ukuran total elemen di layar sebenarnya adalah <strong>Content + Padding + Border</strong>.</p>
         `,
     },
@@ -304,8 +290,7 @@ h1 {
 
 p.miring {
   font-style: italic;
-}
-          </pre>
+}</pre>
 
           <h3>Properti Teks</h3>
           <ul>
@@ -325,8 +310,7 @@ p {
 
 a {
   text-decoration: none; /* Menghapus garis bawah dari link */
-}
-          </pre>
+}</pre>
         `,
     },
   ],

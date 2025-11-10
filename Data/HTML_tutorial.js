@@ -84,8 +84,7 @@ export const html = {
 &lt;h3&gt;Ini adalah heading 3&lt;/h3&gt;
 &lt;h4&gt;Ini adalah heading 4&lt;/h4&gt;
 &lt;h5&gt;Ini adalah heading 5&lt;/h5&gt;
-&lt;h6&gt;Ini adalah heading 6 (paling kecil)&lt;/h6&gt;
-          </pre>
+&lt;h6&gt;Ini adalah heading 6 (paling kecil)&lt;/h6&gt;</pre>
           <p><strong>Penting:</strong> Gunakan heading hanya untuk judul. Jangan gunakan heading untuk membuat teks menjadi BESAR atau tebal.</p>
         `,
     },
@@ -98,8 +97,7 @@ export const html = {
           <p>Paragraf selalu dimulai di baris baru, dan browser secara otomatis menambahkan beberapa spasi (margin) sebelum dan sesudah paragraf.</p>
           <pre>
 &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
-&lt;p&gt;Ini adalah paragraf kedua.&lt;/p&gt;
-          </pre>
+&lt;p&gt;Ini adalah paragraf kedua.&lt;/p&gt;</pre>
           <p>Anda tidak dapat memastikan bagaimana HTML akan ditampilkan. Layar besar atau kecil, dan jendela yang diubah ukurannya akan membuat hasil yang berbeda. Dengan HTML, Anda tidak dapat mengubah tampilan output dengan menambahkan spasi ekstra atau baris ekstra dalam kode HTML Anda.</p>
         `,
     },
@@ -111,8 +109,7 @@ export const html = {
           <p>Tautan HTML (hyperlink) digunakan untuk menghubungkan satu halaman ke halaman lain. Elemen <code>&lt;a&gt;</code> (anchor) adalah elemennya.</p>
           <p>Atribut yang paling penting adalah <code>href</code>, yang menunjukkan tujuan tautan.</p>
           <pre>
-&lt;a href="httpsa://www.google.com"&gt;Kunjungi Google&lt;/a&gt;
-          </pre>
+&lt;a href="httpsa://www.google.com"&gt;Kunjungi Google&lt;/a&gt;</pre>
           <p>Secara default, tautan akan muncul sebagai berikut di browser:</p>
           <ul>
             <li>Tautan yang belum dikunjungi digarisbawahi dan berwarna biru.</li>
@@ -130,12 +127,10 @@ export const html = {
           <p>Tag <code>&lt;img&gt;</code> adalah tag kosong, yang berarti hanya berisi atribut dan tidak memiliki tag penutup.</p>
           <p>Atribut <code>src</code> (source) menentukan jalur (URL) ke gambar. Atribut <code>alt</code> (alternatif) menyediakan teks alternatif untuk gambar jika tidak dapat ditampilkan.</p>
           <pre>
-&lt;img src="gambar_mobil.jpg" alt="Mobil balap merah"&gt;
-          </pre>
+&lt;img src="gambar_mobil.jpg" alt="Mobil balap merah"&gt;</pre>
           <p>Anda juga bisa menentukan lebar dan tinggi gambar dengan atribut <code>width</code> dan <code>height</code>.</p>
           <pre>
-&lt;img src="gambar_mobil.jpg" alt="Mobil balap merah" width="500" height="300"&gt;
-          </pre>
+&lt;img src="gambar_mobil.jpg" alt="Mobil balap merah" width="500" height="300"&gt;</pre>
         `,
     },
     {
@@ -153,8 +148,7 @@ export const html = {
   &lt;li&gt;Kopi&lt;/li&gt;
   &lt;li&gt;Teh&lt;/li&gt;
   &lt;li&gt;Susu&lt;/li&gt;
-&lt;/ul&gt;
-          </pre>
+&lt;/ul&gt;</pre>
           
           <h3>Ordered List (Daftar Terurut)</h3>
           <p>Daftar terurut dimulai dengan tag <code>&lt;ol&gt;</code>. Setiap item daftar juga dimulai dengan tag <code>&lt;li&gt;</code>.</p>
@@ -164,8 +158,7 @@ export const html = {
   &lt;li&gt;Bangun tidur&lt;/li&gt;
   &lt;li&gt;Mandi&lt;/li&gt;
   &lt;li&gt;Sarapan&lt;/li&gt;
-&lt;/ol&gt;
-          </pre>
+&lt;/ol&gt;</pre>
         `,
     },
     {
@@ -199,8 +192,7 @@ export const html = {
     &lt;td&gt;Wijaya&lt;/td&gt;
     &lt;td&gt;25&lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;
-          </pre>
+&lt;/table&gt;</pre>
           <p><strong>Catatan:</strong> Atribut <code>border="1"</code> digunakan untuk menampilkan garis pada tabel. Saat ini, cara yang lebih modern adalah menggunakan CSS.</p>
         `,
     },
@@ -270,8 +262,7 @@ export const html = {
   &lt;!-- Tombol Submit --&gt;
   &lt;input type="submit" value="Kirim"&gt;
   
-&lt;/form&gt;
-          </pre>
+&lt;/form&gt;</pre>
         `,
     },
     {
