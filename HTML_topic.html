@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Pembelajaran</title>
+    <!-- Judulnya kita ubah sedikit -->
+    <title>Materi HTML - Website Pembelajaran</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="https://www.w3school.com/favicon.ico/" />
     <link
@@ -20,7 +21,7 @@
       rel="stylesheet"
     />
 
-    <!-- [BARU] Style dari home.js dipindahkan ke sini -->
+    <!-- Style dari home.js (tetap ada, tidak masalah) -->
     <style>
       /* Style untuk Beranda yang lebih interaktif */
       .homepage-container {
@@ -150,9 +151,11 @@
     </style>
   </head>
   <body>
+    <!-- Header tetap sama persis -->
     <header>
       <div class="header-left">
-        <a href="#" class="menu-btn" id="logo-btn">
+        <!-- [DIUBAH] Tombol logo sekarang kembali ke Index.html -->
+        <a href="Index.html" class="menu-btn" id="logo-btn">
           <div class="logo">
             <img src="assets/image/logo.png" alt="Logo" />
           </div>
@@ -177,7 +180,7 @@
         </div>
     </header>
 
-    <!-- Navigasi Pop-up (Tutorials) -->
+    <!-- Navigasi Pop-up (Tutorials) tetap sama -->
     <div
       class="nested-navigation nested_navigation_hidden"
       id="nested-navigation_id"
@@ -193,7 +196,7 @@
       </div>
     </div>
 
-    <!-- Navigasi Pop-up (References) -->
+    <!-- Navigasi Pop-up (References) tetap sama -->
     <div
       class="nested-navigation nested_navigation_hidden"
       id="nested-navigation_references"
@@ -212,7 +215,7 @@
       </div>
     </div>
 
-    <!-- Navigasi Pop-up (Excersices) -->
+    <!-- Navigasi Pop-up (Excersices) tetap sama -->
     <div
       class="nested-navigation nested_navigation_hidden"
       id="nested-navigation_excersices"
@@ -233,7 +236,7 @@
 
     <!-- Layout Utama untuk Konten -->
     <div class="main-container">
-      <!-- Sidebar untuk navigasi per-materi -->
+      <!-- Sidebar tetap sama -->
       <nav class="sidebar" id="sidebar">
         <h2 id="sidebar-title">Pilih Materi</h2>
         <ul id="sidebar-menu">
@@ -242,87 +245,14 @@
       </nav>
 
       <!-- Area Konten Utama -->
-      <!-- [DIUBAH] Konten beranda dari home.js sekarang ada di sini secara default -->
+      <!-- [DIUBAH] Konten beranda DIHAPUS. Sekarang kosong. -->
       <main class="content-area" id="content-area">
-        <div class="homepage-container">
-          <div class="hero-section">
-            <img
-              src="assets/image/logo.png"
-              alt="Logo PkM"
-              class="homepage-logo"
-            />
-
-            <h1>Ayo Belajar Ngoding</h1>
-
-            <p class="subtitle">
-              Kuasai teknologi web dan wujudkan idemu menjadi kenyataan.
-            </p>
-
-            <button class="cta-button" id="home-start-btn">
-              <i class="fa-solid fa-rocket"></i> Mulai Belajar Sekarang!
-            </button>
-          </div>
-
-          <h2>Apa yang Akan Dipelajari?</h2>
-
-          <div class="tech-grid">
-            <!-- [DIUBAH] Kartu HTML sekarang adalah link ke halaman baru -->
-            <a
-              href="HTML_topic.html"
-              class="tech-item"
-              style="text-decoration: none; color: inherit"
-            >
-              <i class="fa-brands fa-html5"></i>
-              <h3>HTML</h3>
-              <p>Struktur dasar dan pondasi dari semua halaman web.</p>
-            </a>
-            <!-- Kartu lain masih menggunakan data-topic (model SPA) -->
-            <div class="tech-item" data-topic="css">
-              <i class="fa-brands fa-css3-alt"></i>
-              <h3>CSS</h3>
-              <p>Cara mempercantik dan mendesain tampilan website Anda.</p>
-            </div>
-            <div class="tech-item" data-topic="javascript">
-              <i class="fa-brands fa-js"></i>
-              <h3>JavaScript</h3>
-              <p>Membuat website menjadi interaktif dan dinamis.</p>
-            </div>
-            <div class="tech-item" data-topic="design">
-              <i class="fa-solid fa-palette"></i>
-              <h3>UI/UX</h3>
-              <p>Prinsip desain agar website mudah dan nyaman digunakan.</p>
-            </div>
-          </div>
-
-          <hr />
-          <h2>Fitur Utama</h2>
-          <div class="features">
-            <div class="feature-item">
-              <h3><i class="fa-solid fa-book-open"></i> Tutorials</h3>
-              <p>
-                Panduan mendalam dan langkah demi langkah untuk mempelajari
-                teknologi web dari dasar.
-              </p>
-            </div>
-            <div class="feature-item">
-              <h3><i class="fa-solid fa-list-ul"></i> References</h3>
-              <p>
-                Contekan cepat untuk melihat referensi sintaks, tag, dan
-                properti.
-              </p>
-            </div>
-            <div class="feature-item">
-              <h3><i class="fa-solid fa-pencil"></i> Excersices</h3>
-              <p>
-                Uji pemahaman Anda dengan latihan interaktif untuk mempertajam
-                kemampuan.
-              </p>
-            </div>
-          </div>
-        </div>
+        <!-- Konten materi HTML akan dimuat di sini oleh JS -->
       </main>
     </div>
 
-    <script src="assets/js/script.js" type="module"></script>
+    <!-- [DIUBAH] Kita memuat SCRIPT BARU, khusus untuk halaman ini -->
+    <script src="assets/js/HTML_page_script.js" type="module"></script>
+    
   </body>
 </html>
