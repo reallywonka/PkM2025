@@ -1,4 +1,3 @@
-// [DIUBAH] Ganti path import menjadi absolut dari root (folder PkM)
 import { html } from "/Data/HTML_tutorial.js";
 import { css } from "/Data/CSS_tutorial.js";
 import { javascript } from "/Data/JS_tutorial.js";
@@ -17,9 +16,9 @@ const tutorials = {
 
 const topicPageMap = {
   html: "HTML_topic.html",
-  css: "CSS_topic.html", // Nanti kamu buat file ini
-  javascript: "JavaScript_topic.html", // Nanti kamu buat file ini
-  design: "UIUX_topic.html", // Nanti kamu buat file ini
+  css: "UIUX_topic.html",
+  javascript: "JavaScript_topic.html",
+  design: "UIUX_topic.html",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -125,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderContent(lessonId) {
     try {
-      // Hanya ambil dari data HTML
-      const lesson = tutorials.html.lessons.find((l) => l.id === lessonId);
+      // Hanya ambil dari data UIUX
+      const lesson = tutorials.design.lessons.find((l) => l.id === lessonId);
       if (lesson) {
         contentArea.innerHTML = lesson.content;
         addCopyButtonsToCodeBlocks();
@@ -142,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderSidebar() {
-    // Hanya render sidebar HTML
-    const topic = tutorials.html;
+    // Hanya render sidebar UIUX
+    const topic = tutorials.design;
     if (!topic) {
       sidebar.style.display = "none";
       return;
@@ -158,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const a = document.createElement("a");
       a.href = `#${lesson.id}`;
       a.textContent = lesson.title;
-      a.dataset.topic = "html";
+      a.dataset.topic = "design";
       a.dataset.lesson = lesson.id;
       a.id = `link-${lesson.id}`;
       li.appendChild(a);
@@ -188,8 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
-      let linksHTML = `<h2>${topicData.title}</h2>`;
-      linksHTML += `
+      let linksUIUX = `<h2>${topicData.title}</h2>`;
+      linksUIUX += `
         <a 
           href="${pageUrl}" 
           class="nav-topic-link" 
@@ -197,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         >
           Learn ${topicData.title}
         </a>`;
-      itemDiv.innerHTML = linksHTML;
+      itemDiv.innerHTML = linksUIUX;
       tutorialsNavContent.appendChild(itemDiv);
     });
     
@@ -208,14 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (typeof category === "object" && category.title) {
           const itemDiv = document.createElement("div");
           itemDiv.className = "nested-navigation-item";
-          let linksHTML = `<h2>${category.title} References</h2>`;
+          let linksUIUX = `<h2>${category.title} References</h2>`;
           if (Array.isArray(category.lessons)) {
-            linksHTML += `
+            linksUIUX += `
               <a href="#" class="nav-topic-link" data-topic="${key}">
                 View ${category.title} References
               </a>`;
           }
-          itemDiv.innerHTML = linksHTML;
+          itemDiv.innerHTML = linksUIUX;
           referencesNavContent.appendChild(itemDiv);
         }
       }
@@ -227,14 +226,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (typeof category === "object" && category.title) {
           const itemDiv = document.createElement("div");
           itemDiv.className = "nested-navigation-item";
-          let linksHTML = `<h2>${category.title} Excercise</h2>`;
+          let linksUIUX = `<h2>${category.title} Excercise</h2>`;
           if (Array.isArray(category.lessons)) {
-             linksHTML += `
+             linksUIUX += `
               <a href="#" class="nav-topic-link" data-topic="${key}">
                 Try ${category.title} Excercises
               </a>`;
           }
-          itemDiv.innerHTML = linksHTML;
+          itemDiv.innerHTML = linksUIUX;
           excersicesNavContent.appendChild(itemDiv);
         }
       }
@@ -327,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Generate menu di pop-up header
   generateNavMenus();
 
-  // Langsung muat sidebar dan konten HTML
+  // Langsung muat sidebar dan konten UIUX
   renderSidebar();
-  renderContent("html-intro"); // Langsung tampilkan materi pertama
+  renderContent("design-intro"); // Langsung tampilkan materi pertama
 });
