@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "nested-navigation-close-Btn-excs"
   );
 
-  // Elemen Konten Utama
+  // --- Elemen Konten Utama ---
   const sidebar = document.getElementById("sidebar");
   const contentArea = document.getElementById("content-area");
 
-  // Elemen untuk generate menu di pop-up
+  // --- Elemen untuk generate menu di pop-up ---
   const tutorialsNavContent = document.getElementById("tutorials-nav-content");
   const referencesNavContent = document.getElementById(
     "references-nav-content"
@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
           href="${pageUrl}" 
           class="nav-topic-link" 
           data-topic="${topicKey}"
+          data-menu-type="Tutorial" 
         >
           Learn ${topicData.title}
         </a>`;
@@ -95,35 +96,45 @@ document.addEventListener("DOMContentLoaded", () => {
       tutorialsNavContent.appendChild(itemDiv);
     });
 
-    Object.keys(References).forEach((key) => {
-      if (key === "name") return;
-      const category = References[key];
+    // 2. Buat Menu References (dari data 'References')
+    Object.keys(References).forEach((topicKey) => {
+      const topicData = References[topicKey];
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
-      let linksHTML = `<h2>${category.name}</h2>`;
-      category.menu.slice(0, 3).forEach((item) => {
-        linksHTML += `<a href="${item.link}" target="_blank">${item.title}</a>`;
-      });
-      itemDiv.innerHTML = linksHTML;
+      itemDiv.innerHTML = `
+        <h2>${topicData.title} References</h2>
+        <button 
+          class="nav-topic-btn" 
+          data-topic="${topicKey}"
+          data-menu-type="References"
+        >
+          ${topicData.title} References
+        </button>`;
       referencesNavContent.appendChild(itemDiv);
     });
 
-    Object.keys(Excersices).forEach((key) => {
-      if (key === "name") return;
-      const category = Excersices[key];
+    // 3. Buat Menu Excercises (dari data 'Excersices')
+    // (Jika Excersices.js kosong, bagian ini tidak akan menampilkan apa-apa)
+    Object.keys(Excersices).forEach((topicKey) => {
+      const topicData = Excersices[topicKey];
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
-      let linksHTML = `<h2>${category.name}</h2>`;
-      category.menu.slice(0, 3).forEach((item) => {
-        linksHTML += `<a href="${item.link}" target="_blank">${item.title}</a>`;
-      });
-      itemDiv.innerHTML = linksHTML;
+      itemDiv.innerHTML = `
+        <h2>${topicData.title} Excercise</h2>
+        <button 
+          class="nav-topic-btn" 
+          data-topic="${topicKey}"
+          data-menu-type="Excercise"
+        >
+          ${topicData.title} Excercise
+        </button>`;
       excersicesNavContent.appendChild(itemDiv);
     });
   }
 
   // --- Event Listeners (HANYA UNTUK HEADER & HOMEPAGE) ---
 
+  // Tombol Buka/Tutup Menu Header
   tutorialEL.addEventListener("click", () => {
     const isOpening = NestedNavigation.classList.contains(
       "nested_navigation_hidden"
@@ -134,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
       NestedNavigation.classList.remove("nested_navigation_hidden");
     }
   });
-
   nestedNavigationCloseBtn.addEventListener("click", () => {
     closeAllPanels();
   });
@@ -149,7 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
       NestedNavigationRefs.classList.remove("nested_navigation_hidden");
     }
   });
-
   nestedNavigationCloseBtnRefs.addEventListener("click", () => {
     closeAllPanels();
   });
@@ -164,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
       NestedNavigationExcs.classList.remove("nested_navigation_hidden");
     }
   });
-
   nestedNavigationCloseBtnExcs.addEventListener("click", () => {
     closeAllPanels();
   });
@@ -190,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", theme);
   });
 
-  // Event listener untuk tombol logo (kembali ke beranda)
+  // Tombol Logo
   const logoBtn = document.getElementById("logo-btn");
   logoBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -205,12 +213,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listener untuk tombol "Mulai Belajar" di beranda
   contentArea.addEventListener("click", (e) => {
+    // Tombol "Mulai Belajar"
     if (
       e.target.id === "home-start-btn" ||
       e.target.closest("#home-start-btn")
     ) {
       e.preventDefault();
-      tutorialEL.click(); // Simulasikan klik pada menu 'Tutorials'
+      tutorialEL.click();
     }
 
     // [DIHMUS] Logika klik kartu SPA dihapus total.

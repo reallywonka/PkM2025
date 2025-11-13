@@ -1,114 +1,234 @@
 export const Excersices = {
-  name: "Excersices",
-  HTMLandCSS: {
-    name: "HTML and CSS",
-    menu: [
+  // --- LATIHAN HTML ---
+  html: {
+    title: "HTML",
+    lessons: [
       {
-        title: "HTML excersice",
-        link: "https://www.w3schools.com/html/html_exercises.asp",
+        id: "html-exc-1",
+        title: "Latihan Atribut Link",
+        content: `
+          <h1>Latihan Atribut <code>href</code></h1>
+          <p><strong>Tantangan:</strong> Lengkapi kode di bawah ini untuk membuat link ke <code>https://www.google.com</code>. Klik "Run" untuk melihat hasilnya.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <textarea class="exc-code-input">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Tulis kodemu di sini --&gt;
+  &lt;a&gt;Kunjungi Google&lt;/a&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn">Run</button>
+            </div>
+            <div class="exc-output">
+              <iframe class="exc-output-frame" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
       },
       {
-        title: "CSS excersice",
-        link: "https://www.w3schools.com/css/css_exercises.asp",
-      },
-      {
-        title: "Boostrap 3 excersice",
-        link: "https://www.w3schools.com/bootstrap/bootstrap_exercises.asp",
-      },
-      {
-        title: "Boostrap 4 excersice",
-        link: "https://www.w3schools.com/bootstrap4/bootstrap4_exercises.asp",
-      },
-      {
-        title: "Boostrap 5 excersice",
-        link: "https://www.w3schools.com/bootstrap5/bootstrap5_exercises.asp",
-      },
-    ],
-  },
-  JavaScript: {
-    name: "JavaScript",
-    menu: [
-      {
-        title: "JavaScript excersice",
-        link: "https://www.w3schools.com/js/js_exercises.asp",
-      },
-      {
-        title: "React excersice",
-        link: "https://www.w3schools.com/react/react_exercises.asp",
-      },
-      {
-        title: "jQuery excersice",
-        link: "https://www.w3schools.com/jquery/jquery_exercises.asp",
-      },
-      {
-        title: "Vue excersice",
-        link: "https://www.w3schools.com/vue/vue_exercises.asp",
-      },
-      {
-        title: "Angular excersice",
-        link: "https://www.w3schools.com/angular/angular_exercises.asp",
-      },
-    ],
-  },
-  Data_Analytics: {
-    name: "Data Analytics",
-    menu: [
-      {
-        title: "DSA excersice",
-        link: "https://www.w3schools.com/dsa/dsa_exercises.asp",
-      },
-      {
-        title: "NumPy excersice",
-        link: "https://www.w3schools.com/numpy/numpy_exercises.asp",
-      },
-      {
-        title: "Pandas excersice",
-        link: "https://www.w3schools.com/pandas/pandas_exercises.asp",
-      },
-      {
-        title: "SciPy excersice",
-        link: "https://www.w3schools.com/scipy/scipy_exercises.asp",
-      },
-      {
-        title: "Excel excersice",
-        link: "https://www.w3schools.com/excel/excel_exercises.asp",
+        id: "html-exc-2",
+        title: "Latihan Atribut Gambar",
+        content: `
+          <h1>Latihan Atribut <code>src</code> & <code>alt</code></h1>
+          <p><strong>Tantangan:</strong> Tampilkan gambar <code>logo.png</code> (yang ada di <code>assets/image/logo.png</code>) dan berikan <code>alt</code> text "Logo".</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <textarea class="exc-code-input">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } img { width: 100px; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Tulis kodemu di sini --&gt;
+  &lt;img&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn">Run</button>
+            </div>
+            <div class="exc-output">
+              <iframe class="exc-output-frame" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
       },
     ],
   },
-  Beckend: {
-    name: "Backend",
-    menu: [
+
+  // --- LATIHAN CSS ---
+  css: {
+    title: "CSS",
+    lessons: [
       {
-        title: "Python excersice",
-        link: "https://www.w3schools.com/python/python_exercises.asp",
+        id: "css-exc-1",
+        title: "Latihan Selektor Class",
+        content: `
+          <h1>Latihan Selektor Class</h1>
+          <p><strong>Tantangan:</strong> Buat teks di bawah ini menjadi berwarna biru (<code>blue</code>) menggunakan selektor <code>class</code>.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <textarea class="exc-code-input">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; }
+    
+    /* Tulis CSS-mu di sini */
+    
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;p class="info-text"&gt;Ini teks yang harus jadi biru.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn">Run</button>
+            </div>
+            <div class="exc-output">
+              <iframe class="exc-output-frame" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+    ],
+  },
+
+  // --- LATIHAN JAVASCRIPT ---
+  javascript: {
+    title: "JavaScript",
+    lessons: [
+      {
+        id: "js-exc-1",
+        title: "Latihan Variabel",
+        content: `
+          <h1>Latihan Variabel & Console</h1>
+          <p><strong>Tantangan:</strong> Buat variabel <code>nama</code> berisi namamu, lalu tampilkan pesan "Halo, [namamu]" ke konsol.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <textarea class="exc-code-input">
+// Tulis kodemu di sini
+
+let nama = "namamu";
+console.log("Halo, " + nama);
+              </textarea>
+              <button class="exc-run-js-btn">Run JS</button>
+            </div>
+            <div class="exc-output">
+              <pre class="exc-js-output"></pre>
+            </div>
+          </div>
+        `,
       },
       {
-        title: "SQL excersice",
-        link: "https://www.w3schools.com/sql/sql_exercises.asp",
+        id: "js-exc-2",
+        title: "Latihan DOM (HTML)",
+        content: `
+          <h1>Latihan Manipulasi DOM</h1>
+          <p><strong>Tantangan:</strong> Gunakan JavaScript untuk mengubah teks paragraf di bawah dari "...." menjadi "Halo JavaScript!".</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <textarea class="exc-code-input">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;p id="pesan"&gt;....&lt;/p&gt;
+
+  &lt;script&gt;
+    // Tulis kodemu di sini
+    let paragraf = document.getElementById("pesan");
+    paragraf.innerHTML = "Halo JavaScript!";
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn">Run</button>
+            </div>
+            <div class="exc-output">
+              <iframe class="exc-output-frame" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
       },
+    ],
+  },
+
+  // --- LATIHAN UI/UX ---
+  design: {
+    title: "Design UI/UX",
+    lessons: [
       {
-        title: "MySql excersice",
-        link: "https://www.w3schools.com/mysql/mysql_exercises.asp",
-      },
-      {
-        title: "PHP excersice",
-        link: "https://www.w3schools.com/php/php_exercises.asp",
-      },
-      {
-        title: "Java excersice",
-        link: "https://www.w3schools.com/java/java_exercises.asp",
-      },
-      {
-        title: "C excersice",
-        link: "https://www.w3schools.com/c/c_exercises.asp",
-      },
-      {
-        title: "C++ excersice",
-        link: "https://www.w3schools.com/cpp/cpp_exercises.asp",
-      },
-      {
-        title: "C# excersice",
-        link: "https://www.w3schools.com/cs/cs_exercises.asp",
+        id: "design-exc-1",
+        title: "Latihan Tata Letak",
+        content: `
+          <h1>Latihan (Eksperimen)</h1>
+          <p><strong>Tantangan:</strong> Latihan UI/UX adalah tentang visual. Coba gunakan HTML & CSS di editor ini untuk membuat 2 kotak (<code>&lt;div&gt;</code>) bersebelahan.</p>
+          <div class="tip-box">
+            <p><strong>Petunjuk:</strong> Anda bisa menggunakan <code>display: flex;</code> pada elemen pembungkusnya.</p>
+          </div>
+
+          <div class="exc-container">
+            <div class="exc-editor">
+              <textarea class="exc-code-input">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt;
+    .container {
+      /* Tulis CSS-mu di sini */
+      display: flex;
+      gap: 10px;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn">Run</button>
+            </div>
+            <div class="exc-output">
+              <iframe class="exc-output-frame" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
       },
     ],
   },
