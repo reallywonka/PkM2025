@@ -185,7 +185,8 @@ body.dark-mode #light-dark-toggle:hover {
   margin: 0;
   color: var(--bs-yellow);
 }
-.nasted-navigation-content-data {
+
+.nested-navigation-content-data {
   display: grid;
   grid-template-columns: repeat(4, minmax(100px, 1fr));
 }
@@ -490,4 +491,169 @@ body.dark-mode .copy-code-btn {
 
 body.dark-mode .copy-code-btn:hover {
   background-color: #ccc;
+}
+
+/* --- Style untuk Tabel Referensi --- */
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.ref-table th,
+.ref-table td {
+  border: 1px solid var(--border-color);
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.ref-table th {
+  background-color: var(--sidebar-bg);
+  font-weight: 700;
+}
+
+.ref-table td code {
+  font-weight: 700;
+  color: var(--bs-black);
+}
+
+/* Dark mode untuk tabel */
+body.dark-mode .ref-table th {
+  background-color: #4a4c5a;
+}
+body.dark-mode .ref-table td code {
+  color: #fff4a3;
+}
+
+.ref-list {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.ref-list li {
+  margin-bottom: 10px;
+}
+
+/* --- Style untuk Latihan Interaktif --- */
+.exc-details {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.exc-details summary {
+  padding: 10px 15px;
+  font-weight: 700;
+  color: var(--bs-black);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.exc-details summary:hover {
+  background-color: var(--bs-neowhite);
+}
+
+.exc-details-content {
+  padding: 15px;
+  border-top: 1px solid var(--border-color);
+  line-height: 1.7;
+}
+
+.exc-details-content pre {
+  margin-top: 10px;
+}
+
+/* Dark Mode */
+body.dark-mode .exc-details summary:hover {
+  background-color: #555761;
+}
+
+/* --- Style untuk Editor Latihan Interaktif --- */
+.exc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+  height: 300px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.exc-editor,
+.exc-output {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.exc-editor {
+  border-right: 1px solid var(--border-color);
+}
+
+.exc-code-input {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  background-color: var(--sidebar-bg);
+  color: var(--bs-black);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  resize: none;
+}
+.exc-code-input:focus {
+  outline: none;
+}
+
+.exc-run-btn,
+.exc-run-js-btn {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.exc-run-btn:hover,
+.exc-run-js-btn:hover {
+  opacity: 0.8;
+}
+
+.exc-output-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #ffffff;
+}
+body.dark-mode .exc-output-frame {
+  background-color: #cccccc;
+}
+
+/* Untuk output JS */
+.exc-js-output {
+  flex-grow: 1;
+  background-color: #ffffff;
+  color: #333;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+  overflow-y: auto;
+}
+body.dark-mode .exc-js-output {
+  background-color: #282a35;
+  color: #e7e9eb;
+}
+.log-line {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.log-line.error {
+  color: #ff8a8a;
+  font-weight: bold;
 }
