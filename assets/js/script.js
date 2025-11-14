@@ -1,5 +1,3 @@
-// [DIUBAH] Import file data yang sudah dipisah
-// Kita tetap butuh ini untuk generate menu di header
 import { html } from "../../Data/HTML_tutorial.js";
 import { css } from "../../Data/CSS_tutorial.js";
 import { javascript } from "../../Data/JS_tutorial.js";
@@ -8,7 +6,7 @@ import { design } from "../../Data/UIUX_tutorial.js";
 import { References } from "../../Data/References.js";
 import { Excersices } from "../../Data/excersices.js";
 
-// [BARU] Gabungkan semua data tutorial yang terpisah ke dalam satu objek
+// Menggabungkan semua data tutorial yang terpisah ke dalam satu objek
 const tutorials = {
   html: html,
   css: css,
@@ -16,8 +14,7 @@ const tutorials = {
   design: design,
 };
 
-// [BARU] Peta untuk halaman topik (Model MPA)
-// Pastikan nama filenya cocok dengan yang akan kamu buat nanti
+// Peta untuk halaman topik (Model MPA)
 const topicPageMap = {
   html: "HTML_topic.html",
   css: "CSS_topic.html",
@@ -177,10 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
     closeAllPanels();
   });
 
-  // [DIHAPUS] Semua listener untuk sidebar dan konten SPA dihapus
-  // sidebarMenu.addEventListener("click", ...);
-  // tutorialsNavContent.addEventListener("click", ...);
-
   // --- Kode Inisialisasi (Hanya untuk Homepage) ---
 
   // Logika Light/Dark Mode
@@ -202,13 +195,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoBtn = document.getElementById("logo-btn");
   logoBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    closeAllPanels(); // Cukup tutup panel, kita sudah di home
+    closeAllPanels();
   });
 
   // Generate menu di pop-up header
   generateNavMenus();
-
-  // [INTI MASALAH] Sembunyikan sidebar di homepage
   sidebar.style.display = "none";
 
   // Event listener untuk tombol "Mulai Belajar" di beranda
@@ -221,8 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       tutorialEL.click();
     }
-
-    // [DIHMUS] Logika klik kartu SPA dihapus total.
   });
 
   // --- SELESAI ---

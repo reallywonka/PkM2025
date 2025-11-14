@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function copyToClipboard(text, button) {
-    // ... (kode copyToClipboard tidak berubah) ...
     const tempTextArea = document.createElement("textarea");
     tempTextArea.value = text;
     document.body.appendChild(tempTextArea);
@@ -96,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addCopyButtonsToCodeBlocks() {
-    // ... (kode addCopyButtonsToCodeBlocks tidak berubah) ...
     const allCodeBlocks = contentArea.querySelectorAll("pre");
 
     allCodeBlocks.forEach((preElement) => {
@@ -124,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderContent(lessonId) {
     try {
-      // Hanya ambil dari data UIUX
+      // Mengambil dari data UIUX
       const lesson = tutorials.design.lessons.find((l) => l.id === lessonId);
       if (lesson) {
         contentArea.innerHTML = lesson.content;
@@ -141,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderSidebar() {
-    // Hanya render sidebar UIUX
+    // Render sidebar UIUX
     const topic = tutorials.design;
     if (!topic) {
       sidebar.style.display = "none";
@@ -183,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tutorialTopics.forEach((topicKey) => {
       const topicData = tutorials[topicKey];
-      const pageUrl = topicPageMap[topicKey] || "#"; // Ambil URL dari Peta
+      const pageUrl = topicPageMap[topicKey] || "#";
 
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
@@ -199,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       itemDiv.innerHTML = linksUIUX;
       tutorialsNavContent.appendChild(itemDiv);
     });
-    
+
     // Perbaikan untuk References & Excersices
     Object.keys(References).forEach((key) => {
       if (Object.prototype.hasOwnProperty.call(References, key)) {
@@ -228,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
           itemDiv.className = "nested-navigation-item";
           let linksUIUX = `<h2>${category.title} Excercise</h2>`;
           if (Array.isArray(category.lessons)) {
-             linksUIUX += `
+            linksUIUX += `
               <a href="#" class="nav-topic-link" data-topic="${key}">
                 Try ${category.title} Excercises
               </a>`;
