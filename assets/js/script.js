@@ -69,23 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
     excersicesEL.classList.remove("bg-black", "text-white");
   }
 
-  // [DIUBAH] Fungsi ini sekarang membuat link <a> ke halaman topik
   function generateNavMenus() {
     const tutorialTopics = Object.keys(tutorials);
 
+    // Menu Tutorials
     tutorialTopics.forEach((topicKey) => {
       const topicData = tutorials[topicKey];
-      const pageUrl = topicPageMap[topicKey] || "#"; // Ambil URL dari Peta
+      const pageUrl = topicPageMap[topicKey] || "#";
 
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
       let linksHTML = `<h2>${topicData.title}</h2>`;
       linksHTML += `
         <a 
-          href="${pageUrl}" 
+          href="${pageUrl}?type=tutorial" 
           class="nav-topic-link" 
           data-topic="${topicKey}"
-          data-menu-type="Tutorial" 
         >
           Learn ${topicData.title}
         </a>`;
@@ -93,38 +92,39 @@ document.addEventListener("DOMContentLoaded", () => {
       tutorialsNavContent.appendChild(itemDiv);
     });
 
-    // 2. Buat Menu References (dari data 'References')
+    // Menu References
     Object.keys(References).forEach((topicKey) => {
       const topicData = References[topicKey];
+      const pageUrl = topicPageMap[topicKey] || "#";
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
       itemDiv.innerHTML = `
         <h2>${topicData.title} References</h2>
-        <button 
-          class="nav-topic-btn" 
+        <a 
+          href="${pageUrl}?type=references"
+          class="nav-topic-link" 
           data-topic="${topicKey}"
-          data-menu-type="References"
         >
           ${topicData.title} References
-        </button>`;
+        </a>`;
       referencesNavContent.appendChild(itemDiv);
     });
 
-    // 3. Buat Menu Excercises (dari data 'Excersices')
-    // (Jika Excersices.js kosong, bagian ini tidak akan menampilkan apa-apa)
+    // Menu Excercises
     Object.keys(Excersices).forEach((topicKey) => {
       const topicData = Excersices[topicKey];
+      const pageUrl = topicPageMap[topicKey] || "#";
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
       itemDiv.innerHTML = `
         <h2>${topicData.title} Excercise</h2>
-        <button 
-          class="nav-topic-btn" 
+        <a 
+          href="${pageUrl}?type=excersices"
+          class="nav-topic-link" 
           data-topic="${topicKey}"
-          data-menu-type="Excercise"
         >
           ${topicData.title} Excercise
-        </button>`;
+        </a>`;
       excersicesNavContent.appendChild(itemDiv);
     });
   }

@@ -1,17 +1,16 @@
-import { html } from "/Data/HTML_tutorial.js";
-import { css } from "/Data/CSS_tutorial.js";
-import { javascript } from "/Data/JS_tutorial.js";
-import { design } from "/Data/UIUX_tutorial.js";
+import { html as htmlTutorial } from "/Data/HTML_tutorial.js";
+import { css as cssTutorial } from "/Data/CSS_tutorial.js";
+import { javascript as jsTutorial } from "/Data/JS_tutorial.js";
+import { design as uiuxTutorial } from "/Data/UIUX_tutorial.js";
 
 import { References } from "/Data/References.js";
 import { Excersices } from "/Data/excersices.js";
 
-// Gabungkan semua data tutorial (untuk menu pop-up)
 const tutorials = {
-  html: html,
-  css: css,
-  javascript: javascript,
-  design: design,
+  html: htmlTutorial,
+  css: cssTutorial,
+  javascript: jsTutorial,
+  design: uiuxTutorial,
 };
 
 const topicPageMap = {
@@ -21,8 +20,18 @@ const topicPageMap = {
   design: "UIUX_topic.html",
 };
 
+// Peta Data khusus untuk halaman CSS
+const cssDataSources = {
+  tutorial: cssTutorial,
+  references: References.css,
+  excersices: Excersices.css,
+};
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Elemen Header & Navigasi Pop-up
+  const urlParams = new URLSearchParams(window.location.search);
+  const contentType = urlParams.get("type") || "tutorial";
+  const currentData = cssDataSources[contentType];
+
   const NestedNavigation = document.getElementById("nested-navigation_id");
   const tutorialEL = document.getElementById("tutorial-btn");
   const nestedNavigationCloseBtn = document.getElementById(
@@ -42,14 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nestedNavigationCloseBtnExcs = document.getElementById(
     "nested-navigation-close-Btn-excs"
   );
-
-  // Elemen Konten Utama
   const sidebar = document.getElementById("sidebar");
   const sidebarTitle = document.getElementById("sidebar-title");
   const sidebarMenu = document.getElementById("sidebar-menu");
   const contentArea = document.getElementById("content-area");
-
-  // Elemen untuk generate menu di pop-up
   const tutorialsNavContent = document.getElementById("tutorials-nav-content");
   const referencesNavContent = document.getElementById(
     "references-nav-content"
@@ -58,26 +63,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "excersices-nav-content"
   );
 
-  // --- Fungsi-fungsi ---
-
   function closeAllPanels() {
     NestedNavigation.classList.add("nested_navigation_hidden");
     NestedNavigationRefs.classList.add("nested_navigation_hidden");
     NestedNavigationExcs.classList.add("nested_navigation_hidden");
-
     tutorialEL.classList.remove("bg-black", "text-white");
     referencesEL.classList.remove("bg-black", "text-white");
     excersicesEL.classList.remove("bg-black", "text-white");
   }
 
   function copyToClipboard(text, button) {
-    // ... (kode copyToClipboard tidak berubah) ...
     const tempTextArea = document.createElement("textarea");
     tempTextArea.value = text;
     document.body.appendChild(tempTextArea);
     tempTextArea.select();
     tempTextArea.setSelectionRange(0, 99999);
-
     try {
       document.execCommand("copy");
       button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
@@ -86,9 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Gagal menyalin: ", err);
       button.innerText = "Failed!";
     }
-
     document.body.removeChild(tempTextArea);
-
     setTimeout(() => {
       button.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
       button.disabled = false;
@@ -96,26 +94,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addCopyButtonsToCodeBlocks() {
-    // ... (kode addCopyButtonsToCodeBlocks tidak berubah) ...
     const allCodeBlocks = contentArea.querySelectorAll("pre");
-
     allCodeBlocks.forEach((preElement) => {
       if (preElement.parentNode.classList.contains("code-block-wrapper")) {
         return;
       }
-
       const wrapper = document.createElement("div");
       wrapper.className = "code-block-wrapper";
-
       const button = document.createElement("button");
       button.className = "copy-code-btn";
       button.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
-
       button.addEventListener("click", () => {
         const codeToCopy = preElement.innerText;
         copyToClipboard(codeToCopy, button);
       });
-
       preElement.parentNode.insertBefore(wrapper, preElement);
       wrapper.appendChild(preElement);
       wrapper.appendChild(button);
@@ -124,26 +116,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderContent(lessonId) {
     try {
-      // Hanya ambil dari data CSS
-      const lesson = tutorials.css.lessons.find((l) => l.id === lessonId);
+      let lesson;
+      if (currentData && currentData.lessons) {
+        if (lessonId) {
+          lesson = currentData.lessons.find((l) => l.id === lessonId);
+        }
+        if (!lesson) {
+          lesson = currentData.lessons[0];
+        }
+      }
+
       if (lesson) {
         contentArea.innerHTML = lesson.content;
         addCopyButtonsToCodeBlocks();
-        updateActiveSidebarLink(lessonId);
+        updateActiveSidebarLink(lesson.id);
       } else {
-        contentArea.innerHTML = "<h1>Materi tidak ditemukan</h1>";
+        contentArea.innerHTML =
+          "<h1>Materi tidak ditemukan</h1><p>Data untuk topik ini sepertinya kosong.</p>";
       }
     } catch (e) {
-      console.error("Error rendering content:", e);
+      console.error("Error rendering content:", e, currentData);
       contentArea.innerHTML =
         "<h1>Terjadi kesalahan</h1><p>Gagal memuat materi.</p>";
     }
   }
 
   function renderSidebar() {
-    // Hanya render sidebar CSS
-    const topic = tutorials.css;
-    if (!topic) {
+    const topic = currentData;
+    if (!topic || !topic.lessons) {
       sidebar.style.display = "none";
       return;
     }
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const a = document.createElement("a");
       a.href = `#${lesson.id}`;
       a.textContent = lesson.title;
-      a.dataset.topic = "css";
+      a.dataset.topic = contentType;
       a.dataset.lesson = lesson.id;
       a.id = `link-${lesson.id}`;
       li.appendChild(a);
@@ -166,11 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateActiveSidebarLink(activeLessonId) {
-    // ... (kode updateActiveSidebarLink tidak berubah) ...
     document
       .querySelectorAll("#sidebar-menu a")
       .forEach((link) => link.classList.remove("active"));
-
     const activeLink = document.getElementById(`link-${activeLessonId}`);
     if (activeLink) {
       activeLink.classList.add("active");
@@ -178,71 +176,66 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function generateNavMenus() {
-    // ... (kode generateNavMenus sama persis seperti di script.js) ...
     const tutorialTopics = Object.keys(tutorials);
 
+    // Menu Tutorials
     tutorialTopics.forEach((topicKey) => {
       const topicData = tutorials[topicKey];
-      const pageUrl = topicPageMap[topicKey] || "#"; // Ambil URL dari Peta
-
+      const pageUrl = topicPageMap[topicKey] || "#";
       const itemDiv = document.createElement("div");
       itemDiv.className = "nested-navigation-item";
-      let linksCSS = `<h2>${topicData.title}</h2>`;
-      linksCSS += `
+      let linksHTML = `<h2>${topicData.title}</h2>`;
+      linksHTML += `
         <a 
-          href="${pageUrl}" 
+          href="${pageUrl}?type=tutorial" 
           class="nav-topic-link" 
           data-topic="${topicKey}"
         >
           Learn ${topicData.title}
         </a>`;
-      itemDiv.innerHTML = linksCSS;
+      itemDiv.innerHTML = linksHTML;
       tutorialsNavContent.appendChild(itemDiv);
     });
-    
-    // Perbaikan untuk References & Excersices
-    Object.keys(References).forEach((key) => {
-      if (Object.prototype.hasOwnProperty.call(References, key)) {
-        const category = References[key];
-        if (typeof category === "object" && category.title) {
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "nested-navigation-item";
-          let linksCSS = `<h2>${category.title} References</h2>`;
-          if (Array.isArray(category.lessons)) {
-            linksCSS += `
-              <a href="#" class="nav-topic-link" data-topic="${key}">
-                View ${category.title} References
-              </a>`;
-          }
-          itemDiv.innerHTML = linksCSS;
-          referencesNavContent.appendChild(itemDiv);
-        }
-      }
+
+    // Menu References
+    Object.keys(References).forEach((topicKey) => {
+      const topicData = References[topicKey];
+      const pageUrl = topicPageMap[topicKey] || "#";
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "nested-navigation-item";
+      itemDiv.innerHTML = `
+        <h2>${topicData.title} References</h2>
+        <a 
+          href="${pageUrl}?type=references"
+          class="nav-topic-link" 
+          data-topic="${topicKey}"
+        >
+          ${topicData.title} References
+        </a>`;
+      referencesNavContent.appendChild(itemDiv);
     });
 
-    Object.keys(Excersices).forEach((key) => {
-      if (Object.prototype.hasOwnProperty.call(Excersices, key)) {
-        const category = Excersices[key];
-        if (typeof category === "object" && category.title) {
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "nested-navigation-item";
-          let linksCSS = `<h2>${category.title} Excercise</h2>`;
-          if (Array.isArray(category.lessons)) {
-             linksCSS += `
-              <a href="#" class="nav-topic-link" data-topic="${key}">
-                Try ${category.title} Excercises
-              </a>`;
-          }
-          itemDiv.innerHTML = linksCSS;
-          excersicesNavContent.appendChild(itemDiv);
-        }
-      }
+    // Menu Excercises
+    Object.keys(Excersices).forEach((topicKey) => {
+      const topicData = Excersices[topicKey];
+      const pageUrl = topicPageMap[topicKey] || "#";
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "nested-navigation-item";
+      itemDiv.innerHTML = `
+        <h2>${topicData.title} Excercise</h2>
+        <a 
+          href="${pageUrl}?type=excersices"
+          class="nav-topic-link" 
+          data-topic="${topicKey}"
+        >
+          ${topicData.title} Excercise
+        </a>`;
+      excersicesNavContent.appendChild(itemDiv);
     });
   }
 
   // --- Event Listeners ---
   tutorialEL.addEventListener("click", () => {
-    // ... (kode event listener header tidak berubah) ...
     const isOpening = NestedNavigation.classList.contains(
       "nested_navigation_hidden"
     );
@@ -252,13 +245,10 @@ document.addEventListener("DOMContentLoaded", () => {
       NestedNavigation.classList.remove("nested_navigation_hidden");
     }
   });
-
   nestedNavigationCloseBtn.addEventListener("click", () => {
     closeAllPanels();
   });
-
   referencesEL.addEventListener("click", () => {
-    // ... (kode event listener header tidak berubah) ...
     const isOpening = NestedNavigationRefs.classList.contains(
       "nested_navigation_hidden"
     );
@@ -268,13 +258,10 @@ document.addEventListener("DOMContentLoaded", () => {
       NestedNavigationRefs.classList.remove("nested_navigation_hidden");
     }
   });
-
   nestedNavigationCloseBtnRefs.addEventListener("click", () => {
-    closeAllPanels();
+    closeAllSPanels();
   });
-
   excersicesEL.addEventListener("click", () => {
-    // ... (kode event listener header tidak berubah) ...
     const isOpening = NestedNavigationExcs.classList.contains(
       "nested_navigation_hidden"
     );
@@ -284,25 +271,21 @@ document.addEventListener("DOMContentLoaded", () => {
       NestedNavigationExcs.classList.remove("nested_navigation_hidden");
     }
   });
-
   nestedNavigationCloseBtnExcs.addEventListener("click", () => {
     closeAllPanels();
   });
 
-  // Event listener sidebar
   sidebarMenu.addEventListener("click", (e) => {
     e.preventDefault();
     if (e.target.tagName === "A") {
       const lessonId = e.target.dataset.lesson;
-      renderContent(lessonId); // Panggil renderContent versi simpel
+      renderContent(lessonId);
       contentArea.scrollTo(0, 0);
     }
   });
 
   // --- Kode Inisialisasi ---
-  // Logika Light/Dark Mode (SAMA)
   const lightDarkBtn = document.getElementById("light-dark-toggle");
-  // ... (kode dark mode tidak berubah) ...
   const currentTheme = localStorage.getItem("theme");
   if (currentTheme === "dark") {
     document.body.classList.add("dark-mode");
@@ -316,17 +299,14 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", theme);
   });
 
-  // Event listener untuk tombol logo
   const logoBtn = document.getElementById("logo-btn");
   logoBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "Index.html"; // Pastikan kembali ke home
+    window.location.href = "Index.html";
   });
 
-  // Generate menu di pop-up header
   generateNavMenus();
 
-  // Langsung muat sidebar dan konten CSS
   renderSidebar();
-  renderContent("css-intro"); // Langsung tampilkan materi pertama
+  renderContent();
 });
