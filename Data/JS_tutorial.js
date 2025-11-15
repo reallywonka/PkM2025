@@ -687,5 +687,59 @@ console.log("Permintaan sedang diproses...");
           <p>Jika Anda menjalankan ini, Anda akan melihat data (sebuah Object) muncul di konsol, dan judul tugasnya muncul di halaman Anda. Anda baru saja menghubungkan web Anda ke dunia luar!</p>
         `,
     },
+    {
+      id: "js-modules",
+      title: "JS Modules: import & export",
+      content: `
+          <h1>JS Modules: <code>import</code> & <code>export</code></h1>
+          <p>Saat proyek Anda semakin besar, menyimpan semua kode JavaScript Anda dalam satu file raksasa akan sangat merepotkan. <strong>ES6 Modules</strong> adalah cara modern untuk memecah kode Anda menjadi file-file terpisah yang dapat digunakan kembali.</p>
+          <p>Situs web pembelajaran ini sendiri (termasuk file <code>Data</code> Anda) dibangun menggunakan sistem Modul!</p>
+
+          <h3><code>export</code> (Mengekspos Kode)</h3>
+          <p>Gunakan kata kunci <code>export</code> untuk membuat variabel, fungsi, atau objek di dalam file agar "terlihat" dan dapat diakses oleh file lain.</p>
+          <p>Anda bisa memiliki beberapa <code>export</code> dalam satu file.</p>
+          
+          <pre>
+// File: Data/HTML_tutorial.js
+
+// 'html' sekarang bisa di-impor oleh file lain
+export const html = {
+  title: "HTML",
+  lessons: [
+    // ... data materi ...
+  ]
+};
+
+// Anda juga bisa mengekspor fungsi
+export function sapa(nama) {
+  return "Halo, " + nama;
+}
+          </pre>
+
+          <h3><code>import</code> (Mengambil Kode)</h3>
+          <p>Gunakan kata kunci <code>import</code> untuk mengambil kode yang telah di-<code>export</code> dari file lain. Anda harus menggunakan kurung kurawal <code>{ }</code> untuk menentukan apa yang ingin Anda impor.</p>
+          
+          <pre>
+// File: assets/js/HTML_page_script.js
+
+// Mengimpor 'html' dan 'sapa' dari file lain
+import { html, sapa } from "/Data/HTML_tutorial.js";
+
+console.log(html.title); // Output: "HTML"
+console.log(sapa("Budi")); // Output: "Halo, Budi"
+          </pre>
+
+          <div class="info-box">
+            <h3>Penting: <code>type="module"</code> di HTML</h3>
+            <p>Browser tidak akan memproses <code>import</code>/<code>export</code> secara default. Untuk memberi tahu browser bahwa sebuah file skrip menggunakan sistem Modul, Anda <strong>wajib</strong> menambahkan <code>type="module"</code> pada tag <code>&lt;script&gt;</code> Anda di file HTML.</p>
+            <pre>
+&lt;script src="assets/js/HTML_page_script.js"&gt;&lt;/script&gt;
+
+&lt;script src="assets/js/HTML_page_script.js" type="module"&gt;&lt;/script&gt;
+            </pre>
+            <p>Ini adalah persis seperti yang Anda lakukan di semua file <code>..._topic.html</code> Anda.</p>
+          </div>
+        `,
+    },
   ],
 };

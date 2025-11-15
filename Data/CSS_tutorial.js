@@ -391,5 +391,58 @@ a {
       </div>
     `,
     },
+    {
+      id: "css-units",
+      title: "CSS Units (Satuan)",
+      content: `
+          <h1>CSS Units (Satuan Pengukuran)</h1>
+          <p>Saat Anda menentukan ukuran (seperti <code>font-size</code>, <code>width</code>, atau <code>margin</code>), Anda perlu memberi tahu CSS "satuan" apa yang harus digunakan. Satuan ini terbagi menjadi dua kategori utama: <strong>Absolut</strong> dan <strong>Relatif</strong>.</p>
+          
+          <h3>Satuan Absolut (Absolute Units)</h3>
+          <p>Satuan absolut adalah satuan dengan ukuran tetap yang tidak berubah, tidak peduli apa pun yang terjadi pada elemen lain.</p>
+          <ul>
+            <li><code><strong>px</strong></code> (Pixels): Ini adalah satuan absolut yang paling umum. <code>1px</code> adalah satu titik di layar. <code>px</code> sangat bagus untuk properti yang Anda ingin ukurannya tetap, seperti <code>border</code> atau <code>box-shadow</code>.</li>
+          </ul>
+          <pre>
+.box {
+  border: 5px solid black; /* 'px' bagus untuk border */
+  width: 200px;
+}
+          </pre>
+
+          <h3>Satuan Relatif (Relative Units)</h3>
+          <p>Satuan relatif memiliki ukuran yang fleksibel. Ukurannya "relatif" atau bergantung pada ukuran elemen lain. Satuan ini adalah kunci untuk membuat desain yang responsif.</p>
+          
+          <ul>
+            <li><code><strong>%</strong></code> (Persen): Relatif terhadap ukuran elemen <strong>induk (parent)</strong>. Sangat umum digunakan untuk <code>width</code> dalam membuat layout.</li>
+            <li><code><strong>em</strong></code>: Relatif terhadap <code>font-size</code> dari <strong>elemen itu sendiri</strong>. Jika <code>font-size: 16px</code>, maka <code>2em</code> adalah <code>32px</code>.</li>
+            <li><code><strong>rem</strong></code> (Root EM): <strong>Satuan modern yang paling disarankan untuk ukuran font dan spasi.</strong> <code>rem</code> relatif terhadap <code>font-size</code> dari elemen <strong>root (<code>&lt;html&gt;</code>)</strong>.</li>
+          </ul>
+
+          <div class="tip-box">
+            <h3>Mengapa <code>rem</code> lebih baik dari <code>px</code> untuk Font?</h3>
+            <p>Jika Anda mengatur <code>font-size</code> dalam <code>px</code>, ukurannya akan tetap. Tetapi jika Anda menggunakan <code>rem</code>, Anda mengizinkan pengguna untuk mengubah ukuran font dasar di browser mereka (untuk aksesibilitas). Dengan <code>rem</code>, seluruh tata letak (spasi, judul) Anda akan ikut membesar secara proporsional, menghasilkan desain yang jauh lebih mudah diakses.</p>
+            <pre>
+/* Standar modern yang baik */
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+h1 {
+  font-size: 2rem; /* Hasil: 32px */
+}
+p {
+  font-size: 1rem; /* Hasil: 16px */
+  margin-bottom: 1.5rem; /* Hasil: 24px */
+}
+            </pre>
+          </div>
+
+          <ul>
+            <li><code><strong>vw</strong></code> (Viewport Width): <code>1vw</code> adalah 1% dari lebar jendela browser.</li>
+            <li><code><strong>vh</strong></code> (Viewport Height): <code>1vh</code> adalah 1% dari tinggi jendela browser.</li>
+          </ul>
+          <p><code>vw</code> dan <code>vh</code> sangat berguna untuk membuat elemen yang ukurannya pas di layar, seperti "hero section" di halaman depan.</p>
+        `,
+    },
   ],
 };
