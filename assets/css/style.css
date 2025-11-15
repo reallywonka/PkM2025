@@ -657,3 +657,66 @@ body.dark-mode .exc-js-output {
   color: #ff8a8a;
   font-weight: bold;
 }
+
+/* --- Style untuk Editor Latihan Profesional --- */
+
+/* Penataan Header Editor */
+.exc-editor-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background-color: var(--bs-neowhite);
+  border-bottom: 1px solid var(--border-color);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--bs-black);
+}
+
+body.dark-mode .exc-editor-header {
+  background-color: #282a35;
+}
+
+/* Mengatur container editor & output */
+.exc-editor {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  
+  Membuat CodeMirror mengambil alih 100% sisa ruang 
+*/
+.CodeMirror {
+  flex-grow: 1;
+
+  font-size: 14px;
+}
+
+/* Tombol Run */
+.exc-run-btn,
+.exc-run-js-btn {
+  background-color: #04aa6d;
+  border-radius: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+body.dark-mode .exc-run-btn {
+  background-color: #059862;
+}
+
+/* --- Responsif untuk HP --- */
+@media (max-width: 768px) {
+  .exc-container {
+    grid-template-columns: 1fr;
+    height: 600px;
+  }
+
+  .exc-editor {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+}

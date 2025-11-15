@@ -63,6 +63,47 @@ document.addEventListener("DOMContentLoaded", () => {
     "excersices-nav-content"
   );
 
+  // variabel untuk menyimpan instance editor
+  let codeEditorInstance = null;
+
+  // Fungsi untuk inisialisasi latihan interaktif
+  function initializeInteractiveExercises() {
+    const codeTextarea = contentArea.querySelector(".exc-code-input");
+
+    if (codeTextarea) {
+      codeEditorInstance = CodeMirror.fromTextArea(codeTextarea, {
+        lineNumbers: true,
+        mode: "xml",
+        theme: "default",
+      });
+
+      codeEditorInstance.setSize("100%", "auto");
+    }
+
+    // tombol "Run"
+    const runButton = contentArea.querySelector(".exc-run-btn");
+    if (runButton) {
+      runButton.addEventListener("click", () => {
+        if (codeEditorInstance) {
+          const editorId = runButton.dataset.editorId;
+          const frameId = runButton.dataset.frameId;
+
+          const code = codeEditorInstance.getValue();
+
+          const outputFrame = document.getElementById(frameId);
+
+          if (outputFrame) {
+            outputFrame.srcdoc = code;
+          }
+        }
+      });
+    }
+
+    const runJsButton = contentArea.querySelector(".exc-run-js-btn");
+    if (runJsButton) {
+    }
+  }
+
   function closeAllPanels() {
     NestedNavigation.classList.add("nested_navigation_hidden");
     NestedNavigationRefs.classList.add("nested_navigation_hidden");
@@ -130,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contentArea.innerHTML = lesson.content;
         addCopyButtonsToCodeBlocks();
         updateActiveSidebarLink(lesson.id);
+        initializeInteractiveExercises();
       } else {
         contentArea.innerHTML =
           "<h1>Materi tidak ditemukan</h1><p>Data untuk topik ini sepertinya kosong.</p>";
@@ -259,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   nestedNavigationCloseBtnRefs.addEventListener("click", () => {
-    closeAllSPanels();
+    closeAllPanels();
   });
   excersicesEL.addEventListener("click", () => {
     const isOpening = NestedNavigationExcs.classList.contains(

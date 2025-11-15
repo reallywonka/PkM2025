@@ -3,16 +3,23 @@ export const Excersices = {
   html: {
     title: "HTML",
     lessons: [
+      // ...
       {
         id: "html-exc-1",
         title: "Latihan Atribut Link",
+        icon: "fa-solid fa-link",
+        // [MODIFIKASI] Ganti seluruh 'content' dengan ini
         content: `
           <h1>Latihan Atribut <code>href</code></h1>
           <p><strong>Tantangan:</strong> Lengkapi kode di bawah ini untuk membuat link ke <code>https://www.google.com</code>. Klik "Run" untuk melihat hasilnya.</p>
           
           <div class="exc-container">
             <div class="exc-editor">
-              <textarea class="exc-code-input">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-html5" style="color: #e34f26;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-html-exc-1">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -27,10 +34,17 @@ export const Excersices = {
 &lt;/body&gt;
 &lt;/html&gt;
               </textarea>
-              <button class="exc-run-btn">Run</button>
+              <button class="exc-run-btn" data-editor-id="editor-html-exc-1" data-frame-id="frame-html-exc-1">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
             </div>
+            
             <div class="exc-output">
-              <iframe class="exc-output-frame" srcdoc=""></iframe>
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-html-exc-1" srcdoc=""></iframe>
             </div>
           </div>
         `,
