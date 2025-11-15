@@ -313,5 +313,83 @@ a {
 }</pre>
         `,
     },
+    {
+      id: "css-layout-position",
+      title: "CSS Layout: Position",
+      content: `
+      <h1>CSS Layout: Properti <code>position</code></h1>
+      <p>Properti <code>position</code> adalah salah satu properti paling mendasar dalam tata letak CSS. Properti ini menentukan bagaimana sebuah elemen diposisikan di dalam halaman.</p>
+      <p>Ada lima nilai utama untuk <code>position</code>:</p>
+      
+      <h3>1. <code>static</code></h3>
+      <p>Ini adalah nilai default. Elemen akan mengalir di halaman secara normal. Mengatur <code>top</code>, <code>right</code>, <code>bottom</code>, atau <code>left</code> <strong>tidak akan berpengaruh</strong>.</p>
+      
+      <h3>2. <code>relative</code></h3>
+      <p>Elemen diposisikan relatif terhadap posisi normalnya. Anda bisa "menggeser" elemen menggunakan <code>top</code>, <code>right</code>, dll. Ruang asli yang seharusnya ditempati elemen tersebut tetap dijaga (tidak diisi elemen lain).</p>
+      
+      <h3>3. <code>absolute</code></h3>
+      <p>Elemen "dikeluarkan" dari alur normal halaman. Elemen ini diposisikan relatif terhadap <strong>leluhur (ancestor) terdekat yang memiliki posisi</strong> (selain <code>static</code>). Jika tidak ada, ia akan diposisikan relatif terhadap <code>&lt;body&gt;</code>.</p>
+      
+      <h3>4. <code>fixed</code></h3>
+      <p>Elemen "dikeluarkan" dari alur normal halaman dan diposisikan relatif terhadap <strong>viewport (jendela browser)</strong>. Elemen ini akan tetap di tempat yang sama bahkan ketika halaman di-scroll. Contoh umum adalah header navigasi yang "menempel" di atas.</p>
+      
+      <h3>5. <code>sticky</code></h3>
+      <p>Elemen ini bertindak seperti <code>relative</code> sampai ia mencapai titik tertentu saat di-scroll, kemudian ia akan "menempel" (bertindak seperti <code>fixed</code>). Ini sangat populer untuk judul sidebar atau header.</p>
+      
+      <div class="info-box">
+        <h3>Properti <code>z-index</code></h3>
+        <p>Ketika elemen saling tumpang tindih (misalnya saat menggunakan <code>position: absolute</code>), <code>z-index</code> menentukan urutan tumpukannya. Elemen dengan <code>z-index</code> lebih tinggi akan tampil di atas elemen dengan <code>z-index</code> lebih rendah.</p>
+      </div>
+    `,
+    },
+    {
+      id: "css-layout-flexbox",
+      title: "CSS Layout: Flexbox",
+      content: `
+      <h1>CSS Layout: Pengenalan Flexbox</h1>
+      <p>Flexbox (Flexible Box Model) adalah model tata letak satu dimensi (1D) yang merevolusi cara kita mengatur elemen dalam baris atau kolom.</p>
+      <p>Untuk menggunakan Flexbox, Anda hanya perlu menambahkan <code>display: flex;</code> pada elemen pembungkus (kontainer).</p>
+      <pre>
+.container {
+  display: flex;
+}</pre>
+      <p>Semua anak langsung (direct children) dari <code>.container</code> akan otomatis menjadi "flex items".</p>
+      
+      <h3>Properti Penting pada Kontainer (Induk)</h3>
+      <p>Ini adalah properti yang Anda atur pada elemen induk (<code>.container</code>) untuk mengontrol semua anaknya:</p>
+      <ul>
+        <li><strong><code>flex-direction</code></strong>: Menentukan arah sumbu utama.
+          <ul>
+            <li><code>row</code>: (Default) Item diatur berjajar secara horizontal.</li>
+            <li><code>column</code>: Item diatur bertumpuk secara vertikal.</li>
+          </ul>
+        </li>
+        <li><strong><code>justify-content</code></strong>: Mengatur perataan item di sepanjang <strong>sumbu utama</strong> (horizontal jika <code>row</code>).
+          <ul>
+            <li><code>flex-start</code>: (Default) Rapat kiri.</li>
+            <li><code>flex-end</code>: Rapat kanan.</li>
+            <li><code>center</code>: Rata tengah.</li>
+            <li><code>space-between</code>: Jarak merata di antara item (item pertama di tepi kiri, item terakhir di tepi kanan).</li>
+            <li><code>space-around</code>: Jarak merata di sekitar setiap item (termasuk setengah jarak di tepi).</li>
+          </ul>
+        </li>
+        <li><strong><code>align-items</code></strong>: Mengatur perataan item di sepanjang <strong>sumbu silang</strong> (vertikal jika <code>row</code>).
+          <ul>
+            <li><code>flex-start</code>: Rapat atas.</li>
+            <li><code>flex-end</code>: Rapat bawah.</li>
+            <li><code>center</code>: Rata tengah vertikal.</li>
+            <li><code>stretch</code>: (Default) Membuat semua item memiliki tinggi yang sama.</li>
+          </ul>
+        </li>
+        <li><strong><code>gap</code></strong>: Properti modern yang memberi jarak (spasi) antar item. (ContH: <code>gap: 10px;</code>).</li>
+      </ul>
+      
+      <div class="tip-box">
+        <h3>Kapan Menggunakan Flexbox vs. Grid?</h3>
+        <p><strong>Flexbox</strong> adalah pilihan terbaik untuk tata letak <strong>satu dimensi</strong> (mengatur elemen dalam satu baris ATAU satu kolom).<br>
+        <strong>Grid</strong> adalah pilihan terbaik untuk tata letak <strong>dua dimensi</strong> (mengatur elemen dalam baris DAN kolom secara bersamaan, seperti papan catur).</p>
+      </div>
+    `,
+    },
   ],
 };

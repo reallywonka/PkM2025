@@ -56,10 +56,115 @@ export const References = {
           </table>
         `,
       },
+      {
+        id: "html-ref-links-images",
+        title: "Link & Gambar",
+        content: `
+          <h1>Referensi Link & Gambar</h1>
+          <p>Tag yang digunakan untuk menghubungkan halaman dan menampilkan media.</p>
+          <table class="ref-table">
+            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;a&gt;</code></td><td>Mendefinisikan sebuah hyperlink (Anchor).</td></tr>
+              <tr><td><code>&lt;img&gt;</code></td><td>Menyematkan sebuah gambar ke dalam halaman.</td></tr>
+            </tbody>
+          </table>
+          <h3>Atribut Umum</h3>
+          <table class="ref-table">
+            <thead><tr><th>Atribut</th><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>href</code></td><td><code>&lt;a&gt;</code></td><td>Menentukan URL (tujuan) dari link.</td></tr>
+              <tr><td><code>src</code></td><td><code>&lt;img&gt;</code></td><td>Menentukan sumber (Source/URL) dari gambar.</td></tr>
+              <tr><td><code>alt</code></td><td><code>&lt;img&gt;</code></td><td>Teks alternatif (penting untuk aksesibilitas) jika gambar gagal dimuat.</td></tr>
+              <tr><td><code>target="_blank"</code></td><td><code>&lt;a&gt;</code></td><td>Membuka link di tab browser baru.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "html-ref-forms",
+        title: "Form (Formulir)",
+        content: `
+          <h1>Referensi Tag Form</h1>
+          <p>Tag yang digunakan untuk mengumpulkan input dari pengguna.</p>
+          <table class="ref-table">
+            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;form&gt;</code></td><td>Wadah (container) yang membungkus semua elemen formulir.</td></tr>
+              <tr><td><code>&lt;label&gt;</code></td><td>Mendefinisikan label untuk sebuah elemen <code>&lt;input&gt;</code> (penting untuk aksesibilitas).</td></tr>
+              <tr><td><code>&lt;input&gt;</code></td><td>Elemen input utama. Tipenya diatur oleh atribut <code>type</code>.</td></tr>
+              <tr><td><code>&lt;textarea&gt;</code></td><td>Area input teks multi-baris (untuk pesan, komentar, dll).</td></tr>
+              <tr><td><code>&lt;select&gt;</code></td><td>Membuat menu dropdown (daftar pilihan).</td></tr>
+              <tr><td><code>&lt;option&gt;</code></td><td>Mendefinisikan sebuah pilihan di dalam <code>&lt;select&gt;</code>.</td></tr>
+              <tr><td><code>&lt;button&gt;</code></td><td>Mendefinisikan sebuah tombol yang dapat diklik.</td></tr>
+            </tbody>
+          </table>
+          <h3>Atribut <code>type</code> yang Umum untuk <code>&lt;input&gt;</code></h3>
+           <table class="ref-table">
+            <thead><tr><th>Type</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>type="text"</code></td><td>Kotak input teks satu baris (default).</td></tr>
+              <tr><td><code>type="password"</code></td><td>Kotak input teks yang menyembunyikan karakter (untuk kata sandi).</td></tr>
+              <tr><td><code>type="radio"</code></td><td>Tombol radio (memilih satu dari banyak opsi).</td></tr>
+              <tr><td><code>type="checkbox"</code></td><td>Kotak centang (memilih nol atau lebih dari banyak opsi).</td></tr>
+              <tr><td><code>type="submit"</code></td><td>Sebuah tombol yang mengirimkan (submit) formulir.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "html-ref-semantic",
+        title: "HTML Semantik",
+        content: `
+          <h1>Referensi HTML Semantik</h1>
+          <p>Elemen semantik adalah elemen HTML yang memiliki makna jelas, baik bagi browser maupun bagi pengembang. Elemen ini membantu struktur, aksesibilitas, dan SEO.</p>
+          <p>Alih-alih menggunakan <code>&lt;div&gt;</code> untuk segala hal, gunakanlah elemen yang sesuai dengan kontennya.</p>
+          <table class="ref-table">
+            <thead><tr><th>Tag</th><th>Deskripsi Makna</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;header&gt;</code></td><td>Mendefinisikan bagian kepala (header) untuk dokumen atau sebuah bagian (section). Biasanya berisi logo, navigasi, dan judul.</td></tr>
+              <tr><td><code>&lt;nav&gt;</code></td><td>Mendefinisikan wadah (container) khusus untuk tautan navigasi utama.</td></tr>
+              <tr><td><code>&lt;main&gt;</code></td><td>Mendefinisikan konten utama dan unik dari sebuah dokumen. Hanya boleh ada satu <code>&lt;main&gt;</code> per halaman.</td></tr>
+              <tr><td><code>&lt;section&gt;</code></td><td>Mendefinisikan sebuah bagian (section) dalam dokumen yang memiliki tema atau pengelompokan logis.</td></tr>
+              <tr><td><code>&lt;article&gt;</code></td><td>Mendefinisikan konten mandiri yang lengkap dan dapat didistribusikan secara independen (misal: postingan blog, artikel berita).</td></tr>
+              <tr><td><code>&lt;aside&gt;</code></td><td>Mendefinisikan konten yang tidak terkait langsung dengan konten utama di sekitarnya (misal: sidebar, kotak info, iklan).</td></tr>
+              <tr><td><code>&lt;footer&gt;</code></td><td>Mendefinisikan bagian kaki (footer) untuk dokumen atau sebuah bagian. Biasanya berisi info hak cipta, kontak, atau tautan terkait.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "html-ref-media",
+        title: "Audio & Video",
+        content: `
+          <h1>Referensi Tag Media</h1>
+          <p>Tag yang digunakan untuk menyematkan konten media seperti audio dan video.</p>
+          <table class="ref-table">
+            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;audio&gt;</code></td><td>Menyematkan konten suara (audio).</td></tr>
+              <tr><td><code>&lt;video&gt;</code></td><td>Menyematkan konten video.</td></tr>
+              <tr><td><code>&lt;source&gt;</code></td><td>Digunakan di dalam <code>&lt;audio&gt;</code> atau <code>&lt;video&gt;</code> untuk menentukan beberapa format file media alternatif.</td></tr>
+            </tbody>
+          </table>
+          <h3>Atribut Umum</h3>
+           <table class="ref-table">
+            <thead><tr><th>Atribut</th><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>controls</code></td><td><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td><td>Menampilkan kontrol pemutar standar (play, pause, volume).</td></tr>
+              <tr><td><code>autoplay</code></td><td><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td><td>Memulai pemutaran media secara otomatis. (Sering diblokir oleh browser modern).</td></tr>
+              <tr><td><code>muted</code></td><td><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td><td>Membisukan audio. Sering diperlukan agar <code>autoplay</code> berfungsi.</td></tr>
+              <tr><td><code>loop</code></td><td><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td><td>Menyebabkan media diputar ulang secara otomatis setelah selesai.</td></tr>
+              <tr><td><code>src</code></td><td><code>&lt;source&gt;</code></td><td>URL dari file media.</td></tr>
+              <tr><td><code>type</code></td><td><code>&lt;source&gt;</code></td><td>Menentukan tipe MIME dari file media (misal: <code>video/mp4</code> atau <code>audio/mpeg</code>).</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
     ],
   },
 
-  // --- MATERI CSS BARU ---
+  // --- MATERI CSS ---
   css: {
     title: "CSS",
     lessons: [
@@ -123,10 +228,118 @@ export const References = {
           </table>
         `,
       },
+      {
+        id: "css-ref-flexbox",
+        title: "Flexbox",
+        content: `
+          <h1>Referensi Flexbox</h1>
+          <p>Flexbox adalah model tata letak (layout) satu dimensi untuk mengatur elemen dalam baris atau kolom.</p>
+          <p>Untuk mengaktifkan, atur <code>display: flex;</code> pada elemen kontainer (induk).</p>
+          <h3>Properti pada Kontainer (Induk)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Properti</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>display: flex;</code></td><td>Mengaktifkan konteks flexbox untuk elemen anak.</td></tr>
+              <tr><td><code>flex-direction</code></td><td>Mendefinisikan arah sumbu utama (<code>row</code>, <code>column</code>, <code>row-reverse</code>, <code>column-reverse</code>).</td></tr>
+              <tr><td><code>justify-content</code></td><td>Mengatur perataan elemen di sepanjang sumbu utama (horizontal jika <code>row</code>).</td></tr>
+              <tr><td><code>align-items</code></td><td>Mengatur perataan elemen di sepanjang sumbu silang (vertikal jika <code>row</code>).</td></tr>
+              <tr><td><code>gap</code></td><td>Memberi jarak (spasi) antar elemen anak.</td></tr>
+            </tbody>
+          </table>
+          <h3>Properti pada Elemen Anak (Item)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Properti</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>flex-grow</code></td><td>Mengatur seberapa besar elemen bisa "tumbuh" (mengisi sisa ruang).</td></tr>
+              <tr><td><code>flex-shrink</code></td><td>Mengatur seberapa besar elemen bisa "menyusut" jika ruang tidak cukup.</td></tr>
+              <tr><td><code>flex-basis</code></td><td>Mengatur ukuran awal elemen sebelum sisa ruang didistribusikan.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "css-ref-positioning",
+        title: "Positioning",
+        content: `
+          <h1>Referensi Positioning</h1>
+          <p>Properti <code>position</code> menentukan metode penempatan (positioning) untuk sebuah elemen.</p>
+          <table class="ref-table">
+            <thead><tr><th>Nilai</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>static</code></td><td>Default. Elemen mengikuti alur normal dokumen. Properti <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> tidak berpengaruh.</td></tr>
+              <tr><td><code>relative</code></td><td>Elemen diposisikan relatif terhadap posisi normalnya. Menggunakan <code>top</code>, <code>left</code>, dll. akan menggesernya dari titik tersebut tanpa memengaruhi elemen lain.</td></tr>
+              <tr><td><code>absolute</code></td><td>Elemen diposisikan relatif terhadap leluhur (ancestor) terdekatnya yang memiliki posisi (selain <code>static</code>). Jika tidak ada, ia akan relatif terhadap <code>&lt;body&gt;</code>.</td></tr>
+              <tr><td><code>fixed</code></td><td>Elemen diposisikan relatif terhadap viewport (jendela browser). Elemen akan tetap di tempat yang sama bahkan saat halaman di-scroll.</td></tr>
+              <tr><td><code>sticky</code></td><td>Gabungan antara <code>relative</code> dan <code>fixed</code>. Elemen akan "menempel" (menjadi <code>fixed</code>) saat scroll mencapai posisi tertentu.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "css-ref-grid",
+        title: "Grid Layout",
+        content: `
+          <h1>Referensi CSS Grid</h1>
+          <p>CSS Grid adalah model tata letak (layout) dua dimensi (baris dan kolom). Ini adalah sistem yang sangat kuat untuk membuat layout halaman yang kompleks.</p>
+          <p>Untuk mengaktifkan, atur <code>display: grid;</code> pada elemen kontainer (induk).</p>
+          <h3>Properti pada Kontainer (Induk)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Properti</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>display: grid;</code></td><td>Mengaktifkan konteks grid untuk elemen anak.</td></tr>
+              <tr><td><code>grid-template-columns</code></td><td>Mendefinisikan jumlah dan ukuran kolom (misal: <code>1fr 1fr 200px</code>).</td></tr>
+              <tr><td><code>grid-template-rows</code></td><td>Mendefinisikan jumlah dan ukuran baris.</td></tr>
+              <tr><td><code>gap</code></td><td>Jarak (spasi) antar sel grid (misal: <code>10px</code>).</td></tr>
+              <tr><td><code>justify-items</code></td><td>Mengatur perataan item secara horizontal di dalam sel mereka.</td></tr>
+              <tr><td><code>align-items</code></td><td>Mengatur perataan item secara vertikal di dalam sel mereka.</td></tr>
+            </tbody>
+          </table>
+          <h3>Properti pada Elemen Anak (Item)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Properti</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>grid-column</code></td><td>Menentukan di kolom mana item harus ditempatkan (misal: <code>1 / 3</code>).</td></tr>
+              <tr><td><code>grid-row</code></td><td>Menentukan di baris mana item harus ditempatkan.</td></tr>
+              <tr><td><code>justify-self</code></td><td>Mengatur perataan horizontal satu item spesifik di dalam selnya.</td></tr>
+              <tr><td><code>align-self</code></td><td>Mengatur perataan vertikal satu item spesifik di dalam selnya.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "css-ref-pseudo",
+        title: "Pseudo-class & Pseudo-element",
+        content: `
+          <h1>Referensi Pseudo-class & Pseudo-element</h1>
+          <p>Ini adalah kata kunci yang ditambahkan ke selektor untuk menata elemen dalam keadaan tertentu atau menata bagian tertentu dari elemen.</p>
+          <h3>Pseudo-class (Status/Keadaan)</h3>
+          <p>Ditulis dengan satu titik dua (<code>:</code>). Menata elemen berdasarkan statusnya.</p>
+          <table class="ref-table">
+            <thead><tr><th>Selektor</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>:hover</code></td><td>Saat kursor mouse berada di atas elemen.</td></tr>
+              <tr><td><code>:active</code></td><td>Saat elemen sedang diklik atau diaktifkan.</td></tr>
+              <tr><td><code>:focus</code></td><td>Saat elemen sedang dalam fokus (misal: input formulir yang sedang diketik).</td></tr>
+              <tr><td><code>:nth-child(n)</code></td><td>Memilih elemen anak ke-n (misal: <code>:nth-child(odd)</code> untuk baris ganjil).</td></tr>
+            </tbody>
+          </table>
+          <h3>Pseudo-element (Bagian dari Elemen)</h3>
+          <p>Ditulis dengan dua titik dua (<code>::</code>). Menata bagian spesifik dari sebuah elemen.</p>
+          <table class="ref-table">
+            <thead><tr><th>Selektor</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>::before</code></td><td>Membuat elemen semu <strong>sebelum</strong> konten asli dari elemen yang dipilih.</td></tr>
+              <tr><td><code>::after</code></td><td>Membuat elemen semu <strong>setelah</strong> konten asli dari elemen yang dipilih.</td></tr>
+              <tr><td><code>::first-letter</code></td><td>Menata huruf pertama dari sebuah paragraf.</td></tr>
+              <tr><td><code>::placeholder</code></td><td>Menata teks placeholder di dalam elemen <code>&lt;input&gt;</code> atau <code>&lt;textarea&gt;</code>.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
     ],
   },
 
-  // --- MATERI JAVASCRIPT BARU ---
+  // --- MATERI JAVASCRIPT ---
   javascript: {
     title: "JavaScript",
     lessons: [
@@ -206,10 +419,120 @@ let paragraf = document.querySelector("p");
           </pre>
         `,
       },
+      {
+        id: "js-ref-vars-funcs",
+        title: "Variabel & Fungsi",
+        content: `
+          <h1>Referensi Variabel & Fungsi</h1>
+          <p>Blok bangunan dasar untuk menyimpan data dan menjalankan logika.</p>
+          <h3>Deklarasi Variabel</h3>
+          <table class="ref-table">
+            <thead><tr><th>Kata Kunci</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>let</code></td><td>Mendeklarasikan variabel yang nilainya dapat diubah (block-scoped). Ini adalah cara modern yang disarankan.</td></tr>
+              <tr><td><code>const</code></td><td>Mendeklarasikan variabel konstan yang nilainya <strong>tidak dapat</strong> diubah setelah ditetapkan (block-scoped).</td></tr>
+              <tr><td><code>var</code></td><td>Cara lama mendeklarasikan variabel (function-scoped). Sebaiknya dihindari dalam kode modern.</td></tr>
+            </tbody>
+          </table>
+          <h3>Deklarasi Fungsi</h3>
+          <table class="ref-table">
+            <thead><tr><th>Sintaks</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>function nama(p) { ... }</code></td><td>Deklarasi fungsi standar (Function Declaration).</td></tr>
+              <tr><td><code>let nama = function(p) { ... }</code></td><td>Ekspresi fungsi (Function Expression).</td></tr>
+              <tr><td><code>let nama = (p) => { ... }</code></td><td>Fungsi panah (Arrow Function). Sintaks modern yang lebih ringkas.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "js-ref-logic",
+        title: "Logika Kondisi & Perulangan",
+        content: `
+          <h1>Referensi Logika & Perulangan</h1>
+          <p>Mengontrol alur program Anda.</p>
+          <h3>Kondisional (Percabangan)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Sintaks</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>if (kondisi) { ... }</code></td><td>Menjalankan blok kode jika kondisi bernilai <code>true</code>.</td></tr>
+              <tr><td><code>if (kondisi) { ... } else { ... }</code></td><td>Menjalankan blok <code>if</code> jika <code>true</code>, atau blok <code>else</code> jika <code>false</code>.</td></tr>
+              <tr><td><code>if ... else if ... else</code></td><td>Rangkaian untuk memeriksa beberapa kondisi secara berurutan.</td></tr>
+            </tbody>
+          </table>
+          <h3>Perulangan (Loops)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Sintaks</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>for (let i=0; i < N; i++) { ... }</code></td><td>Perulangan <code>for</code> standar. Paling umum digunakan jika Anda tahu jumlah pasti perulangan.</td></tr>
+              <tr><td><code>while (kondisi) { ... }</code></td><td>Menjalankan blok kode berulang kali <strong>selama</strong> kondisi bernilai <code>true</code>.</td></tr>
+              <tr><td><code>array.forEach(item => { ... })</code></td><td>Metode array modern untuk menjalankan fungsi pada setiap item di dalam array.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "js-ref-array-methods",
+        title: "Metode Array",
+        content: `
+          <h1>Referensi Metode Array</h1>
+          <p>Fungsi-fungsi bawaan yang sangat berguna untuk memanipulasi array.</p>
+          <table class="ref-table">
+            <thead><tr><th>Metode</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>.forEach(item => { ... })</code></td><td>Menjalankan sebuah fungsi untuk setiap elemen di dalam array.</td></tr>
+              <tr><td><code>.map(item => { ... })</code></td><td>Membuat array baru dengan menjalankan fungsi pada setiap elemen dan mengembalikan hasilnya.</td></tr>
+              <tr><td><code>.filter(item => { ... })</code></td><td>Membuat array baru yang berisi elemen-elemen yang lolos (<code>true</code>) dari kondisi fungsi.</td></tr>
+              <tr><td><code>.find(item => { ... })</code></td><td>Mengembalikan elemen <strong>pertama</strong> di dalam array yang lolos dari kondisi fungsi.</td></tr>
+              <tr><td><code>.push(item)</code></td><td>Menambahkan satu atau lebih elemen ke <strong>akhir</strong> array.</td></tr>
+              <tr><td><code>.pop()</code></td><td>Menghapus elemen <strong>terakhir</strong> dari array.</td></tr>
+              <tr><td><code>.includes(item)</code></td><td>Mengembalikan <code>true</code> jika array berisi elemen yang dicari, dan <code>false</code> jika tidak.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "js-ref-events",
+        title: "Events",
+        content: `
+          <h1>Referensi Penanganan Event</h1>
+          <p>Event adalah tindakan atau kejadian (seperti klik mouse, penekanan tombol, atau halaman selesai dimuat) yang dapat dideteksi oleh JavaScript.</p>
+          <h3>Cara Modern: <code>addEventListener</code></h3>
+          <p>Ini adalah cara yang disarankan untuk menangani event, memisahkan logika JavaScript dari HTML.</p>
+          <pre>
+// 1. Dapatkan elemennya
+let tombol = document.getElementById("tombol-saya");
+
+// 2. Buat fungsi (handler)
+function saatDiklik() {
+  console.log("Tombol telah diklik!");
+}
+
+// 3. Pasang 'pendengar' (listener)
+tombol.addEventListener("click", saatDiklik);
+          </pre>
+          <h3>Event yang Umum Digunakan</h3>
+          <table class="ref-table">
+            <thead><tr><th>Nama Event</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>'click'</code></td><td>Terjadi saat pengguna mengklik elemen.</td></tr>
+              <tr><td><code>'submit'</code></td><td>Terjadi saat sebuah <code>&lt;form&gt;</code> dikirim (submit).</td></tr>
+              <tr><td><code>'change'</code></td><td>Terjadi saat nilai dari elemen formulir (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>) berubah.</td></tr>
+              <tr><td><code>'keydown'</code></td><td>Terjadi saat pengguna menekan sebuah tombol di keyboard.</td></tr>
+              <tr><td><code>'mouseover'</code></td><td>Terjadi saat kursor mouse bergerak ke atas elemen.</td></tr>
+              <tr><td><code>'DOMContentLoaded'</code></td><td>Terjadi saat dokumen HTML selesai dimuat (tanpa menunggu gambar).</td></tr>
+            </tbody>
+          </table>
+          <div class="tip-box">
+            <h3>Mencegah Perilaku Default (<code>event.preventDefault()</code>)</h3>
+            <p>Di dalam fungsi handler, Anda bisa memanggil <code>event.preventDefault()</code> untuk menghentikan perilaku bawaan browser. Ini sangat umum digunakan pada event <code>'submit'</code> formulir untuk mencegah halaman me-refresh.</p>
+          </div>
+        `,
+      },
     ],
   },
 
-  // --- MATERI UI/UX BARU ---
+  // --- MATERI UI/UX ---
   design: {
     title: "Design UI/UX",
     lessons: [
@@ -250,6 +573,72 @@ let paragraf = document.querySelector("p");
               <tr><td><strong>Toggle</strong></td><td>Tombol geser (On/Off) untuk mengubah satu pengaturan.</td></tr>
               <tr><td><strong>Modal</strong></td><td>Jendela pop-up yang muncul di atas konten utama, memaksa pengguna fokus pada satu tugas (misal: Konfirmasi Hapus).</td></tr>
               <tr><td><strong>Tooltip</strong></td><td>Pesan kecil yang muncul saat pengguna meng-hover elemen, memberikan info tambahan.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-crap",
+        title: "Prinsip Desain (CRAP)",
+        content: `
+          <h1>Referensi Prinsip Desain Visual (CRAP)</h1>
+          <p>Empat prinsip dasar untuk membantu membuat desain yang bersih, teratur, dan profesional.</p>
+          <table class="ref-table">
+            <thead><tr><th>Prinsip</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>C</strong>ontrast (Kontras)</td><td>Membuat elemen yang berbeda terlihat benar-benar berbeda (misal: warna, ukuran font, ketebalan). Tujuannya adalah untuk menciptakan fokus dan hierarki.</td></tr>
+              <tr><td><strong>R</strong>epetition (Repetisi)</td><td>Menggunakan kembali elemen desain yang sama secara konsisten di seluruh antarmuka (misal: gaya tombol, palet warna, jenis font). Tujuannya adalah untuk menciptakan kesatuan.</td></tr>
+              <tr><td><strong>A</strong>lignment (Perataan)</td><td>Menempatkan setiap elemen secara sengaja; tidak ada yang ditempatkan secara acak. Tujuannya adalah untuk menciptakan tampilan yang teratur, bersih, dan terhubung.</td></tr>
+              <tr><td><strong>P</strong>roximity (Kedekatan)</td><td>Mengelompokkan elemen-elemen yang terkait secara visual menjadi satu. Tujuannya adalah untuk mengatur informasi dan mengurangi kekacauan (clutter).</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-color",
+        title: "Teori Warna (UI)",
+        content: `
+          <h1>Referensi Teori Warna (UI)</h1>
+          <p>Warna adalah salah satu alat paling kuat dalam desain UI untuk membangkitkan emosi, menarik perhatian, dan mengkomunikasikan status.</p>
+          <h3>Terminologi Dasar</h3>
+          <table class="ref-table">
+            <thead><tr><th>Istilah</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Hue</strong> (Rona)</td><td>Ini adalah warna murni itu sendiri (misal: merah, hijau, biru).</td></tr>
+              <tr><td><strong>Saturation</strong> (Saturasi)</td><td>Intensitas atau kemurnian warna. Saturasi tinggi terlihat jelas dan cerah, saturasi rendah terlihat pudar atau keabu-abuan.</td></tr>
+              <tr><td><strong>Value / Brightness</strong> (Nilai / Kecerahan)</td><td>Tingkat gelap atau terangnya sebuah warna.</td></tr>
+            </tbody>
+          </table>
+          <h3>Aturan 60-30-10</h3>
+          <p>Ini adalah panduan klasik untuk menciptakan palet warna yang seimbang:</p>
+          <ul>
+            <li><strong>60% (Warna Primer):</strong> Warna dominan Anda, sering digunakan untuk latar belakang atau area besar.</li>
+            <li><strong>30% (Warna Sekunder):</strong> Warna pendukung yang kontras dengan warna primer, digunakan untuk menyorot elemen sekunder (seperti kartu, sub-judul).</li>
+            <li><strong>10% (Warna Aksen):</strong> Warna yang paling cerah dan menonjol. Digunakan hemat untuk elemen yang paling penting (tombol CTA, notifikasi).</li>
+          </ul>
+        `,
+      },
+      {
+        id: "design-ref-typography",
+        title: "Tipografi (UI)",
+        content: `
+          <h1>Referensi Tipografi (UI)</h1>
+          <p>Tipografi adalah seni mengatur huruf agar teks mudah dibaca (legible) dan menarik secara visual. Di UI, keterbacaan (readability) adalah kuncinya.</p>
+          <h3>Jenis Font Dasar</h3>
+          <table class="ref-table">
+            <thead><tr><th>Jenis Font</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Serif</strong></td><td>Memiliki "kaki" atau guratan kecil di ujung huruf (misal: Times New Roman, Georgia). Memberi kesan tradisional, formal, dan elegan.</td></tr>
+              <tr><td><strong>Sans-Serif</strong></td><td>Tidak memiliki "kaki" (misal: Arial, Roboto, Helvetica). Memberi kesan modern, bersih, dan minimalis. Paling umum untuk teks di layar.</td></tr>
+            </tbody>
+          </table>
+          <h3>Konsep Keterbacaan (Readability)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Konsep</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Hierarki</strong></td><td>Menggunakan ukuran font (<code>font-size</code>) dan ketebalan (<code>font-weight</code>) yang berbeda untuk membedakan judul, sub-judul, dan paragraf.</td></tr>
+              <tr><td><strong>Line Height (Tinggi Baris)</strong></td><td>Jarak vertikal antar baris teks. Aturan umumnya adalah 1.4x hingga 1.6x dari ukuran font untuk keterbacaan yang baik.</td></tr>
+              <tr><td><strong>Line Length (Panjang Baris)</strong></td><td>Jumlah karakter per baris. Teks yang terlalu lebar sulit dibaca. Usahakan 45-75 karakter per baris untuk paragraf.</td></tr>
             </tbody>
           </table>
         `,

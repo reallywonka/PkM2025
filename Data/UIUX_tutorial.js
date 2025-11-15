@@ -199,5 +199,78 @@ body {
           </ul>
         `,
     },
+    {
+      id: "design-process-ucd",
+      title: "Proses Desain (UCD)",
+      content: `
+      <h1>Proses Desain: User-Centered Design (UCD)</h1>
+      <p>Desain UI/UX yang hebat tidak dibuat secara acak. Desainer profesional mengikuti sebuah proses yang disebut <strong>User-Centered Design (UCD)</strong> atau Desain yang Berpusat pada Pengguna.</p>
+      <p>UCD adalah filosofi yang menempatkan <strong>kebutuhan pengguna</strong> sebagai pusat dari setiap keputusan desain. Salah satu kerangka kerja (framework) UCD yang paling populer adalah <strong>Design Thinking</strong>, yang umumnya memiliki lima fase:</p>
+      
+      <ol>
+        <li><strong>1. Empathize (Empati)</strong>
+          <p>Fase di mana Anda berusaha memahami pengguna Anda secara mendalam. Tujuannya bukan untuk berasumsi, tetapi untuk benar-benar mengerti masalah, kebutuhan, dan motivasi mereka.
+          <br><strong>Aktivitas:</strong> Wawancara pengguna, survei, observasi, membuat "User Persona".</p>
+        </li>
+      
+        <li><strong>2. Define (Definisi)</strong>
+          <p>Setelah mengumpulkan wawasan dari fase empati, Anda menganalisis dan mensintesis temuan tersebut untuk mendefinisikan masalah inti (core problem) yang akan Anda selesaikan.
+          <br><strong>Aktivitas:</strong> Membuat "Problem Statement" (pernyataan masalah), "User Journey Map".</p>
+        </li>
+      
+        <li><strong>3. Ideate (Ideasi)</strong>
+          <p>Ini adalah fase curah pendapat (brainstorming). Anda menghasilkan sebanyak mungkin ide atau solusi untuk masalah yang telah didefinisikan. Kuantitas lebih penting daripada kualitas di tahap ini.
+          <br><strong>Aktivitas:</strong> "Crazy 8s", membuat "User Flow" (alur pengguna), "Sitemap" (peta situs).</p>
+        </li>
+      
+        <li><strong>4. Prototype (Purwarupa)</strong>
+          <p>Anda memilih ide-ide terbaik dan mulai membangun versi "draf" dari solusi Anda. Ini bisa berupa apa saja, dari sketsa kertas hingga simulasi digital yang dapat diklik. Tujuannya adalah membuat sesuatu yang nyata untuk diuji.
+          <br><strong>Aktivitas:</strong> Membuat Wireframe, Mockup, dan Prototipe Interaktif.</p>
+        </li>
+      
+        <li><strong>5. Test (Uji)</strong>
+          <p>Anda menguji purwarupa Anda dengan pengguna sungguhan untuk mendapatkan umpan balik. Fase ini sangat penting untuk menemukan kekurangan dalam desain Anda sebelum menghabiskan waktu dan uang untuk pengembangan (coding).
+          <br><strong>Aktivitas:</strong> "Usability Testing" (Uji Ketergunaan).</p>
+        </li>
+      </ol>
+      <div class="info-box">
+        <h3>Bukan Proses yang Lurus</h3>
+        <p>Penting untuk diingat bahwa proses ini bersifat <strong>iteratif</strong> (berulang), bukan linear. Hasil dari fase Uji (Test) sering kali membawa Anda kembali ke fase Ideasi (Ideate) atau bahkan Define (Definisi) untuk memperbaiki solusi Anda.</p>
+      </div>
+    `,
+    },
+    {
+      id: "design-wireframe-prototype",
+      title: "Wireframe vs Prototype",
+      content: `
+      <h1>Artefak Desain: Wireframe, Mockup, & Prototype</h1>
+      <p>Sebelum menulis kode, desainer membuat "draf" visual untuk mengkomunikasikan ide mereka. Tiga istilah yang paling sering digunakan adalah Wireframe, Mockup, dan Prototype. Penting untuk mengetahui perbedaannya.</p>
+      
+      <h3>1. Wireframe (Sketsa Kasar)</h3>
+      <p>Wireframe adalah sketsa berfidelitas rendah (low-fidelity) yang berfungsi sebagai "cetak biru" (blueprint) dari sebuah halaman. Wireframe tidak peduli dengan estetika (warna, font, atau gambar).</p>
+      <ul>
+        <li><strong>Fokus Utama:</strong> Struktur, tata letak (layout), penempatan konten, dan fungsionalitas dasar.</li>
+        <li><strong>Analogi:</strong> Denah arsitektur sebuah rumah.</li>
+        <li><strong>Tujuan:</strong> Mengatur informasi dan menyepakati alur dasar dengan cepat dan murah.</li>
+      </ul>
+      
+      <h3>2. Mockup (Desain Visual)</h3>
+      <p>Mockup adalah desain berfidelitas tinggi (high-fidelity) yang bersifat statis. Ini adalah gambaran tentang bagaimana produk akhir akan <strong>terlihat</strong> secara visual.</p>
+      <ul>
+        <li><strong>Fokus Utama:</strong> Desain UI. Ini mencakup palet warna, tipografi, ikon, gambar, dan spasi (whitespace).</li>
+        <li><strong>Analogi:</strong> "Render 3D" fotorealistik dari rumah yang sudah jadi.</li>
+        <li><strong>Tujuan:</strong> Memvisualisasikan tampilan dan nuansa (look and feel) akhir produk.</li>
+      </ul>
+      
+      <h3>3. Prototype (Purwarupa Interaktif)</h3>
+      <p>Prototype adalah simulasi berfidelitas tinggi (high-fidelity) dari produk akhir. Ini adalah gabungan dari Mockup (visual) dengan <strong>interaktivitas</strong>.</p>
+      <p>Pengguna dapat mengklik tombol, melihat transisi halaman, dan berinteraksi dengan komponen seolah-olah itu adalah produk jadi.</p>
+      <ul>
+        <li><strong>Fokus Utama:</strong> Desain UX. Ini mensimulasikan alur pengguna (user flow) dan pengalaman pengguna.</li>
+        <li><strong>Analogi:</strong> "Maket rumah" interaktif di mana Anda bisa membuka pintu dan menyalakan lampu.</li>
+        <li><strong>Tujuan:</strong> Menguji ketergunaan (usability) dan alur desain dengan pengguna nyata sebelum diserahkan ke developer.</li>
+      </ul>
+    `,
+    },
   ],
 };

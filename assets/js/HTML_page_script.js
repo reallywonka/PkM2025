@@ -321,6 +321,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const lessonId = e.target.dataset.lesson;
       renderContent(lessonId);
       contentArea.scrollTo(0, 0);
+      sidebar.style.scrollBehavior = "auto";
+      sidebar.scrollTop = 0;
+      sidebar.style.scrollBehavior = "smooth";
     }
   });
 
