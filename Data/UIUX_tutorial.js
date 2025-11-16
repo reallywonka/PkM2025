@@ -272,5 +272,70 @@ body {
       </ul>
     `,
     },
+    {
+      id: "design-ref-user-flow",
+      title: "User Flow (Alur Pengguna)",
+      content: `
+          <h1>Referensi User Flow (Alur Pengguna)</h1>
+          <p>User Flow adalah diagram visual (diagram alir) yang memetakan langkah-langkah yang diambil pengguna untuk menyelesaikan sebuah tugas spesifik di dalam aplikasi Anda.</p>
+          <p>Ini dibuat pada fase <strong>Ideate (Ideasi)</strong>, sebelum membuat wireframe mendetail. Tujuannya adalah untuk memikirkan "alur" sebelum memikirkan "layar".</p>
+          
+          <h3>Komponen Dasar User Flow</h3>
+          <table class="ref-table">
+            <thead><tr><th>Bentuk</th><th>Nama</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Persegi Panjang (Kotak)</strong></td><td>Layar / Halaman</td><td>Mewakili satu layar atau halaman yang dilihat pengguna (misal: "Halaman Beranda", "Halaman Login").</td></tr>
+              <tr><td><strong>Belah Ketupat (Diamond)</strong></td><td>Keputusan / Cabang</td><td>Mewakili titik di mana pengguna harus membuat pilihan (misal: "Sudah Punya Akun?", "Login Berhasil?").</td></tr>
+              <tr><td><strong>Oval / Kapsul</strong></td><td>Titik Mulai / Selesai</td><td>Menandakan awal atau akhir dari sebuah alur (misal: "Mulai", "Selesai", "Keluar").</td></tr>
+              <tr><td><strong>Panah</strong></td><td>Aksi / Arah</td><td>Menghubungkan bentuk-bentuk dan menunjukkan arah pergerakan pengguna.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box">
+            <h3>Perbedaan Sitemap vs. User Flow</h3>
+            <p><strong>Sitemap (Peta Situs)</strong> adalah tentang <strong>struktur informasi</strong> (hierarki halaman). Ini seperti daftar isi buku.</p>
+            <p><strong>User Flow</strong> adalah tentang <strong>pergerakan dan aksi</strong> (langkah-langkah). Ini seperti satu bab spesifik yang menunjukkan cara melakukan sesuatu.</p>
+          </div>
+        `,
+    },
+    {
+      id: "design-ref-accessibility-wcag",
+      title: "Checklist Aksesibilitas (WCAG)",
+      content: `
+          <h1>Referensi Checklist Aksesibilitas (WCAG)</h1>
+          <p>Aksesibilitas (a11y) memastikan produk Anda dapat digunakan oleh semua orang, termasuk penyandang disabilitas. Standar utamanya disebut <strong>WCAG</strong> (Web Content Accessibility Guidelines).</p>
+          <p>Berikut adalah beberapa poin referensi cepat yang paling umum (dikenal sebagai <strong>POUR</strong>):</p>
+          
+          <h3>1. Perceivable (Dapat Dipersepsi)</h3>
+          <p>Informasi harus dapat disajikan kepada pengguna dengan cara yang dapat mereka pahami.</p>
+          <ul>
+            <li><strong>Alt Text:</strong> Berikan teks alternatif (<code>alt</code>) yang deskriptif untuk semua gambar penting.</li>
+            <li><strong>Kontras Warna:</strong> Pastikan rasio kontras antara teks dan latar belakang mencukupi (minimal 4.5:1 untuk teks normal).</li>
+            <li><strong>Transkrip:</strong> Sediakan transkrip atau teks (captions) untuk konten audio dan video.</li>
+          </ul>
+
+          <h3>2. Operable (Dapat Dioperasikan)</h3>
+          <p>Antarmuka (UI) harus dapat dioperasikan. Pengguna harus bisa menavigasi.</p>
+          <ul>
+            <li><strong>Navigasi Keyboard:</strong> Pastikan semua fungsionalitas (link, tombol, form) dapat diakses dan dioperasikan hanya dengan menggunakan keyboard (tombol Tab).</li>
+            <li><strong>Target Klik:</strong> Pastikan tombol dan link memiliki area klik yang cukup besar (minimal 44x44px).</li>
+            <li><strong>Jangan Andalkan Waktu:</strong> Beri pengguna cukup waktu untuk membaca dan menggunakan konten.</li>
+          </ul>
+
+          <h3>3. Understandable (Dapat Dipahami)</h3>
+          <p>Informasi dan operasi UI harus mudah dipahami.</p>
+          <ul>
+            <li><strong>Label yang Jelas:</strong> Semua input formulir harus memiliki <code>&lt;label&gt;</code> yang jelas.</li>
+            <li><strong>Pesan Error:</strong> Pesan kesalahan harus jelas, spesifik, dan memberi tahu cara memperbaikinya.</li>
+            <li><strong>Konsistensi:</strong> Gunakan navigasi dan penamaan yang konsisten di seluruh situs.</li>
+          </ul>
+
+          <h3>4. Robust (Kuat)</h3>
+          <p>Konten harus cukup kuat untuk dapat ditafsirkan secara andal oleh berbagai macam teknologi bantu (seperti screen reader).</p>
+          <ul>
+            <li><strong>HTML Semantik:</strong> Gunakan tag HTML sesuai maknanya (<code>&lt;nav&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;main&gt;</code>), jangan hanya mengandalkan <code>&lt;div&gt;</code>.</li>
+          </ul>
+        `,
+    },
   ],
 };

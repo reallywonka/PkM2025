@@ -148,7 +148,7 @@ export const References = {
             </tbody>
           </table>
           <h3>Atribut Umum</h3>
-           <table class="ref-table">
+          <table class="ref-table">
             <thead><tr><th>Atribut</th><th>Tag</th><th>Deskripsi</th></tr></thead>
             <tbody>
               <tr><td><code>controls</code></td><td><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></td><td>Menampilkan kontrol pemutar standar (play, pause, volume).</td></tr>
@@ -159,6 +159,46 @@ export const References = {
               <tr><td><code>type</code></td><td><code>&lt;source&gt;</code></td><td>Menentukan tipe MIME dari file media (misal: <code>video/mp4</code> atau <code>audio/mpeg</code>).</td></tr>
             </tbody>
           </table>
+        `,
+      },
+      {
+        id: "html-ref-head-advanced",
+        title: "Tag <head>",
+        content: `
+          <h1>Referensi Tag <code>&lt;head&gt;</code> Lanjutan</h1>
+          <p>Selain <code>&lt;title&gt;</code> dan <code>&lt;meta&gt;</code> dasar, <code>&lt;head&gt;</code> adalah tempat untuk menautkan ikon situs (favicon) dan metadata untuk media sosial (Open Graph).</p>
+          
+          <h3>Favicon (Ikon Situs)</h3>
+          <p>Favicon adalah ikon kecil yang muncul di tab browser, bookmark, dan hasil pencarian. Ini adalah bagian penting dari identitas brand Anda.</p>
+          <pre>
+&lt;!-- Cara modern paling sederhana (taruh favicon.ico di root) --&gt;
+&lt;link rel="icon" href="/favicon.ico" sizes="any"&gt;
+
+&lt;!-- Atau tautkan PNG --&gt;
+&lt;link rel="icon" href="/icon.png" type="image/png"&gt;
+
+&lt;!-- Apple Touch Icon (untuk saat di-bookmark di iPhone) --&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
+          </pre>
+
+          <h3>Meta Tag Open Graph (Untuk Media Sosial)</h3>
+          <p>Pernahkah Anda membagikan link di WhatsApp atau Twitter dan melihat pratinjau (preview) cantik dengan judul, deskripsi, dan gambar? Itu diatur oleh meta tag <strong>Open Graph (OG)</strong>.</p>
+          <pre>
+&lt;!-- OG: Tipe konten --&gt;
+&lt;meta property="og:type" content="website"&gt;
+
+&lt;!-- OG: Judul yang akan tampil (lebih baik dari &lt;title&gt;) --&gt;
+&lt;meta property="og:title" content="7 IN 1 Pemrograman Web Untuk Pemula"&gt;
+
+&lt;!-- OG: Deskripsi singkat --&gt;
+&lt;meta property="og:description" content="Belajar HTML, CSS, dan JavaScript dari dasar."&gt;
+
+&lt;!-- OG: Gambar thumbnail (sangat penting!) --&gt;
+&lt;meta property="og:image" content="https://www.url-situs-anda.com/gambar-preview.jpg"&gt;
+
+&lt;!-- OG: URL dari halaman ini --&gt;
+&lt;meta property="og:url" content="https://www.url-situs-anda.com/halaman-ini.html"&gt;
+          </pre>
         `,
       },
     ],
@@ -334,6 +374,57 @@ export const References = {
               <tr><td><code>::placeholder</code></td><td>Menata teks placeholder di dalam elemen <code>&lt;input&gt;</code> atau <code>&lt;textarea&gt;</code>.</td></tr>
             </tbody>
           </table>
+        `,
+      },
+      {
+        id: "css-ref-transitions",
+        title: "Transisi & Animasi",
+        content: `
+          <h1>Referensi Transisi & Animasi</h1>
+          <p>CSS memungkinkan Anda menganimasikan perubahan properti secara mulus (smooth).</p>
+          
+          <h3>Transisi (<code>transition</code>)</h3>
+          <p>Transisi digunakan untuk menganimasikan perubahan properti saat terjadi perubahan status (misalnya saat <code>:hover</code>).</p>
+          <table class="ref-table">
+            <thead><tr><th>Properti</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>transition-property</code></td><td>Properti CSS yang ingin dianimasikan (misal: <code>background-color</code>, <code>width</code>, <code>all</code>).</td></tr>
+              <tr><td><code>transition-duration</code></td><td>Durasi total animasi (misal: <code>0.3s</code> atau <code>300ms</code>).</td></tr>
+              <tr><td><code>transition-timing-function</code></td><td>Kurva kecepatan animasi (misal: <code>linear</code>, <code>ease-in</code>, <code>ease-out</code>).</td></tr>
+              <tr><td><code>transition-delay</code></td><td>Waktu tunda sebelum animasi dimulai.</td></tr>
+            </tbody>
+          </table>
+          <pre>
+/* Shorthand (Cara Cepat) */
+.tombol {
+  background-color: blue;
+  transition: background-color 0.4s ease;
+}
+
+.tombol:hover {
+  background-color: red; /* <-- Perubahan ini akan dianimasikan */
+}
+          </pre>
+
+          <h3>Animasi (<code>@keyframes</code>)</h3>
+          <p><code>@keyframes</code> digunakan untuk animasi yang lebih kompleks yang berjalan sendiri, tanpa perlu <code>:hover</code>.</p>
+          <pre>
+/* 1. Definisikan animasinya */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 2. Terapkan ke elemen */
+.box-muncul {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+          </pre>
         `,
       },
     ],
@@ -529,6 +620,56 @@ tombol.addEventListener("click", saatDiklik);
           </div>
         `,
       },
+      {
+        id: "js-ref-async-fetch",
+        title: "Async/Await & Fetch API",
+        content: `
+          <h1>Referensi Async/Await & Fetch API</h1>
+          <p>JavaScript modern sangat bergantung pada operasi Asinkron (Asynchronous), terutama untuk mengambil data dari server atau API.</p>
+          
+          <h3><code>fetch()</code></h3>
+          <p><code>fetch()</code> adalah fungsi bawaan browser modern untuk membuat permintaan jaringan (HTTP request) dan mengambil data (seperti JSON) dari sebuah URL.</p>
+          
+          <h3><code>async / await</code></h3>
+          <p><code>async</code> dan <code>await</code> adalah sintaks modern untuk menangani kode asinkron (seperti <code>fetch</code>) agar terlihat seperti kode sinkron biasa, membuatnya jauh lebih mudah dibaca daripada <code>.then()</code>.</p>
+          <ul>
+            <li><code><strong>async</strong></code>: Ditulis sebelum sebuah fungsi (<code>async function ...</code>) untuk menandakan bahwa fungsi tersebut mengandung operasi asinkron.</li>
+            <li><code><strong>await</strong></code>: Hanya dapat digunakan di dalam <code>async function</code>. Ini "menjeda" eksekusi fungsi sampai operasi (Promise) selesai dan mengembalikan hasilnya.</li>
+          </ul>
+
+          <h3>Contoh Umum: Mengambil Data dari API</h3>
+          <pre>
+// 1. Definisikan URL API
+const API_URL = 'https://api.example.com/data/1';
+
+// 2. Buat sebuah 'async function'
+async function ambilData() {
+  try {
+    // 3. 'await' fetch() untuk mengambil data
+    const response = await fetch(API_URL);
+    
+    // 4. Periksa jika request gagal (misal: error 404)
+    if (!response.ok) {
+      throw new Error('Gagal mengambil data!');
+    }
+
+    // 5. 'await' konversi response menjadi JSON
+    const data = await response.json();
+    
+    // 6. Gunakan datanya
+    console.log(data);
+
+  } catch (error) {
+    // 7. Tangani jika terjadi kesalahan
+    console.error('Terjadi kesalahan:', error);
+  }
+}
+
+// 8. Panggil fungsinya
+ambilData();
+          </pre>
+        `,
+      },
     ],
   },
 
@@ -639,6 +780,94 @@ tombol.addEventListener("click", saatDiklik);
               <tr><td><strong>Hierarki</strong></td><td>Menggunakan ukuran font (<code>font-size</code>) dan ketebalan (<code>font-weight</code>) yang berbeda untuk membedakan judul, sub-judul, dan paragraf.</td></tr>
               <tr><td><strong>Line Height (Tinggi Baris)</strong></td><td>Jarak vertikal antar baris teks. Aturan umumnya adalah 1.4x hingga 1.6x dari ukuran font untuk keterbacaan yang baik.</td></tr>
               <tr><td><strong>Line Length (Panjang Baris)</strong></td><td>Jumlah karakter per baris. Teks yang terlalu lebar sulit dibaca. Usahakan 45-75 karakter per baris untuk paragraf.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-user-flow",
+        title: "User Flow (Alur Pengguna)",
+        content: `
+          <h1>Referensi User Flow (Alur Pengguna)</h1>
+          <p>User Flow adalah diagram visual (diagram alir) yang memetakan langkah-langkah yang diambil pengguna untuk menyelesaikan sebuah tugas spesifik di dalam aplikasi Anda.</p>
+          <p>Ini dibuat pada fase <strong>Ideate (Ideasi)</strong>, sebelum membuat wireframe mendetail. Tujuannya adalah untuk memikirkan "alur" sebelum memikirkan "layar".</p>
+          
+          <h3>Komponen Dasar User Flow</h3>
+          <table class="ref-table">
+            <thead><tr><th>Bentuk</th><th>Nama</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Persegi Panjang (Kotak)</strong></td><td>Layar / Halaman</td><td>Mewakili satu layar atau halaman yang dilihat pengguna (misal: "Halaman Beranda", "Halaman Login").</td></tr>
+              <tr><td><strong>Belah Ketupat (Diamond)</strong></td><td>Keputusan / Cabang</td><td>Mewakili titik di mana pengguna harus membuat pilihan (misal: "Sudah Punya Akun?", "Login Berhasil?").</td></tr>
+              <tr><td><strong>Oval / Kapsul</strong></td><td>Titik Mulai / Selesai</td><td>Menandakan awal atau akhir dari sebuah alur (misal: "Mulai", "Selesai", "Keluar").</td></tr>
+              <tr><td><strong>Panah</strong></td><td>Aksi / Arah</td><td>Menghubungkan bentuk-bentuk dan menunjukkan arah pergerakan pengguna.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box">
+            <h3>Perbedaan Sitemap vs. User Flow</h3>
+            <p><strong>Sitemap (Peta Situs)</strong> adalah tentang <strong>struktur informasi</strong> (hierarki halaman). Ini seperti daftar isi buku.</p>
+            <p><strong>User Flow</strong> adalah tentang <strong>pergerakan dan aksi</strong> (langkah-langkah). Ini seperti satu bab spesifik yang menunjukkan cara melakukan sesuatu.</p>
+          </div>
+        `,
+      },
+      {
+        id: "design-ref-accessibility-wcag",
+        title: "Checklist Aksesibilitas (WCAG)",
+        content: `
+          <h1>Referensi Checklist Aksesibilitas (WCAG)</h1>
+          <p>Aksesibilitas (a11y) memastikan produk Anda dapat digunakan oleh semua orang, termasuk penyandang disabilitas. Standar utamanya disebut <strong>WCAG</strong> (Web Content Accessibility Guidelines).</p>
+          <p>Berikut adalah beberapa poin referensi cepat yang paling umum (dikenal sebagai <strong>POUR</strong>):</p>
+          
+          <h3>1. Perceivable (Dapat Dipersepsi)</h3>
+          <p>Informasi harus dapat disajikan kepada pengguna dengan cara yang dapat mereka pahami.</p>
+          <ul>
+            <li><strong>Alt Text:</strong> Berikan teks alternatif (<code>alt</code>) yang deskriptif untuk semua gambar penting.</li>
+            <li><strong>Kontras Warna:</strong> Pastikan rasio kontras antara teks dan latar belakang mencukupi (minimal 4.5:1 untuk teks normal).</li>
+            <li><strong>Transkrip:</strong> Sediakan transkrip atau teks (captions) untuk konten audio dan video.</li>
+          </ul>
+
+          <h3>2. Operable (Dapat Dioperasikan)</h3>
+          <p>Antarmuka (UI) harus dapat dioperasikan. Pengguna harus bisa menavigasi.</p>
+          <ul>
+            <li><strong>Navigasi Keyboard:</strong> Pastikan semua fungsionalitas (link, tombol, form) dapat diakses dan dioperasikan hanya dengan menggunakan keyboard (tombol Tab).</li>
+            <li><strong>Target Klik:</strong> Pastikan tombol dan link memiliki area klik yang cukup besar (minimal 44x44px).</li>
+            <li><strong>Jangan Andalkan Waktu:</strong> Beri pengguna cukup waktu untuk membaca dan menggunakan konten.</li>
+          </ul>
+
+          <h3>3. Understandable (Dapat Dipahami)</h3>
+          <p>Informasi dan operasi UI harus mudah dipahami.</p>
+          <ul>
+            <li><strong>Label yang Jelas:</strong> Semua input formulir harus memiliki <code>&lt;label&gt;</code> yang jelas.</li>
+            <li><strong>Pesan Error:</strong> Pesan kesalahan harus jelas, spesifik, dan memberi tahu cara memperbaikinya.</li>
+            <li><strong>Konsistensi:</strong> Gunakan navigasi dan penamaan yang konsisten di seluruh situs.</li>
+          </ul>
+
+          <h3>4. Robust (Kuat)</h3>
+          <p>Konten harus cukup kuat untuk dapat ditafsirkan secara andal oleh berbagai macam teknologi bantu (seperti screen reader).</p>
+          <ul>
+            <li><strong>HTML Semantik:</strong> Gunakan tag HTML sesuai maknanya (<code>&lt;nav&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;main&gt;</code>), jangan hanya mengandalkan <code>&lt;div&gt;</code>.</li>
+          </ul>
+        `,
+      },
+      {
+        id: "design-ref-journey-map",
+        title: "User Journey Map",
+        content: `
+          <h1>Referensi User Journey Map (Peta Perjalanan Pengguna)</h1>
+          <p><strong>User Journey Map</strong> adalah visualisasi dari pengalaman yang dilalui pengguna dari waktu ke waktu saat berinteraksi dengan produk atau layanan Anda untuk mencapai tujuan tertentu.</p>
+          <p>Berbeda dengan <strong>User Flow</strong> yang fokus pada "langkah dan layar", Journey Map fokus pada <strong>"pengalaman dan emosi"</strong> pengguna.</p>
+          
+          <h3>Kolom Umum dalam Journey Map</h3>
+          <p>Peta perjalanan biasanya disajikan dalam bentuk tabel atau diagram dengan beberapa komponen utama:</p>
+          <table class="ref-table">
+            <thead><tr><th>Komponen</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Fase (Phases)</strong></td><td>Tahapan utama dari perjalanan (misal: Kesadaran -> Pertimbangan -> Pembelian -> Penggunaan -> Loyalitas).</td></tr>
+              <tr><td><strong>Aksi (Actions)</strong></td><td>Apa yang dilakukan pengguna di setiap fase? (Misal: "Mencari di Google", "Membaca review", "Klik tombol 'Beli'").</td></tr>
+              <tr><td><strong>Pikiran (Thoughts)</strong></td><td>Apa yang dipikirkan pengguna di setiap aksi? (Misal: "Apakah ini aman?", "Harganya mahal", "Kok lama sekali loadingnya?").</td></tr>
+              <tr><td><strong>Emosi (Emotions)</strong></td><td>Bagaimana perasaan pengguna? (Biasanya digambarkan sebagai garis: Senang 😊, Netral 😐, Frustrasi 😠).</td></tr>
+              <tr><td><strong>Titik Sakit (Pain Points)</strong></td><td>Di mana pengguna mengalami masalah atau frustrasi? Ini adalah area di mana Anda harus fokus memperbaiki.</td></tr>
+              <tr><td><strong>Peluang (Opportunities)</strong></td><td>Ide-ide yang muncul untuk meningkatkan pengalaman di titik sakit tersebut.</td></tr>
             </tbody>
           </table>
         `,
