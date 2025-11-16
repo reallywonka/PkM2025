@@ -718,3 +718,32 @@ body.dark-mode .exc-run-btn {
     border-bottom: 1px solid var(--border-color);
   }
 }
+
+
+
+/* Tombol Navigasi Halaman (Next/Prev) */
+.page-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.page-nav-btn {
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--bs-black);
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.page-nav-btn:hover {
+  background-color: var(--sidebar-bg);
+}
+
+body.dark-mode .page-nav-btn:hover {
+  background-color: var(--bs-neowhite);
+}

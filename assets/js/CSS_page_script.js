@@ -167,11 +167,45 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+
+      // Cari Tahu Index Materi Saat Ini
+      const currentIndex = currentData.lessons.findIndex(
+        (l) => l.id === lesson.id
+      );
+      const previousLesson = currentData.lessons[currentIndex - 1];
+      const nextLesson = currentData.lessons[currentIndex + 1];
+
       if (lesson) {
         contentArea.innerHTML = lesson.content;
         addCopyButtonsToCodeBlocks();
         updateActiveSidebarLink(lesson.id);
         initializeInteractiveExercises();
+
+        // Buat HTML untuk Tombol Navigasi
+        let navHtml = '<div class="page-nav-buttons">';
+
+        // Tombol Previous
+        if (previousLesson) {
+          navHtml += `<a href="#" class="page-nav-btn prev" data-lesson="${previousLesson.id}">
+                        ${previousLesson.title}
+                      </a>`;
+        } else {
+          navHtml += "<div></div>"; // Placeholder untuk alignment
+        }
+
+        // Tombol Next
+        if (nextLesson) {
+          navHtml += `<a href="#" class="page-nav-btn next" data-lesson="${nextLesson.id}">
+                        ${nextLesson.title}
+                      </a>`;
+        } else {
+          navHtml += "<div></div>"; // Placeholder untuk alignment
+        }
+
+        navHtml += "</div>";
+        // Tambahkan tombol ke akhir contentArea
+        contentArea.insertAdjacentHTML("beforeend", navHtml);
+
       } else {
         contentArea.innerHTML =
           "<h1>Materi tidak ditemukan</h1><p>Data untuk topik ini sepertinya kosong.</p>";
@@ -326,6 +360,20 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.style.scrollBehavior = "auto";
       sidebar.scrollTop = 0;
       sidebar.style.scrollBehavior = "smooth";
+    }
+  });
+
+  // Event listener untuk tombol Next/Prev di dalam konten
+  contentArea.addEventListener("click", (e) => {
+    // Cari apakah yang diklik adalah tombol navigasi
+    const navButton = e.target.closest(".page-nav-btn");
+    if (navButton) {
+      e.preventDefault(); // Mencegah link '#' bekerja
+      const lessonId = navButton.dataset.lesson;
+      if (lessonId) {
+        renderContent(lessonId);
+        contentArea.scrollTo(0, 0); // Scroll ke atas halaman
+      }
     }
   });
 
