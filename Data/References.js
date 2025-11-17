@@ -100,7 +100,7 @@ export const References = {
             </tbody>
           </table>
           <h3>Atribut <code>type</code> yang Umum untuk <code>&lt;input&gt;</code></h3>
-           <table class="ref-table">
+          <table class="ref-table">
             <thead><tr><th>Type</th><th>Deskripsi</th></tr></thead>
             <tbody>
               <tr><td><code>type="text"</code></td><td>Kotak input teks satu baris (default).</td></tr>
@@ -198,6 +198,128 @@ export const References = {
 
 &lt;!-- OG: URL dari halaman ini --&gt;
 &lt;meta property="og:url" content="https://www.url-situs-anda.com/halaman-ini.html"&gt;
+          </pre>
+        `,
+      },
+      {
+        id: "html-ref-input-types",
+        title: "Tipe Input HTML5",
+        content: `
+          <h1>Referensi Tipe <code>&lt;input&gt;</code> HTML5</h1>
+          <p>Selain <code>"text"</code> dan <code>"password"</code>, HTML5 memperkenalkan banyak tipe input baru yang menyediakan fungsionalitas dan validasi bawaan dari browser, terutama di perangkat seluler.</p>
+          <table class="ref-table">
+            <thead><tr><th>Atribut <code>type</code></th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>type="email"</code></td><td>Memvalidasi bahwa input harus berisi alamat email yang valid.</td></tr>
+              <tr><td><code>type="number"</code></td><td>Memunculkan input angka (seringkali dengan panah atas/bawah) dan keyboard numerik di HP.</td></tr>
+              <tr><td><code>type="date"</code></td><td>Memunculkan pemilih tanggal (datepicker) bawaan browser.</td></tr>
+              <tr><td><code>type="color"</code></td><td>Memunculkan pemilih warna (color picker) bawaan browser.</td></tr>
+              <tr><td><code>type="range"</code></td><td>Membuat slider (penggeser) untuk memilih nilai dalam rentang tertentu.</td></tr>
+              <tr><td><code>type="tel"</code></td><td>Memunculkan keyboard telepon di perangkat seluler (tidak memvalidasi).</td></tr>
+              <tr><td><code>type="search"</code></td><td>Secara fungsional mirip dengan <code>text</code>, tetapi secara visual sering menyertakan tombol 'X' untuk menghapus.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "html-ref-table-span",
+        title: "Atribut Tabel (Colspan & Rowspan)",
+        content: `
+          <h1>Referensi Atribut Tabel (<code>colspan</code> & <code>rowspan</code>)</h1>
+          <p>Atribut ini digunakan di dalam tag <code>&lt;th&gt;</code> atau <code>&lt;td&gt;</code> untuk "menggabungkan" beberapa sel menjadi satu.</p>
+          <table class="ref-table">
+            <thead><tr><th>Atribut</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>colspan="N"</code></td><td>Menggabungkan sel secara <strong>horizontal</strong> (kolom). Sel akan mengambil ruang sebanyak N kolom.</td></tr>
+              <tr><td><code>rowspan="N"</code></td><td>Menggabungkan sel secara <strong>vertikal</strong> (baris). Sel akan mengambil ruang sebanyak N baris.</td></tr>
+            </tbody>
+          </table>
+          <h3>Contoh <code>colspan</code></h3>
+          <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th colspan="2"&gt;Nama Lengkap&lt;/th&gt; &lt;!-- Menggabung 2 kolom --&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Budi&lt;/td&gt;
+    &lt;td&gt;Santoso&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+          </pre>
+          <h3>Contoh <code>rowspan</code></h3>
+          <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nama&lt;/th&gt;
+    &lt;td&gt;Budi&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2"&gt;Telepon&lt;/th&gt; &lt;!-- Menggabung 2 baris --&gt;
+    &lt;td&gt;0812345&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;0876543&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+          </pre>
+        `,
+      },
+      {
+        id: "html-ref-data-attr",
+        title: "Atribut data-*",
+        content: `
+          <h1>Referensi Atribut <code>data-*</code> (Data Attributes)</h1>
+          <p>Atribut <code>data-*</code> adalah atribut global khusus yang memungkinkan Anda menyimpan informasi atau data kustom langsung pada elemen HTML.</p>
+          <p>Sintaksnya selalu diawali dengan <code>data-</code>, diikuti oleh nama yang Anda inginkan (misal: <code>data-id</code>, <code>data-nama-user</code>).</p>
+          <p>Atribut ini sangat berguna untuk "mengaitkan" data dari JavaScript ke elemen HTML tanpa harus membuat ID atau class yang rumit.</p>
+          
+          <h3>Contoh di HTML</h3>
+          <pre>
+&lt;ul&gt;
+  &lt;li data-id="101" data-kategori="buah"&gt;Apel&lt;/li&gt;
+  &lt;li data-id="102" data-kategori="sayur"&gt;Bayam&lt;/li&gt;
+&lt;/ul&gt;
+          </pre>
+
+          <h3>Cara Mengakses di CSS</h3>
+          <p>Anda dapat menata elemen berdasarkan atribut data menggunakan selektor atribut standar.</p>
+          <pre>
+/* Memilih semua elemen dengan data-kategori 'buah' */
+[data-kategori="buah"] {
+  color: red;
+}
+          </pre>
+
+          <h3>Cara Mengakses di JavaScript</h3>
+          <p>Cara termudah adalah menggunakan properti <code>.dataset</code>.</p>
+          <pre>
+let item = document.querySelector('li[data-id="101"]');
+
+console.log(item.dataset.id);       // Output: "101"
+console.log(item.dataset.kategori); // Output: "buah"
+          </pre>
+        `,
+      },
+      {
+        id: "html-ref-iframe-attr",
+        title: "Atribut <iframe> Lanjutan",
+        content: `
+          <h1>Referensi Atribut <code>&lt;iframe&gt;</code> Lanjutan</h1>
+          <p>Selain <code>src</code> dan <code>title</code>, ada atribut modern yang sangat penting untuk keamanan dan performa <code>&lt;iframe&gt;</code>.</p>
+          <table class="ref-table">
+            <thead><tr><th>Atribut</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>loading="lazy"</code></td><td><strong>(Performa)</strong> Mencegah iframe (misal: video YouTube) dimuat oleh browser sampai pengguna melakukan scroll mendekati iframe tersebut. Ini sangat mempercepat waktu muat halaman.</td></tr>
+              <tr><td><code>sandbox</code></td><td><strong>(Keamanan)</strong> Menerapkan serangkaian batasan keamanan pada konten di dalam iframe. Ini mencegah konten di dalam iframe melakukan hal-hal berbahaya (seperti menjalankan skrip, mengirim formulir, atau membuka pop-up).</td></tr>
+              <tr><td><code>allowfullscreen</code></td><td>Secara eksplisit mengizinkan konten di dalam iframe (seperti video) untuk masuk ke mode layar penuh.</td></tr>
+            </tbody>
+          </table>
+          <h3>Contoh <code>sandbox</code></h3>
+          <p>Nilai atribut <code>sandbox</code> sering dikosongkan untuk menerapkan *semua* batasan, atau diisi dengan pengecualian yang diizinkan.</p>
+          <pre>
+&lt;iframe src="..." title="..." sandbox&gt;&lt;/iframe&gt;
+
+&lt;iframe src="..." title="..." sandbox="allow-scripts"&gt;&lt;/iframe&gt;
           </pre>
         `,
       },
@@ -423,6 +545,115 @@ export const References = {
 .box-muncul {
   animation-name: fadeIn;
   animation-duration: 2s;
+}
+          </pre>
+        `,
+      },
+      {
+        id: "css-ref-specificity",
+        title: "Hierarki & Specificity",
+        content: `
+          <h1>Referensi Hierarki CSS (Specificity)</h1>
+          <p>Apa yang terjadi jika dua aturan CSS menargetkan elemen yang sama? <strong>Specificity (Kekhususan)</strong> adalah "skor" yang dihitung oleh browser untuk menentukan aturan mana yang akan menang (diterapkan).</p>
+          <p>Aturan dengan skor tertinggi akan selalu menang.</p>
+          
+          <h3>Hierarki Skor (dari Tertinggi ke Terendah)</h3>
+          <table class="ref-table">
+            <thead><tr><th>Tipe Selektor</th><th>Skor (Contoh)</th><th>Contoh</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1. Style Inline</strong></td><td>(Skor: 1,0,0,0)</td><td><code>&lt;p style="color: red;"&gt;</code></td></tr>
+              <tr><td><strong>2. ID</strong></td><td>(Skor: 0,1,0,0)</td><td><code>#judul { ... }</code></td></tr>
+              <tr><td><strong>3. Class, Pseudo-class, Atribut</strong></td><td>(Skor: 0,0,1,0)</td><td><code>.tombol</code>, <code>:hover</code>, <code>[type="text"]</code></td></tr>
+              <tr><td><strong>4. Elemen (Tag), Pseudo-element</strong></td><td>(Skor: 0,0,0,1)</td><td><code>p { ... }</code>, <code>::before</code></td></tr>
+            </tbody>
+          </table>
+          
+          <div class="tip-box">
+            <h3>Contoh Perhitungan</h3>
+            <ul>
+              <li><code>p.info</code> (1 tag, 1 class) = Skor 0,0,1,1</li>
+              <li><code>#sidebar a</code> (1 ID, 1 tag) = Skor 0,1,0,1</li>
+            </ul>
+            <p><code>#sidebar a</code> akan <strong>menang</strong> melawan <code>p.info</code> karena memiliki skor ID yang lebih tinggi.</p>
+            <p><strong>Pengecualian:</strong> <code>!important</code> akan mengalahkan semua aturan di atas, tetapi penggunaannya sangat tidak disarankan karena merusak hierarki.</p>
+          </div>
+        `,
+      },
+      {
+        id: "css-ref-text-styling",
+        title: "Properti Teks Lanjutan",
+        content: `
+          <h1>Referensi Properti Teks Lanjutan</h1>
+          <p>Properti-properti ini memberikan kontrol lebih rinci terhadap tampilan teks di luar <code>font-size</code> dan <code>color</code>.</p>
+          <table class="ref-table">
+            <thead><tr><th>Properti</th><th>Deskripsi</th><th>Contoh Nilai</th></tr></thead>
+            <tbody>
+              <tr><td><code>line-height</code></td><td>Mengatur jarak vertikal (spasi) antar baris teks. Sangat penting untuk keterbacaan.</td><td><code>1.6</code>, <code>150%</code>, <code>24px</code></td></tr>
+              <tr><td><code>letter-spacing</code></td><td>Mengatur spasi antar karakter (huruf).</td><td><code>0.5px</code>, <code>-1px</code></td></tr>
+              <tr><td><code>word-spacing</code></td><td>Mengatur spasi antar kata.</td><td><code>4px</code></td></tr>
+              <tr><td><code>text-transform</code></td><td>Mengubah kapitalisasi teks secara otomatis.</td><td><code>uppercase</code>, <code>lowercase</code>, <code>capitalize</code></td></tr>
+              <tr><td><code>text-decoration</code></td><td>Menambah atau menghapus dekorasi garis pada teks.</td><td><code>none</code> (biasa untuk link), <code>underline</code>, <code>line-through</code></td></tr>
+              <tr><td><code>white-space</code></td><td>Mengontrol bagaimana spasi dan jeda baris (line break) di dalam elemen ditangani.</td><td><code>nowrap</code> (mencegah teks turun baris)</td></tr>
+              <tr><td><code>text-overflow</code></td><td>Menentukan bagaimana teks yang "meluap" (overflow) dari kotaknya ditampilkan.</td><td><code>ellipsis</code> (menampilkan "...").</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "css-ref-combinators",
+        title: "Selektor Kombinasi (Combinators)",
+        content: `
+          <h1>Referensi Selektor Kombinasi (Combinators)</h1>
+          <p>Kombinasi adalah karakter khusus dalam CSS yang digunakan untuk memilih elemen berdasarkan hubungannya dengan elemen lain.</p>
+          <table class="ref-table">
+            <thead><tr><th>Simbol</th><th>Nama</th><th>Contoh</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td>(spasi)</td><td><strong>Descendant (Keturunan)</strong></td><td><code>div p</code></td><td>Memilih semua <code>&lt;p&gt;</code> yang berada <strong>di dalam</strong> <code>&lt;div&gt;</code>, tidak peduli seberapa dalam.</td></tr>
+              <tr><td><code>&gt;</code></td><td><strong>Child (Anak Langsung)</strong></td><td><code>div > p</code></td><td>Memilih <code>&lt;p&gt;</code> yang merupakan <strong>anak langsung</strong> dari <code>&lt;div&gt;</code>.</td></tr>
+              <tr><td><code>+</code></td><td><strong>Adjacent Sibling (Saudara Dekat)</strong></td><td><code>h1 + p</code></td><td>Memilih <code>&lt;p&gt;</code> yang berada <strong>tepat setelah</strong> <code>&lt;h1&gt;</code> (harus bersaudara/sejajar).</td></tr>
+              <tr><td><code>~</code></td><td><strong>General Sibling (Saudara Umum)</strong></td><td><code>h1 ~ p</code></td><td>Memilih <strong>semua</strong> <code>&lt;p&gt;</code> yang datang <strong>setelah</strong> <code>&lt;h1&gt;</code> (harus bersaudara/sejajar).</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "css-ref-background-adv",
+        title: "Properti Background Lanjutan",
+        content: `
+          <h1>Referensi Properti <code>background</code> Lanjutan</h1>
+          <p>Properti <code>background</code> sangat kuat. Selain <code>background-color</code>, Anda dapat mengontrol gambar, gradien, dan lainnya.</p>
+          
+          <h3>Shorthand (Cara Cepat)</h3>
+          <p>Anda dapat menggabungkan banyak properti <code>background</code> dalam satu baris, dengan urutan:</p>
+          <p><code>[color] [image] [repeat] [position] / [size]</code></p>
+          <pre>
+.hero {
+  /* Warna #333, 
+    gambar 'hero.jpg', 
+    tidak diulang, 
+    posisi tengah, 
+    dan menutupi seluruh area
+  */
+  background: #333 url('hero.jpg') no-repeat center / cover;
+}
+          </pre>
+
+          <h3>Linear Gradient (Gradien Garis)</h3>
+          <p>Anda dapat menggunakan <code>background-image</code> untuk membuat gradien warna, bukan hanya gambar.</p>
+          <pre>
+/* Gradien dari atas (biru) ke bawah (putih) */
+.grad-1 {
+  background-image: linear-gradient(to bottom, blue, white);
+}
+
+/* Gradien 45 derajat dari merah ke kuning */
+.grad-2 {
+  background-image: linear-gradient(45deg, red, yellow);
+}
+
+/* Gradien dengan tiga warna */
+.grad-3 {
+  background-image: linear-gradient(to right, red, yellow, green);
 }
           </pre>
         `,
@@ -670,6 +901,146 @@ ambilData();
           </pre>
         `,
       },
+      {
+        id: "js-ref-string-methods",
+        title: "Metode String",
+        content: `
+          <h1>Referensi Metode String</h1>
+          <p>Metode bawaan yang sangat sering digunakan untuk memanipulasi atau mendapatkan informasi dari teks (string).</p>
+          <table class="ref-table">
+            <thead><tr><th>Metode</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>.length</code></td><td>(Properti) Mengembalikan jumlah karakter dalam string.</td></tr>
+              <tr><td><code>.toUpperCase()</code></td><td>Mengubah string menjadi HURUF BESAR SEMUA.</td></tr>
+              <tr><td><code>.toLowerCase()</code></td><td>Mengubah string menjadi huruf kecil semua.</td></tr>
+              <tr><td><code>.includes('teks')</code></td><td>Mengembalikan <code>true</code> jika string berisi 'teks' yang dicari.</td></tr>
+              <tr><td><code>.trim()</code></td><td>Menghapus spasi (whitespace) dari awal dan akhir string. Sangat penting untuk input form.</td></tr>
+              <tr><td><code>.slice(awal, akhir)</code></td><td>Mengekstrak (memotong) bagian dari string dan mengembalikannya sebagai string baru.</td></tr>
+              <tr><td><code>.replace('lama', 'baru')</code></td><td>Mencari nilai 'lama' dan menggantinya dengan nilai 'baru'. (Hanya mengganti temuan pertama).</td></tr>
+            </tbody>
+          </table>
+          <pre>
+let sapa = "  Halo Dunia!  ";
+console.log(sapa.length);     // Output: 15
+console.log(sapa.trim());       // Output: "Halo Dunia!"
+console.log(sapa.toLowerCase());// Output: "  halo dunia!  "
+console.log(sapa.slice(2, 6));  // Output: "Halo"
+          </pre>
+        `,
+      },
+      {
+        id: "js-ref-object-methods",
+        title: "Metode Objek",
+        content: `
+          <h1>Referensi Metode Objek</h1>
+          <p>Metode statis bawaan pada <code>Object</code> yang sangat berguna untuk bekerja dengan data objek.</p>
+          <table class="ref-table">
+            <thead><tr><th>Metode</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>Object.keys(obj)</code></td><td>Mengembalikan sebuah <strong>array</strong> yang berisi semua nama <strong>kunci (key)</strong> dari objek.</td></tr>
+              <tr><td><code>Object.values(obj)</code></td><td>Mengembalikan sebuah <strong>array</strong> yang berisi semua nilai <strong>(value)</strong> dari objek.</td></tr>
+              <tr><td><code>Object.entries(obj)</code></td><td>Mengembalikan sebuah <strong>array</strong> yang berisi array pasangan <strong>[kunci, nilai]</strong>. Sangat berguna untuk melakukan perulangan (looping) pada objek.</td></tr>
+            </tbody>
+          </table>
+          <pre>
+const pengguna = {
+  nama: "Budi",
+  umur: 30,
+  pekerjaan: "Developer"
+};
+
+// 1. Object.keys()
+const kunci = Object.keys(pengguna);
+// Output: ["nama", "umur", "pekerjaan"]
+
+// 2. Object.values()
+const nilai = Object.values(pengguna);
+// Output: ["Budi", 30, "Developer"]
+
+// 3. Object.entries() (sering dipakai dengan .forEach)
+Object.entries(pengguna).forEach(([kunci, nilai]) => {
+  console.log(kunci + ": " + nilai);
+});
+// Output:
+// nama: Budi
+// umur: 30
+// pekerjaan: Developer
+          </pre>
+        `,
+      },
+      {
+        id: "js-ref-web-storage",
+        title: "Web Storage (LocalStorage)",
+        content: `
+          <h1>Referensi Web Storage (<code>localStorage</code>)</h1>
+          <p>Web Storage (<code>localStorage</code>) memungkinkan situs web menyimpan data (dalam bentuk string) di dalam browser pengguna secara permanen (bahkan setelah browser ditutup).</p>
+          <p>Ini sangat ideal untuk mengingat preferensi pengguna, seperti pilihan Mode Gelap (Dark Mode) atau status login sederhana.</p>
+          
+          <table class="ref-table">
+            <thead><tr><th>Metode</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>localStorage.setItem(kunci, nilai)</code></td><td>Menyimpan data. <code>kunci</code> dan <code>nilai</code> harus berupa string.</td></tr>
+              <tr><td><code>localStorage.getItem(kunci)</code></td><td>Mengambil data berdasarkan <code>kunci</code>-nya. Mengembalikan <code>null</code> jika tidak ada.</td></tr>
+              <tr><td><code>localStorage.removeItem(kunci)</code></td><td>Menghapus satu item data berdasarkan <code>kunci</code>-nya.</td></tr>
+              <tr><td><code>localStorage.clear()</code></td><td>Menghapus <strong>semua</strong> data yang disimpan oleh situs tersebut.</td></tr>
+            </tbody>
+          </table>
+
+          <pre>
+// 1. Menyimpan data
+localStorage.setItem('tema', 'dark');
+
+// 2. Mengambil data saat pengguna kembali
+let temaPilihan = localStorage.getItem('tema'); // "dark"
+
+// 3. Menghapus data
+localStorage.removeItem('tema');
+          </pre>
+          <div class="tip-box">
+            <p><strong>Catatan:</strong> <code>localStorage</code> hanya menyimpan string. Jika Anda ingin menyimpan objek atau array, Anda harus mengubahnya menjadi string JSON menggunakan <code>JSON.stringify()</code> saat menyimpan, dan <code>JSON.parse()</code> saat mengambil.</p>
+          </div>
+        `,
+      },
+      {
+        id: "js-ref-dom-manipulation-adv",
+        title: "Manipulasi DOM (Membuat Elemen)",
+        content: `
+          <h1>Referensi Manipulasi DOM (Membuat & Menghapus)</h1>
+          <p>Selain mengubah elemen yang ada (<code>.innerHTML</code>), JavaScript dapat membuat elemen HTML baru dari awal dan menambahkannya ke halaman.</p>
+          
+          <table class="ref-table">
+            <thead><tr><th>Metode</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>document.createElement('tagName')</code></td><td>Membuat elemen HTML baru di dalam memori (misal: <code>'p'</code>, <code>'div'</code>).</td></tr>
+              <tr><td><code>element.textContent = '...'</code></td><td>Mengatur konten teks dari sebuah elemen (cara aman, tidak memproses HTML).</td></tr>
+              <tr><td><code>element.setAttribute('attr', 'value')</code></td><td>Mengatur atribut pada elemen (misal: <code>'class'</code>, <code>'id'</code>).</td></tr>
+              <tr><td><code>parent.appendChild(child)</code></td><td>Menambahkan elemen <code>child</code> (anak) sebagai anak terakhir di dalam <code>parent</code> (induk).</td></tr>
+              <tr><td><code>element.remove()</code></td><td>Menghapus elemen dari DOM.</td></tr>
+            </tbody>
+          </table>
+
+          <pre>
+// --- CONTOH: MEMBUAT LIST ITEM BARU ---
+
+// 1. Dapatkan elemen induk
+let menu = document.getElementById('menu-list');
+
+// 2. Buat elemen baru
+let itemBaru = document.createElement('li');
+
+// 3. Atur konten dan atributnya
+itemBaru.textContent = 'Item Baru';
+itemBaru.setAttribute('class', 'item');
+
+// 4. Tambahkan elemen baru ke dalam induk
+menu.appendChild(itemBaru);
+
+// --- CONTOH: MENGHAPUS ELEMEN ---
+let itemLama = document.getElementById('item-1');
+itemLama.remove();
+          </pre>
+        `,
+      },
     ],
   },
 
@@ -868,6 +1239,77 @@ ambilData();
               <tr><td><strong>Emosi (Emotions)</strong></td><td>Bagaimana perasaan pengguna? (Biasanya digambarkan sebagai garis: Senang 😊, Netral 😐, Frustrasi 😠).</td></tr>
               <tr><td><strong>Titik Sakit (Pain Points)</strong></td><td>Di mana pengguna mengalami masalah atau frustrasi? Ini adalah area di mana Anda harus fokus memperbaiki.</td></tr>
               <tr><td><strong>Peluang (Opportunities)</strong></td><td>Ide-ide yang muncul untuk meningkatkan pengalaman di titik sakit tersebut.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-laws-of-ux",
+        title: "Hukum Desain UX (Laws of UX)",
+        content: `
+          <h1>Referensi Hukum Desain UX (Laws of UX)</h1>
+          <p>"Laws of UX" adalah kumpulan prinsip atau "hukum" psikologis yang memengaruhi cara pengguna memandang dan berinteraksi dengan antarmuka digital.</p>
+          
+          <table class="ref-table">
+            <thead><tr><th>Hukum</th><th>Deskripsi Singkat</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Hukum Fitts (Fitts's Law)</strong></td><td>Waktu yang dibutuhkan untuk mengklik sebuah target (misal: tombol) adalah fungsi dari <strong>jarak</strong> ke target dan <strong>ukuran</strong> target. <br><strong>Inti:</strong> Buat tombol penting (seperti "Beli") menjadi besar dan mudah dijangkau.</td></tr>
+              <tr><td><strong>Hukum Hick (Hick's Law)</strong></td><td>Semakin banyak pilihan yang diberikan kepada pengguna, semakin lama waktu yang mereka butuhkan untuk mengambil keputusan. <br><strong>Inti:</strong> Hindari membanjiri pengguna dengan terlalu banyak pilihan sekaligus. Sederhanakan!</td></tr>
+              <tr><td><strong>Hukum Miller (Miller's Law)</strong></td><td>Rata-rata manusia hanya dapat menyimpan sekitar <strong>7 (plus/minus 2)</strong> item dalam memori kerja mereka. <br><strong>Inti:</strong> Kelompokkan informasi menjadi potongan-potongan kecil (chunking). (Contoh: Nomor telepon 0812-3456-789 lebih mudah diingat daripada 08123456789).</td></tr>
+              <tr><td><strong>Efek Jakob (Jakob's Law)</strong></td><td>Pengguna menghabiskan sebagian besar waktu mereka di situs web <strong>lain</strong>. Ini berarti mereka mengharapkan situs Anda berfungsi sama seperti situs lain yang sudah mereka kenal. <br><strong>Inti:</strong> Jangan ciptakan pola desain yang aneh. Ikuti konvensi (misal: logo di kiri atas, keranjang belanja di kanan atas).</td></tr>
+              <tr><td><strong>Efek Estetika-Kegunaan</strong></td><td>Pengguna sering kali mempersepsikan desain yang <strong>terlihat indah</strong> sebagai desain yang <strong>lebih mudah digunakan</strong>, bahkan jika sebenarnya tidak. <br><strong>Inti:</strong> Tampilan visual (UI) yang baik membangun kepercayaan dan membuat pengguna lebih sabar terhadap masalah kegunaan (UX) yang kecil.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-dark-mode",
+        title: "Prinsip Desain Dark Mode",
+        content: `
+          <h1>Referensi Prinsip Desain Dark Mode (Mode Gelap)</h1>
+          <p>Mode gelap (dark mode) adalah antarmuka yang menggunakan latar belakang gelap (hitam atau abu-abu tua) dengan teks terang. Ini bukan sekadar membalik warna, tetapi membutuhkan pertimbangan desain yang cermat.</p>
+          <table class="ref-table">
+            <thead><tr><th>Prinsip</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Jangan Gunakan Hitam Murni</strong></td><td>Hindari menggunakan <code>#000000</code> (hitam pekat) sebagai latar belakang utama. Gunakan abu-abu sangat tua (misal: <code>#121212</code>). Hitam pekat dapat menyebabkan bayangan (smearing) di beberapa layar dan membuat kontras terlalu tajam.</td></tr>
+              <tr><td><strong>Turunkan Kecerahan Warna Aksen</strong></td><td>Warna yang terlihat bagus di latar putih (misal: biru cerah) akan terlihat terlalu "menyala" dan mengganggu di latar gelap. Gunakan versi warna yang lebih pudar (desaturated) atau lebih gelap di mode gelap.</td></tr>
+              <tr><td><strong>Jangan Gunakan Putih Murni untuk Teks</strong></td><td>Sama seperti latar hitam, teks <code>#FFFFFF</code> (putih pekat) di latar gelap dapat "mekar" (halation) dan menyilaukan mata. Gunakan warna putih pudar (misal: <code>#E6E6E6</code> atau <code>opacity: 87%</code>) untuk teks utama.</td></tr>
+              <tr><td><strong>Gunakan Elevasi (Ketinggian)</strong></td><td>Di mode terang, kita menggunakan bayangan (shadow) untuk menunjukkan kedalaman. Di mode gelap, bayangan tidak terlihat. Sebagai gantinya, buat permukaan yang "lebih tinggi" (seperti pop-up) menjadi sedikit <strong>lebih terang</strong> daripada latar belakang.</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-fidelities",
+        title: "Fidelitas Desain (Fidelity)",
+        content: `
+          <h1>Referensi Fidelitas Desain (Fidelity)</h1>
+          <p>Fidelitas (Fidelity) mengacu pada seberapa detail atau "nyata" sebuah desain (wireframe atau prototipe) terlihat dan berfungsi. Desain biasanya berevolusi dari Lo-Fi ke Hi-Fi.</p>
+          
+          <table class="ref-table">
+            <thead><tr><th>Tipe</th><th>Deskripsi</th><th>Tujuan</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Low-Fidelity (Lo-Fi)</strong></td><td>Sketsa dasar, seringkali hitam-putih, digambar tangan atau menggunakan kotak-kotak sederhana. Fokus murni pada struktur, tata letak, dan alur.</td><td>Validasi alur (flow) dengan cepat, murah, dan tanpa terikat pada visual. "Apakah alurnya masuk akal?"</td></tr>
+              <tr><td><strong>Mid-Fidelity (Mid-Fi)</strong></td><td>Wireframe digital (menggunakan komputer), masih hitam-putih, tetapi menggunakan komponen UI yang lebih rapi dan teks yang sebenarnya.</td><td>Menguji tata letak yang lebih presisi dan penempatan konten.</td></tr>
+              <tr><td><strong>High-Fidelity (Hi-Fi)</strong></td><td>Desain "pixel-perfect". Ini adalah <strong>Mockup</strong> (statis) atau <strong>Prototipe</strong> (interaktif) yang mencakup warna, font, gambar, dan spasi yang sesungguhnya.</td><td>Validasi tampilan dan nuansa (look and feel) serta uji ketergunaan (usability test) dengan pengguna. "Apakah desainnya menarik dan mudah digunakan?"</td></tr>
+            </tbody>
+          </table>
+        `,
+      },
+      {
+        id: "design-ref-heuristic-evaluation",
+        title: "Evaluasi Heuristik",
+        content: `
+          <h1>Referensi Evaluasi Heuristik (Heuristic Evaluation)</h1>
+          <p>Evaluasi Heuristik adalah sebuah <strong>metode inspeksi (inspection)</strong> di mana sekelompok pakar (desainer UI/UX atau ahli kegunaan) meninjau antarmuka Anda dan menilainya berdasarkan 10 Prinsip Heuristik Kegunaan dari Jakob Nielsen.</p>
+          
+          <h3>Perbedaan Kunci: Heuristic Evaluation vs. Usability Testing</h3>
+          <table class="ref-table">
+            <thead><tr><th>Aspek</th><th>Heuristic Evaluation (Evaluasi Pakar)</th><th>Usability Testing (Uji Pengguna)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Siapa yang Melakukan?</strong></td><td>Pakar Desain (Misal: 3-5 desainer).</td><td>Pengguna Nyata (Misal: 5-8 orang dari target audiens).</td></tr>
+              <tr><td><strong>Apa Tujuannya?</strong></td><td>Menemukan masalah kegunaan yang "jelas" dan pelanggaran terhadap prinsip-prinsip desain yang sudah mapan.</td><td>Menemukan bagaimana pengguna <strong>berperilaku</strong> dan di mana mereka <strong>bingung</strong> saat mencoba menyelesaikan tugas.</td></tr>
+              <tr><td><strong>Kapan Dilakukan?</strong></td><td>Kapan saja, seringkali di awal (pada wireframe) untuk menangkap masalah besar dengan cepat.</td><td>Secara berulang, tetapi sangat penting saat prototipe interaktif (Hi-Fi) sudah siap.</td></tr>
             </tbody>
           </table>
         `,

@@ -8,7 +8,6 @@ export const Excersices = {
         id: "html-exc-1",
         title: "Latihan Atribut Link",
         icon: "fa-solid fa-link",
-        // [MODIFIKASI] Ganti seluruh 'content' dengan ini
         content: `
           <h1>Latihan Atribut <code>href</code></h1>
           <p><strong>Tantangan:</strong> Lengkapi kode di bawah ini untuk membuat link ke <code>https://www.google.com</code>. Klik "Run" untuk melihat hasilnya.</p>
@@ -438,6 +437,117 @@ export const Excersices = {
                 Browser Output
               </div>
               <iframe class="exc-output-frame" id="frame-html-exc-9" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "html-exc-10",
+        title: "Latihan Atribut Input (Form)",
+        icon: "fa-solid fa-check-to-slot",
+        content: `
+          <h1>Latihan Atribut Input (Form)</h1>
+          <p><strong>Tantangan:</strong> Anda memiliki input teks untuk "Username". Saat ini, input tersebut kosong dan tidak wajib diisi.</p>
+          <ol>
+            <li>Tambahkan atribut <code>placeholder</code> dengan teks "Ketik username Anda".</li>
+            <li>Tambahkan atribut <code>required</code> agar formulir tidak dapat dikirim jika input ini kosong.</li>
+          </ol>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-html5" style="color: #e34f26;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-html-exc-10">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;form&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    
+    &lt;!-- Edit tag input di bawah ini --&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    
+    &lt;input type="submit" value="Kirim"&gt;
+  &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-html-exc-10" data-frame-id="frame-html-exc-10">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-html-exc-10" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "html-exc-11",
+        title: "Latihan Pengelompokan Form",
+        icon: "fa-solid fa-object-group",
+        content: `
+          <h1>Latihan Pengelompokan Form (Fieldset)</h1>
+          <p><strong>Tantangan:</strong> Formulir di bawah ini memiliki dua bagian, "Info Login" dan "Info Pribadi", tetapi terlihat tercampur.</p>
+          <p>Gunakan tag <code>&lt;fieldset&gt;</code> untuk membungkus setiap grup, dan gunakan tag <code>&lt;legend&gt;</code> untuk memberi judul pada setiap grup tersebut.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-html5" style="color: #e34f26;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-html-exc-11">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } fieldset { margin-bottom: 15px; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form&gt;
+    &lt;!-- Grup 1: Info Login --&gt;
+    
+      &lt;!-- Tambahkan tag legend di sini: "Info Login" --&gt;
+      
+      &lt;label&gt;Email: &lt;input type="email"&gt;&lt;/label&gt;&lt;br&gt;
+      &lt;label&gt;Password: &lt;input type="password"&gt;&lt;/label&gt;
+    
+    &lt;!-- Grup 2: Info Pribadi --&gt;
+    
+      &lt;!-- Tambahkan tag legend di sini: "Info Pribadi" --&gt;
+      
+      &lt;label&gt;Nama: &lt;input type="text"&gt;&lt;/label&gt;&lt;br&gt;
+      &lt;label&gt;Usia: &lt;input type="number"&gt;&lt;/label&gt;
+    
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-html-exc-11" data-frame-id="frame-html-exc-11">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-html-exc-11" srcdoc=""></iframe>
             </div>
           </div>
         `,
@@ -933,6 +1043,118 @@ export const Excersices = {
                 Browser Output
               </div>
               <iframe class="exc-output-frame" id="frame-css-exc-8" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "css-exc-9",
+        title: "Latihan Selektor (Anak)",
+        icon: "fa-solid fa-chevron-right",
+        content: `
+          <h1>Latihan Selektor Anak (Child Combinator)</h1>
+          <p><strong>Tantangan:</strong> Anda memiliki daftar (list) bersarang. Saat ini, semua paragraf (<code>&lt;p&gt;</code>) berwarna abu-abu.</p>
+          <p>Gunakan selektor anak (<code>&gt;</code>) untuk membuat <strong>hanya</strong> paragraf yang merupakan <strong>anak langsung</strong> dari <code>.box</code> yang berwarna <code>red</code> (merah). Paragraf yang ada di dalam <code>.sub-box</code> tidak boleh berubah.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-css-exc-9">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt;
+    p { color: grey; }
+    .box {
+      border: 1px solid black;
+      padding: 10px;
+    }
+    .sub-box {
+      border: 1px dashed blue;
+      padding: 10px;
+    }
+    
+    /* Tulis CSS-mu di sini */
+    
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  <div class="box">
+    <p>Paragraf ini (Anak Langsung) harusnya merah.</p>
+    <div class="sub-box">
+      <p>Paragraf ini (Bukan Anak Langsung) harusnya tetap abu-abu.</p>
+    </div>
+  </div>
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-css-exc-9" data-frame-id="frame-css-exc-9">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-css-exc-9" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "css-exc-10",
+        title: "Latihan Selektor (Saudara)",
+        icon: "fa-solid fa-plus",
+        content: `
+          <h1>Latihan Selektor Saudara (Adjacent Sibling)</h1>
+          <p><strong>Tantangan:</strong> Gunakan selektor saudara dekat (<code>+</code>) untuk memberi gaya <strong>hanya</strong> pada paragraf (<code>&lt;p&gt;</code>) yang posisinya berada <strong>tepat setelah</strong> <code>&lt;h2&gt;</code>.</p>
+          <p>Beri paragraf tersebut <code>font-style: italic;</code> (miring).</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-css-exc-10">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; }
+    
+    /* Tulis CSS-mu di sini */
+    
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  <p>Paragraf ini tidak boleh miring.</p>
+  <h2>Judul</h2>
+  <p>Paragraf ini harusnya miring.</p>
+  <p>Paragraf ini tidak boleh miring.</p>
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-css-exc-10" data-frame-id="frame-css-exc-10">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-css-exc-10" srcdoc=""></iframe>
             </div>
           </div>
         `,
@@ -1470,6 +1692,131 @@ console.log(sapa("Dunia")); // Output: Halo, Dunia
           </div>
         `,
       },
+      {
+        id: "js-exc-10",
+        title: "Latihan Membuat Elemen",
+        icon: "fa-solid fa-plus-square",
+        content: `
+          <h1>Latihan Membuat Elemen (Create Element)</h1>
+          <p><strong>Tantangan:</strong> Saat ini daftar (list) di bawah ini tidak lengkap.</p>
+          <p>Gunakan <code>document.createElement()</code> untuk membuat elemen <code>&lt;li&gt;</code> baru. Atur <code>.textContent</code>-nya menjadi "Item 3", lalu gunakan <code>.appendChild()</code> untuk menambahkannya ke dalam <code>&lt;ul id="daftar-saya"&gt;</code>.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-js" style="color: #f7df1e;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-js-exc-10">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  <ul id="daftar-saya">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  &lt;script&gt;
+    // 1. Dapatkan elemen induk (ul)
+    let daftar = document.getElementById("daftar-saya");
+    
+    // Tulis kodemu di sini:
+    // 2. Buat elemen 'li' baru
+    
+    // 3. Atur konten teksnya
+    
+    // 4. Tambahkan (append) elemen baru ke 'daftar'
+    
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-js-exc-10" data-frame-id="frame-js-exc-10">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-js-exc-10" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "js-exc-11",
+        title: "Latihan Validasi (String .trim)",
+        icon: "fa-solid fa-scissors",
+        content: `
+          <h1>Latihan Validasi (String <code>.trim()</code>)</h1>
+          <p><strong>Tantangan:</strong> Buat validasi sederhana. Saat tombol diklik, ambil nilai (<code>.value</code>) dari input.</p>
+          <p>Gunakan <code>.trim()</code> untuk menghapus spasi di awal dan akhir. Jika panjang (<code>.length</code>) dari string yang sudah di-trim lebih besar dari 0, tampilkan "Sukses!". Jika tidak, tampilkan "Input tidak boleh kosong!".</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-brands fa-js" style="color: #f7df1e;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-js-exc-11">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt; body { font-family: sans-serif; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  <input type="text" id="input-data" value="   ">
+  <button id="tombol-validasi">Validasi</button>
+  <p id="hasil"></p>
+
+  &lt;script&gt;
+    const input = document.getElementById("input-data");
+    const tombol = document.getElementById("tombol-validasi");
+    const hasil = document.getElementById("hasil");
+    
+    function validasi() {
+      // 1. Ambil nilai input dan trim
+      let nilai = input.value;
+      let nilaiTrim = nilai.trim();
+      
+      // 2. Tulis logika if/else di sini
+      if (true) { // Ganti 'true' dengan kondisimu
+        
+      } else {
+        
+      }
+    }
+    
+    tombol.addEventListener("click", validasi);
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-js-exc-11" data-frame-id="frame-js-exc-11">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-js-exc-11" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
     ],
   },
 
@@ -1940,6 +2287,118 @@ console.log(sapa("Dunia")); // Output: Halo, Dunia
                 Browser Output
               </div>
               <iframe class="exc-output-frame" id="frame-design-exc-8" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "design-exc-9",
+        title: "Latihan Hukum Fitts (Target)",
+        icon: "fa-solid fa-mouse-pointer",
+        content: `
+          <h1>Latihan Hukum Fitts (Ukuran Target)</h1>
+          <p><strong>Tantangan:</strong> "Hukum Fitts" menyatakan bahwa target yang lebih besar lebih mudah diklik. Tombol di bawah ini sangat kecil dan sulit diklik, terutama di perangkat seluler.</p>
+          <p>Perbaiki masalah kegunaan (usability) ini dengan memberikan <code>padding</code> vertikal (<code>12px</code>) dan horizontal (<code>20px</code>) pada class <code>.tombol-kecil</code> agar areanya lebih besar dan lebih mudah diklik.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-palette" style="color: #8A2BE2;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-design-exc-9">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt;
+    .tombol-kecil {
+      background-color: #eee;
+      border: 1px solid #999;
+      cursor: pointer;
+      font-size: 12px; /* <-- Font kecil */
+      padding: 2px 5px; /* <-- Padding kecil */
+      
+      /* Tulis CSS-mu di sini untuk memperbaikinya */
+      
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  <button class="tombol-kecil">Klik Saya!</button>
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-design-exc-9" data-frame-id="frame-design-exc-9">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-design-exc-9" srcdoc=""></iframe>
+            </div>
+          </div>
+        `,
+      },
+      {
+        id: "design-exc-10",
+        title: "Latihan Prinsip Repetition (Font)",
+        icon: "fa-solid fa-font",
+        content: `
+          <h1>Latihan Prinsip Repetition (Konsistensi Font)</h1>
+          <p><strong>Tantangan:</strong> Desain ini melanggar prinsip repetisi (konsistensi). Judul (<code>h2</code>) menggunakan font "Times New Roman" (Serif), sedangkan paragraf (<code>p</code>) menggunakan "Arial" (Sans-Serif).</p>
+          <p>Perbaiki ini dengan mengatur <code>font-family: Arial, sans-serif;</code> pada <code>h2</code> agar konsisten dengan paragrafnya.</p>
+          
+          <div class="exc-container">
+            <div class="exc-editor">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-palette" style="color: #8A2BE2;"></i>
+                index.html
+              </div>
+              <textarea class="exc-code-input" id="editor-design-exc-10">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hasil Latihan&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif; /* <-- Default */
+      line-height: 1.6;
+    }
+    h2 {
+      font-family: "Times New Roman", serif; /* <-- Font tidak konsisten! */
+      
+      /* Tulis CSS-mu di sini untuk memperbaikinya */
+      
+    }
+    p {
+      /* Menggunakan font default dari body (Arial) */
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  <h2>Judul (Font Times)</h2>
+  <p>Paragraf ini menggunakan font Arial. Perbedaan font ini membuat desain terlihat tidak profesional dan berantakan.</p>
+
+&lt;/body&gt;
+&lt;/html&gt;
+              </textarea>
+              <button class="exc-run-btn" data-editor-id="editor-design-exc-10" data-frame-id="frame-design-exc-10">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+            </div>
+            <div class="exc-output">
+              <div class="exc-editor-header">
+                <i class="fa-solid fa-display"></i>
+                Browser Output
+              </div>
+              <iframe class="exc-output-frame" id="frame-design-exc-10" srcdoc=""></iframe>
             </div>
           </div>
         `,
