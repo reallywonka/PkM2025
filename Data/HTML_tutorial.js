@@ -30,7 +30,19 @@ export const html = {
             <li>Elemen <code>&lt;body&gt;</code> berisi konten halaman yang terlihat.</li>
             <li>Elemen <code>&lt;h1&gt;</code> mendefinisikan heading besar.</li>
             <li>Elemen <code>&lt;p&gt;</code> mendefinisikan paragraf.</li>
-          </ul>
+          </ul><br>
+
+          <h3>Hello World!</h3>
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Belajar HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
         `,
     },
     {
@@ -38,26 +50,8 @@ export const html = {
       title: "Struktur Dasar Dokumen HTML",
       content: `
           <h1>Struktur Dasar Dokumen HTML</h1>
-          <p>Setiap halaman web HTML yang valid mengikuti struktur atau kerangka (boilerplate) dasar yang sama. Struktur ini memberi tahu browser bahwa ini adalah halaman web dan mendefinisikan bagian-bagian utamanya.</p>
-          <p>Bahkan halaman kosong pun harus memiliki struktur ini:</p>
-          
-          <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="id"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Judul Halaman Anda&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    
-    &lt;!-- Semua konten yang terlihat oleh pengguna diletakkan di sini --&gt;
-  
-  &lt;/body&gt;
-&lt;/html&gt;
-          </pre>
+          <p>HTML setidaknya memiliki struktur dasar yang terdiri dari:</p>
 
-          <h3>Penjelasan Setiap Bagian</h3>
           <table class="ref-table">
             <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
             <tbody>
@@ -67,6 +61,35 @@ export const html = {
               <tr><td><code>&lt;body&gt;</code></td><td>Berisi "tubuh" halaman. <strong>Semua konten yang Anda lihat</strong> di browser—seperti heading, paragraf, gambar, dan link—harus ditempatkan di dalam tag ini.</td></tr>
             </tbody>
           </table>
+
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman Anda&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Semua Konten --&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+        `,
+    },
+    {
+      id: "html-tags",
+      title: "HTML Tag",
+      content: `
+          <h1>Tag Elemen Dokumen</h1>
+          <p>Tag digunakan untuk menyatakan elemen dalam suatu dokumen HTML. Tag dinyatakan dengan menggunakan tanda <b><</b> sebagai pembuka, dan diikuti dengan nama elemen, lalu ditutup dengan tanda <b>></b> sebagai penutup. Tag HTML digunakan untuk menyatakan suatu elemen dokumen akan dituliskan secara berpasangan, ada tag pembuka dan tag penutup.</p>
+
+          <p>Penulisan tag HTML pembuka:</p>
+          <pre>&lt;namaelemen&gt;</pre>
+          
+          <p>Penulisan tag HTML penutup:</p>
+          <pre>&lt;/namaelemen&gt;</pre>
+
+          <p>Tag HTML pembuka dan penutup menggunakan namaelemen yang sama, hanya pada elemen penutup, ada tambahan tanda <b>/</b> sebelum namaelemen nya.</p>
         `,
     },
     {
@@ -74,9 +97,6 @@ export const html = {
       title: "HTML Elemen",
       content: `
           <h1>HTML Elemen</h1>
-          <p>Elemen HTML adalah segalanya mulai dari tag awal hingga tag akhir:</p>
-          <pre>&lt;namatag&gt;Konten ada di sini...&lt;/namatag&gt;</pre>
-
           <p>Beberapa elemen HTML tidak memiliki konten (seperti elemen <code>&lt;br&gt;</code>). Elemen-elemen ini disebut elemen kosong. Elemen kosong tidak memiliki tag akhir!</p>
           <h3>Elemen Bersarang (Nested Elements)</h3>
           <p>Elemen HTML dapat disarangkan (ini berarti elemen dapat berisi elemen lain).</p>
