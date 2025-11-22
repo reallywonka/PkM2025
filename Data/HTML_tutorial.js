@@ -6,7 +6,7 @@ export const html = {
       id: "html-intro",
       title: "HTML Pendahuluan",
       content: `
-          <h1>HTML Pendahuluan</h1>
+          <h1>Pendahuluan</h1>
           <p>HTML (Hyper Text Markup Language) adalah sebuah bahasa markup yang digunakan untuk membuat sebuah halaman web dan menampilkan berbagai informasi di dalam sebuah browser Internet. HTML menggambarkan struktur halaman web menggunakan markup.</p>
           
           <h3>Contoh Dokumen HTML Sederhana</h3>
@@ -43,6 +43,34 @@ export const html = {
     &lt;p&gt;Hello World!&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;</pre>
+        `,
+    },
+    {
+      id: "tools",
+      title: "Persiapan Tools",
+      content: `
+          <p>Sebelum mulai "ngoding", ada dua software wajib yang harus disiapkan:</p>
+
+          <h3>1. Web Browser</h3>
+          <p>Browser bertugas menerjemahkan kode HTML menjadi tampilan visual yang bisa dilihat manusia. Sebagai web developer, kita disarankan menggunakan browser yang memiliki fitur <em>Developer Tools</em> yang baik.</p>
+          <ul>
+              <li><strong>Google Chrome</strong> (Sangat Disarankan)</li>
+              <li>Mozilla Firefox</li>
+              <li>Microsoft Edge</li>
+          </ul>
+
+          <h3>2. Text Editor</h3>
+          <p>Tempat menulis kode. Jangan gunakan <em>Microsoft Word</em> atau <em>Notepad biasa</em> karena tidak memiliki fitur pewarnaan kode (syntax highlighting) yang membantu kita melihat kesalahan.</p>
+          <ul>
+              <li><strong>Visual Studio Code (VS Code)</strong>: Editor paling populer, gratis, dan canggih.</li>
+              <li><strong>Sublime Text</strong>: Sangat ringan dan cepat.</li>
+              <li><strong>Notepad++</strong>: Alternatif ringan untuk Windows.</li>
+              <li>Lainnya.</li>
+          </ul>
+
+          <div class="note">
+              <strong>Tips File:</strong> Selalu simpan file kerjamu dalam satu folder khusus. Beri nama file utama dengan <code>index.html</code> agar otomatis dikenali browser sebagai halaman depan.
+          </div>
         `,
     },
     {
@@ -96,7 +124,7 @@ export const html = {
       id: "html-elements",
       title: "HTML Elemen",
       content: `
-          <h1>HTML Elemen</h1>
+          <h1>Elemen HTML</h1>
           <p>Beberapa elemen HTML tidak memiliki konten (seperti elemen <code>&lt;br&gt;</code>). Elemen-elemen ini disebut elemen kosong. Elemen kosong tidak memiliki tag akhir!</p>
           <h3>Elemen Bersarang (Nested Elements)</h3>
           <p>Elemen HTML dapat disarangkan (ini berarti elemen dapat berisi elemen lain).</p>
@@ -112,7 +140,7 @@ export const html = {
       id: "html-attributes",
       title: "HTML Atribut",
       content: `
-          <h1>HTML Atribut</h1>
+          <h1>Atribut</h1>
           <p>Atribut menyediakan informasi tambahan tentang elemen HTML.</p>
           <ul>
             <li>Semua elemen HTML dapat memiliki <strong>atribut</strong>.</li>
@@ -131,7 +159,7 @@ export const html = {
       id: "html-headings",
       title: "HTML Heading",
       content: `
-          <h1>HTML Heading</h1>
+          <h1>Heading</h1>
           <p>Heading HTML adalah judul atau subjudul yang ingin kamu tampilkan di halaman web.</p>
           <p>Heading HTML didefinisikan dengan tag <code>&lt;h1&gt;</code> sampai <code>&lt;h6&gt;</code>.</p>
           <pre>
@@ -148,24 +176,40 @@ export const html = {
       id: "html-paragraphs",
       title: "HTML Paragraf",
       content: `
-          <h1>HTML Paragraf</h1>
+          <h1>Paragraf dan Gaya Teks</h1>
           <p>Paragraf HTML didefinisikan dengan tag <code>&lt;p&gt;</code>.</p>
           <p>Paragraf selalu dimulai di baris baru, dan browser secara otomatis menambahkan beberapa spasi (margin) sebelum dan sesudah paragraf.</p>
           <pre>
 &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
 &lt;p&gt;Ini adalah paragraf kedua.&lt;/p&gt;</pre>
           <p>Anda tidak dapat memastikan bagaimana HTML akan ditampilkan. Layar besar atau kecil, dan jendela yang diubah ukurannya akan membuat hasil yang berbeda. Dengan HTML, Anda tidak dapat mengubah tampilan output dengan menambahkan spasi ekstra atau baris ekstra dalam kode HTML Anda.</p>
+
+          <h3>Gaya Teks:</h3>
+          <ul>
+              <li><code>&lt;b&gt;</code> atau <code>&lt;strong&gt;</code>: <strong>Tebal (Bold)</strong></li>
+              <li><code>&lt;i&gt;</code> atau <code>&lt;em&gt;</code>: <em>Miring (Italic)</em></li>
+              <li><code>&lt;u&gt;</code>: <u>Garis Bawah (Underline)</u></li>
+              <li><code>&lt;br&gt;</code>: Ganti baris (Enter/Break)</li>
+              <li><code>&lt;hr&gt;</code>: Garis horizontal</li>
+          </ul>
+
+          <pre>
+&lt;p&gt;
+  &lt;b&gt;Teks ini dicetak tebal&lt;/b&gt;&lt;br&gt;
+  &lt;i&gt;Teks ini dicetak miring&lt;/i&gt;&lt;br&gt;
+  &lt;u&gt;Teks ini bergaris bawah&lt;/u&gt;
+&lt;/p&gt; </pre>
         `,
     },
     {
       id: "html-links",
-      title: "HTML Links",
+      title: "HTML Hyperlink",
       content: `
-          <h1>HTML Links (Tautan)</h1>
+          <h1>Hyperlink (Tautan)</h1>
           <p>Tautan HTML (hyperlink) digunakan untuk menghubungkan satu halaman ke halaman lain. Elemen <code>&lt;a&gt;</code> (anchor) adalah elemennya.</p>
           <p>Atribut yang paling penting adalah <code>href</code>, yang menunjukkan tujuan tautan.</p>
           <pre>
-&lt;a href="httpsa://www.google.com"&gt;Kunjungi Google&lt;/a&gt;</pre>
+&lt;a href="https://www.google.com"&gt;Kunjungi Google&lt;/a&gt;</pre>
           <p>Secara default, tautan akan muncul sebagai berikut di browser:</p>
           <ul>
             <li>Tautan yang belum dikunjungi digarisbawahi dan berwarna biru.</li>
@@ -181,7 +225,10 @@ export const html = {
           <h1>HTML Gambar</h1>
           <p>Gambar dapat meningkatkan desain dan tampilan halaman web. Elemen <code>&lt;img&gt;</code> digunakan untuk menyisipkan gambar.</p>
           <p>Tag <code>&lt;img&gt;</code> adalah tag kosong, yang berarti hanya berisi atribut dan tidak memiliki tag penutup.</p>
-          <p>Atribut <code>src</code> (source) menentukan jalur (URL) ke gambar. Atribut <code>alt</code> (alternatif) menyediakan teks alternatif untuk gambar jika tidak dapat ditampilkan.</p>
+          <ul>
+              <li>Atribut <code>src</code> (source) : Menentukan jalur/lokasi (URL) ke file gambar.</li>
+              <li>Atribut <code>alt</code> (alternatif) : Menyediakan teks alternatif untuk gambar jika tidak dapat ditampilkan.</li>
+          </ul>
           <pre>
 &lt;img src="gambar_mobil.jpg" alt="Mobil balap merah"&gt;</pre>
           <p>Anda juga bisa menentukan lebar dan tinggi gambar dengan atribut <code>width</code> dan <code>height</code>.</p>
@@ -193,9 +240,9 @@ export const html = {
       id: "html-lists",
       title: "HTML Lists",
       content: `
-          <h1>HTML Lists (Daftar)</h1>
+          <h1>Lists</h1>
           <p>HTML menyediakan dua jenis daftar utama: daftar tidak terurut (unordered) dan daftar terurut (ordered).</p>
-          
+          <br>
           <h3>Unordered List (Daftar Tidak Terurut)</h3>
           <p>Daftar tidak terurut dimulai dengan tag <code>&lt;ul&gt;</code>. Setiap item daftar dimulai dengan tag <code>&lt;li&gt;</code> (list item).</p>
           <p>Secara default, item daftar akan ditandai dengan bulet (lingkaran hitam kecil).</p>
@@ -205,7 +252,7 @@ export const html = {
   &lt;li&gt;Teh&lt;/li&gt;
   &lt;li&gt;Susu&lt;/li&gt;
 &lt;/ul&gt;</pre>
-          
+          <br>
           <h3>Ordered List (Daftar Terurut)</h3>
           <p>Daftar terurut dimulai dengan tag <code>&lt;ol&gt;</code>. Setiap item daftar juga dimulai dengan tag <code>&lt;li&gt;</code>.</p>
           <p>Secara default, item daftar akan ditandai dengan angka.</p>
@@ -221,7 +268,7 @@ export const html = {
       id: "html-tables",
       title: "HTML Tabel",
       content: `
-          <h1>HTML Tabel</h1>
+          <h1>Tabel</h1>
           <p>Tabel HTML digunakan untuk menampilkan data dalam bentuk baris dan kolom.</p>
           <ul>
             <li>Tabel HTML didefinisikan dengan tag <code>&lt;table&gt;</code>.</li>
@@ -253,10 +300,30 @@ export const html = {
         `,
     },
     {
+      id: "html-divspan",
+      title: "HTML Div & Span",
+      content: `
+          <h1>Div & Span</h1>
+          <p>Dua tag ini sangat penting untuk pengelompokan elemen (Grouping).</p>
+          <h3>&lt;div&gt; (Division)</h3>
+          <p>Elemen <strong>Block</strong>. Digunakan untuk mengelompokkan bagian besar (seperti header, sidebar, footer). Otomatis membuat baris baru.</p>
+          <pre>
+&lt;div class="kotak-berita"&gt;
+  &lt;h2&gt;Judul Berita&lt;/h2&gt;
+  &lt;p&gt;Isi berita...&lt;/p&gt;
+&lt;/div&gt; </pre>
+          <br>
+          <h3>&lt;span&gt;</h3>
+          <p>Elemen <strong>Inline</strong>. Digunakan untuk menandai bagian kecil teks dalam satu baris (misal: mewarnai satu kata).</p>
+          <pre>
+&lt;p&gt;Saya suka warna &lt;span style="color:red"&gt;Merah&lt;/span&gt;.&lt;/p&gt; </pre>
+        `,
+    },
+    {
       id: "html-block-inline",
       title: "HTML Block & Inline",
       content: `
-          <h1>HTML Elemen Block vs Inline</h1>
+          <h1>Elemen Block vs Inline</h1>
           <p>Setiap elemen HTML memiliki tampilan default, yang utamanya adalah <strong>block</strong> atau <strong>inline</strong>.</p>
           
           <h3>Elemen Block-level</h3>

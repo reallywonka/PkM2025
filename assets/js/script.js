@@ -213,6 +213,4 @@ document.addEventListener("DOMContentLoaded", () => {
       tutorialEL.click();
     }
   });
-
-  // --- SELESAI ---
 });
