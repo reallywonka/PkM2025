@@ -58,7 +58,7 @@ export const html = {
               <li>Mozilla Firefox</li>
               <li>Microsoft Edge</li>
           </ul>
-
+          <br>
           <h3>2. Text Editor</h3>
           <p>Tempat menulis kode. Jangan gunakan <em>Microsoft Word</em> atau <em>Notepad biasa</em> karena tidak memiliki fitur pewarnaan kode (syntax highlighting) yang membantu kita melihat kesalahan.</p>
           <ul>
