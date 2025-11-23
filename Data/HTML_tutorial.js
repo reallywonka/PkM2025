@@ -4,7 +4,7 @@ export const html = {
   lessons: [
     {
       id: "html-intro",
-      title: "HTML Pendahuluan",
+      title: "Pendahuluan",
       content: `
           <h1>Pendahuluan</h1>
           <p>HTML (Hyper Text Markup Language) adalah sebuah bahasa markup yang digunakan untuk membuat sebuah halaman web dan menampilkan berbagai informasi di dalam sebuah browser Internet. HTML menggambarkan struktur halaman web menggunakan markup.</p>
@@ -106,7 +106,7 @@ export const html = {
     },
     {
       id: "html-tags",
-      title: "HTML Tag",
+      title: "Tags",
       content: `
           <h1>Tag Elemen Dokumen</h1>
           <p>Tag digunakan untuk menyatakan elemen dalam suatu dokumen HTML. Tag dinyatakan dengan menggunakan tanda <b><</b> sebagai pembuka, dan diikuti dengan nama elemen, lalu ditutup dengan tanda <b>></b> sebagai penutup. Tag HTML digunakan untuk menyatakan suatu elemen dokumen akan dituliskan secara berpasangan, ada tag pembuka dan tag penutup.</p>
@@ -122,7 +122,7 @@ export const html = {
     },
     {
       id: "html-elements",
-      title: "HTML Elemen",
+      title: "Elemen",
       content: `
           <h1>Elemen HTML</h1>
           <p>Beberapa elemen HTML tidak memiliki konten (seperti elemen <code>&lt;br&gt;</code>). Elemen-elemen ini disebut elemen kosong. Elemen kosong tidak memiliki tag akhir!</p>
@@ -138,7 +138,7 @@ export const html = {
     },
     {
       id: "html-attributes",
-      title: "HTML Atribut",
+      title: "Atribut",
       content: `
           <h1>Atribut</h1>
           <p>Atribut menyediakan informasi tambahan tentang elemen HTML.</p>
@@ -157,7 +157,7 @@ export const html = {
     },
     {
       id: "html-headings",
-      title: "HTML Heading",
+      title: "Headings",
       content: `
           <h1>Heading</h1>
           <p>Heading HTML adalah judul atau subjudul yang ingin kamu tampilkan di halaman web.</p>
@@ -174,7 +174,7 @@ export const html = {
     },
     {
       id: "html-paragraphs",
-      title: "HTML Paragraf",
+      title: "Paragraf",
       content: `
           <h1>Paragraf dan Gaya Teks</h1>
           <p>Paragraf HTML didefinisikan dengan tag <code>&lt;p&gt;</code>.</p>
@@ -203,7 +203,7 @@ export const html = {
     },
     {
       id: "html-links",
-      title: "HTML Hyperlink",
+      title: "Hyperlink",
       content: `
           <h1>Hyperlink (Tautan)</h1>
           <p>Tautan HTML (hyperlink) digunakan untuk menghubungkan satu halaman ke halaman lain. Elemen <code>&lt;a&gt;</code> (anchor) adalah elemennya.</p>
@@ -220,7 +220,7 @@ export const html = {
     },
     {
       id: "html-images",
-      title: "HTML Gambar",
+      title: "Gambar",
       content: `
           <h1>HTML Gambar</h1>
           <p>Gambar dapat meningkatkan desain dan tampilan halaman web. Elemen <code>&lt;img&gt;</code> digunakan untuk menyisipkan gambar.</p>
@@ -238,7 +238,7 @@ export const html = {
     },
     {
       id: "html-lists",
-      title: "HTML Lists",
+      title: "Lists",
       content: `
           <h1>Lists</h1>
           <p>HTML menyediakan dua jenis daftar utama: daftar tidak terurut (unordered) dan daftar terurut (ordered).</p>
@@ -266,7 +266,7 @@ export const html = {
     },
     {
       id: "html-tables",
-      title: "HTML Tabel",
+      title: "Tabel",
       content: `
           <h1>Tabel</h1>
           <p>Tabel HTML digunakan untuk menampilkan data dalam bentuk baris dan kolom.</p>
@@ -301,7 +301,7 @@ export const html = {
     },
     {
       id: "html-divspan",
-      title: "HTML Div & Span",
+      title: "Div & Span",
       content: `
           <h1>Div & Span</h1>
           <p>Dua tag ini sangat penting untuk pengelompokan elemen (Grouping).</p>
@@ -321,7 +321,7 @@ export const html = {
     },
     {
       id: "html-block-inline",
-      title: "HTML Block & Inline",
+      title: "Block & Inline",
       content: `
           <h1>Elemen Block vs Inline</h1>
           <p>Setiap elemen HTML memiliki tampilan default, yang utamanya adalah <strong>block</strong> atau <strong>inline</strong>.</p>
@@ -352,7 +352,7 @@ export const html = {
     },
     {
       id: "html-forms",
-      title: "HTML Forms",
+      title: "Forms",
       content: `
           <h1>HTML Forms (Formulir)</h1>
           <p>Formulir HTML digunakan untuk mengumpulkan input dari pengguna. Input pengguna ini paling sering dikirim ke server untuk diproses.</p>
@@ -389,8 +389,46 @@ export const html = {
         `,
     },
     {
+      id: "html-forms-advanced",
+      title: "Elemen Form Lanjutan",
+      content: `
+          <h1>Elemen Form Lanjutan</h1>
+          <p>Selain input teks dan tombol radio, formulir HTML memiliki elemen yang lebih kuat untuk mengumpulkan data, seperti menu dropdown (<code>&lt;select&gt;</code>) dan kotak teks multi-baris (<code>&lt;textarea&gt;</code>).</p>
+          
+          <h2><code>&lt;select&gt;</code> (Menu Dropdown)</h2>
+          <p>Tag <code>&lt;select&gt;</code> digunakan untuk membuat daftar pilihan (menu dropdown). Setiap pilihan di dalam daftar didefinisikan oleh tag <code>&lt;option&gt;</code>.</p>
+          <p>Ini sangat berguna ketika Anda memiliki banyak pilihan dan ingin menghemat ruang layar.</p>
+          <pre>
+&lt;label for="jurusan"&gt;Pilih Jurusan Anda:&lt;/label&gt;
+&lt;select id="jurusan" name="jurusan_user"&gt;
+  &lt;option value=""&gt;--Pilih Opsi--&lt;/option&gt;
+  &lt;option value="informatika"&gt;Teknik Informatika&lt;/option&gt;
+  &lt;option value="sipil"&gt;Teknik Sipil&lt;/option&gt;
+  &lt;option value="mesin"&gt;Teknik Mesin&lt;/option&gt;
+&lt;/select&gt;
+          </pre>
+
+          <h2><code>&lt;textarea&gt;</code> (Area Teks)</h2>
+          <p>Jika <code>&lt;input type="text"&gt;</code> hanya untuk satu baris, <code>&lt;textarea&gt;</code> adalah untuk input multi-baris. Ini sangat ideal untuk kotak "Komentar", "Pesan", atau "Alamat".</p>
+          <p>Anda dapat mengontrol ukurannya dengan atribut <code>rows</code> (jumlah baris) dan <code>cols</code> (jumlah kolom/lebar).</p>
+          <pre>
+&lt;label for="pesan"&gt;Tulis Pesan Anda:&lt;/label&gt;&lt;br&gt;
+&lt;textarea 
+  id="pesan" 
+  name="pesan_user" 
+  rows="5" 
+  cols="40"
+  placeholder="Ketik pesan Anda di sini..."
+&gt;&lt;/textarea&gt;
+          </pre>
+          <div class="tip-box">
+            <p><strong>Catatan:</strong> Tidak seperti tag <code>&lt;input&gt;</code>, tag <code>&lt;textarea&gt;</code> memiliki tag penutup (<code>&lt;/textarea&gt;</code>). Teks <em>placeholder</em> (teks petunjuk) harus diatur menggunakan atribut <code>placeholder</code>, bukan di antara tag.</p>
+          </div>
+        `,
+    },
+    {
       id: "html-semantic",
-      title: "HTML Semantik",
+      title: "Semantik",
       content: `
           <h1>HTML Semantik</h1>
           <p>Elemen semantik adalah elemen HTML yang memiliki <strong>makna</strong> atau arti yang jelas bagi browser dan pengembang.</p>
@@ -414,7 +452,7 @@ export const html = {
     },
     {
       id: "html-comments",
-      title: "HTML Komentar",
+      title: "Komentar",
       content: `
           <h1>HTML Komentar</h1>
           <p>Komentar HTML (HTML Comments) adalah catatan atau teks yang Anda tambahkan ke dalam kode HTML, tetapi <strong>tidak akan ditampilkan</strong> oleh browser di halaman web.</p>
@@ -437,6 +475,41 @@ export const html = {
 --&gt;
 
 &lt;!-- &lt;p&gt;Paragraf ini tidak akan tampil.&lt;/p&gt; --&gt;
+          </pre>
+        `,
+    },
+    {
+      id: "html-text-formatting-basic",
+      title: "Pemformatan Teks Dasar",
+      content: `
+          <h1>Pemformatan Teks Dasar (Style Teks)</h1>
+          <p>Selain tag paragraf (<code>&lt;p&gt;</code>) dan heading (<code>&lt;h1&gt;</code>), HTML memiliki banyak tag <em>inline</em> yang dirancang khusus untuk memberi "gaya" atau makna semantik pada bagian-bagian kecil dari teks Anda.</p>
+          
+          <h3>Perbedaan Semantik vs. Visual</h3>
+          <p>Beberapa tag memiliki makna semantik (makna khusus), sementara yang lain murni untuk visual.</p>
+          <ul>
+            <li><code><strong>&lt;strong&gt;</strong></code>: Menandakan teks yang memiliki <strong>kepentingan serius</strong>. Browser menampilkannya sebagai <strong>tebal</strong>.</li>
+            <li><code><b></code>: Murni visual untuk <b>menebalkan</b> teks tanpa menyiratkan kepentingan khusus.</li>
+            <li><code><em>&lt;em&gt;</em></code>: Menandakan teks yang ingin <strong>ditekankan</strong> (emphasis). Browser menampilkannya sebagai <em>miring</em>.</li>
+            <li><code><i></code>: Murni visual untuk membuat <i>miring</i> teks (sering digunakan untuk istilah teknis atau nama).</li>
+          </ul>
+
+          <h3>Tag Pemformatan Umum Lainnya</h3>
+          <table class="ref-table">
+            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;mark&gt;</code></td><td>Mendefinisikan teks yang ditandai atau <mark>disorot</mark> (highlighted).</td></tr>
+              <tr><td><code>&lt;del&gt;</code></td><td>Mendefinisikan teks yang telah <del>dihapus</del> dari dokumen.</td></tr>
+              <tr><td><code>&lt;ins&gt;</code></td><td>Mendefinisikan teks yang <ins>disisipkan</ins> ke dalam dokumen.</td></tr>
+              <tr><td><code>&lt;u&gt;</code></td><td>Mendefinisikan teks yang <u>digarisbawahi</u> (murni visual, sebaiknya dihindari agar tidak dikira link).</td></tr>
+              <tr><td><code>&lt;small&gt;</code></td><td>Mendefinisikan teks yang <small>lebih kecil</small> (sering untuk hak cipta atau catatan kaki).</td></tr>
+            </tbody>
+          </table>
+
+          <pre>
+<p>Gunakan <strong>&lt;strong&gt;</strong> untuk hal penting.</p>
+<p>Gunakan <em>&lt;em&gt;</em> untuk penekanan.</p>
+<p>Harga lama: <del>$100</del>, harga baru: <ins>$80</ins>!</p>
           </pre>
         `,
     },
@@ -483,7 +556,7 @@ export const html = {
     },
     {
       id: "html-media",
-      title: "HTML Video & Audio",
+      title: "Video & Audio",
       content: `
           <h1>HTML Media: Video & Audio</h1>
           <p>HTML5 memperkenalkan tag <code>&lt;video&gt;</code> dan <code>&lt;audio&gt;</code> yang memungkinkan Anda menyematkan konten media langsung ke halaman web tanpa memerlukan plugin eksternal seperti Flash.</p>
@@ -527,7 +600,7 @@ export const html = {
     },
     {
       id: "html-iframe",
-      title: "HTML Iframe",
+      title: "Iframe",
       content: `
           <h1>HTML Iframe</h1>
           <p>Tag <code>&lt;iframe&gt;</code> (kependekan dari "inline frame") digunakan untuk menampilkan sebuah halaman web di dalam halaman web lain. Ini seperti membuka "jendela" kecil ke situs web lain.</p>
@@ -601,41 +674,6 @@ export const html = {
 &lt;meta name="description" content="Website pembelajaran web interaktif untuk pemula."&gt;
             </pre>
           </div>
-        `,
-    },
-    {
-      id: "html-text-formatting-basic",
-      title: "Pemformatan Teks Dasar",
-      content: `
-          <h1>Pemformatan Teks Dasar (Style Teks)</h1>
-          <p>Selain tag paragraf (<code>&lt;p&gt;</code>) dan heading (<code>&lt;h1&gt;</code>), HTML memiliki banyak tag <em>inline</em> yang dirancang khusus untuk memberi "gaya" atau makna semantik pada bagian-bagian kecil dari teks Anda.</p>
-          
-          <h3>Perbedaan Semantik vs. Visual</h3>
-          <p>Beberapa tag memiliki makna semantik (makna khusus), sementara yang lain murni untuk visual.</p>
-          <ul>
-            <li><code><strong>&lt;strong&gt;</strong></code>: Menandakan teks yang memiliki <strong>kepentingan serius</strong>. Browser menampilkannya sebagai <strong>tebal</strong>.</li>
-            <li><code><b></code>: Murni visual untuk <b>menebalkan</b> teks tanpa menyiratkan kepentingan khusus.</li>
-            <li><code><em>&lt;em&gt;</em></code>: Menandakan teks yang ingin <strong>ditekankan</strong> (emphasis). Browser menampilkannya sebagai <em>miring</em>.</li>
-            <li><code><i></code>: Murni visual untuk membuat <i>miring</i> teks (sering digunakan untuk istilah teknis atau nama).</li>
-          </ul>
-
-          <h3>Tag Pemformatan Umum Lainnya</h3>
-          <table class="ref-table">
-            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
-            <tbody>
-              <tr><td><code>&lt;mark&gt;</code></td><td>Mendefinisikan teks yang ditandai atau <mark>disorot</mark> (highlighted).</td></tr>
-              <tr><td><code>&lt;del&gt;</code></td><td>Mendefinisikan teks yang telah <del>dihapus</del> dari dokumen.</td></tr>
-              <tr><td><code>&lt;ins&gt;</code></td><td>Mendefinisikan teks yang <ins>disisipkan</ins> ke dalam dokumen.</td></tr>
-              <tr><td><code>&lt;u&gt;</code></td><td>Mendefinisikan teks yang <u>digarisbawahi</u> (murni visual, sebaiknya dihindari agar tidak dikira link).</td></tr>
-              <tr><td><code>&lt;small&gt;</code></td><td>Mendefinisikan teks yang <small>lebih kecil</small> (sering untuk hak cipta atau catatan kaki).</td></tr>
-            </tbody>
-          </table>
-
-          <pre>
-<p>Gunakan <strong>&lt;strong&gt;</strong> untuk hal penting.</p>
-<p>Gunakan <em>&lt;em&gt;</em> untuk penekanan.</p>
-<p>Harga lama: <del>$100</del>, harga baru: <ins>$80</ins>!</p>
-          </pre>
         `,
     },
     {
@@ -726,44 +764,6 @@ export const html = {
           </pre>
           <div class="info-box">
             <p><strong>Catatan:</strong> Elemen semantik ini secara visual tidak berbeda dengan <code>&lt;div&gt;</code>. Anda tetap harus menatanya menggunakan CSS (misalnya menggunakan Flexbox atau Grid) untuk membuatnya terlihat seperti layout yang Anda inginkan.</p>
-          </div>
-        `,
-    },
-    {
-      id: "html-forms-advanced",
-      title: "Elemen Form Lanjutan",
-      content: `
-          <h1>Elemen Form Lanjutan</h1>
-          <p>Selain input teks dan tombol radio, formulir HTML memiliki elemen yang lebih kuat untuk mengumpulkan data, seperti menu dropdown (<code>&lt;select&gt;</code>) dan kotak teks multi-baris (<code>&lt;textarea&gt;</code>).</p>
-          
-          <h2><code>&lt;select&gt;</code> (Menu Dropdown)</h2>
-          <p>Tag <code>&lt;select&gt;</code> digunakan untuk membuat daftar pilihan (menu dropdown). Setiap pilihan di dalam daftar didefinisikan oleh tag <code>&lt;option&gt;</code>.</p>
-          <p>Ini sangat berguna ketika Anda memiliki banyak pilihan dan ingin menghemat ruang layar.</p>
-          <pre>
-&lt;label for="jurusan"&gt;Pilih Jurusan Anda:&lt;/label&gt;
-&lt;select id="jurusan" name="jurusan_user"&gt;
-  &lt;option value=""&gt;--Pilih Opsi--&lt;/option&gt;
-  &lt;option value="informatika"&gt;Teknik Informatika&lt;/option&gt;
-  &lt;option value="sipil"&gt;Teknik Sipil&lt;/option&gt;
-  &lt;option value="mesin"&gt;Teknik Mesin&lt;/option&gt;
-&lt;/select&gt;
-          </pre>
-
-          <h2><code>&lt;textarea&gt;</code> (Area Teks)</h2>
-          <p>Jika <code>&lt;input type="text"&gt;</code> hanya untuk satu baris, <code>&lt;textarea&gt;</code> adalah untuk input multi-baris. Ini sangat ideal untuk kotak "Komentar", "Pesan", atau "Alamat".</p>
-          <p>Anda dapat mengontrol ukurannya dengan atribut <code>rows</code> (jumlah baris) dan <code>cols</code> (jumlah kolom/lebar).</p>
-          <pre>
-&lt;label for="pesan"&gt;Tulis Pesan Anda:&lt;/label&gt;&lt;br&gt;
-&lt;textarea 
-  id="pesan" 
-  name="pesan_user" 
-  rows="5" 
-  cols="40"
-  placeholder="Ketik pesan Anda di sini..."
-&gt;&lt;/textarea&gt;
-          </pre>
-          <div class="tip-box">
-            <p><strong>Catatan:</strong> Tidak seperti tag <code>&lt;input&gt;</code>, tag <code>&lt;textarea&gt;</code> memiliki tag penutup (<code>&lt;/textarea&gt;</code>). Teks <em>placeholder</em> (teks petunjuk) harus diatur menggunakan atribut <code>placeholder</code>, bukan di antara tag.</p>
           </div>
         `,
     },

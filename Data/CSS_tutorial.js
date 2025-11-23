@@ -4,20 +4,20 @@ export const css = {
   lessons: [
     {
       id: "css-intro",
-      title: "CSS Pendahuluan",
+      title: "Pendahuluan",
       content: `
-          <h1>CSS Pendahuluan</h1>
-          <p>CSS adalah singkatan dari Cascading Style Sheets.</p>
-          <p>CSS digunakan untuk memformat tata letak halaman web.</p>
-          <p>Dengan CSS, kamu bisa mengontrol warna, font, ukuran teks, jarak antar elemen, dan banyak lagi!</p>
-          <p>Bayangkan HTML sebagai kerangka (tulang) mobil, dan CSS sebagai cat, velg, dan desain interiornya.</p>
+          <h1>Pendahuluan</h1>
+          <p>CSS adalah singkatan dari Cascading Style Sheet, CSS digunakan untuk mempercantik 
+penampilan HTML atau menentukan bagaimana elemen HTML ditampilkan, seperti 
+menentukan posisi, merubah warna teks atau background dan lain sebagainya.</p>
+          <p>Bayangkan HTML sebagai struktur dasar dari sebuah konten, sedangkan CSS adalah desainer yang membuat tampilan tersebut lebih menarik—mulai dari penggunaan font yang lebih rapi, sudut elemen yang membulat, hingga latar belakang berwarna merah cerah.</p>
         `,
     },
     {
       id: "css-syntax",
-      title: "CSS Sintaks",
+      title: "Sintaks",
       content: `
-          <h1>CSS Sintaks</h1>
+          <h1>Sintaks CSS</h1>
           <p>Sebuah aturan CSS terdiri dari sebuah selektor dan sebuah blok deklarasi.</p>
           <pre>
 selektor {
@@ -40,28 +40,22 @@ p {
     },
     {
       id: "css-howto",
-      title: "Cara Menambahkan CSS",
+      title: "Penulisan CSS",
       content: `
-          <h1>3 Cara Menambahkan CSS ke HTML</h1>
-          <p>Ada tiga cara untuk menyisipkan CSS ke dalam dokumen HTML:</p>
-          
-          <h3>1. External CSS (Cara Terbaik)</h3>
-          <p>Dengan file CSS eksternal, Anda dapat mengubah tampilan seluruh situs web hanya dengan mengubah satu file!</p>
-          <p>Setiap halaman HTML harus menyertakan referensi ke file stylesheet eksternal di dalam elemen <code>&lt;head&gt;</code>.</p>
+          <h1>Penulisan CSS</h1>
+          <p>Ada tiga cara penulisan kode CSS, yaitu inline, internal dan external. Ketiganya bisa anda 
+lakukan sesuai dengan kebutuhan. Berikut contoh penggunaan dari metode-metode 
+tersebut: </p>
+
+          <h3>1. Inline CSS</h3>
+          <p>Penulisan kode CSS dengan metode inline ini bisa dilakukan langsung pada tag yang ingin diberi style dengan menggunakan atribut style. Pada metode ini, anda tidak perlu menuliskan selector. Karena anda menuliskan CSS langsung pada tag yang ingin diberi style. Gaya inline digunakan untuk menerapkan gaya unik ke satu elemen. Cara ini <strong>tidak direkomendasikan</strong> karena mencampurkan konten (HTML) dan presentasi (CSS).</p>
           <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  ...
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-          
+&lt;h1 style="color:blue; text-align:center;"&gt;
+  Ini adalah heading biru.
+&lt;/h1&gt;</pre><br>
+
           <h3>2. Internal CSS</h3>
-          <p>Stylesheet internal dapat digunakan jika satu halaman HTML memiliki gaya yang unik.</p>
-          <p>Gaya internal didefinisikan di dalam elemen <code>&lt;style&gt;</code>, di dalam <code>&lt;head&gt;</code>.</p>
+          <Gaya>Stylesheet internal dapat digunakan jika satu halaman HTML memiliki gaya yang unik. Gaya internal didefinisikan/dituliskan di dalam elemen <code>&lt;style&gt;</code>, di dalam <code>&lt;head&gt;</code>. Metode kedua ini sangat dianjurkan untuk pengujian style, atau ketika anda hanya memiliki satu halaman web. </p>
           <pre>
 &lt;head&gt;
   &lt;style&gt;
@@ -72,19 +66,26 @@ p {
       color: maroon;
     }
   &lt;/style&gt;
-&lt;/head&gt;</pre>
+&lt;/head&gt; </pre><br>
 
-          <h3>3. Inline CSS</h3>
-          <p>Gaya inline digunakan untuk menerapkan gaya unik ke satu elemen. Cara ini <strong>tidak direkomendasikan</strong> karena mencampurkan konten (HTML) dan presentasi (CSS).</p>
+          <h3>3. External CSS (Cara Terbaik)</h3>
+          <p>Dengan file CSS eksternal, Anda dapat mengubah tampilan seluruh situs web hanya dengan mengubah satu file. Setiap halaman HTML harus menyertakan referensi ke file stylesheet eksternal di dalam elemen <code>&lt;head&gt;</code> menggunakan tag link.</p>
+          <p>Atribut rel adalah informasi hubungan (relationship) dari tag link tersebut, yaitu sebagai stylesheet. Href diisi dengan lokasi file CSS yang ingin dimuat. Pemanggilannya sama dengan pemanggilan gambar atau link.</p>
           <pre>
-&lt;h1 style="color:blue; text-align:center;"&gt;
-  Ini adalah heading biru.
-&lt;/h1&gt;</pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt; </pre>
         `,
     },
     {
       id: "css-selectors",
-      title: "CSS Selektor",
+      title: "Selektor",
       content: `
           <h1>CSS Selektor</h1>
           <p>Selektor CSS digunakan untuk "menemukan" atau memilih elemen HTML yang ingin Anda gayai.</p>
@@ -118,9 +119,28 @@ p {
 } </pre>
         `,
     },
+
+    {
+      id: "css-komentar",
+      title: "Komentar",
+      content: `
+          <h1>Komentar di CSS</h1>
+          <p>Komentar digunakan untuk memberi catatan pada kode. Komentar tidak akan ditampilkan di browser.</p>
+          <p>Komentar pada CSS dapat ditulis dengan <code>/*</code> dan diakhiri dengan <code>*/</code></p>
+          <pre>
+/* Ini adalah komentar
+  Bisa satu baris atau lebih
+*/
+
+p {
+  color: red; /* Ini komentar di samping kode */
+} </pre>
+        `,
+    },
+
     {
       id: "css-colors",
-      title: "CSS Colors",
+      title: "Colors",
       content: `
           <h1>CSS Colors (Warna)</h1>
           <p>Warna sangat penting dalam CSS. Kita bisa mengatur warna teks, warna latar belakang, warna border, dan lainnya.</p>
@@ -177,7 +197,7 @@ div {
     },
     {
       id: "css-backgrounds",
-      title: "CSS Backgrounds",
+      title: "Backgrounds",
       content: `
           <h1>CSS Backgrounds (Latar Belakang)</h1>
           <p>Properti CSS background digunakan untuk mengatur efek latar belakang pada elemen.</p>
@@ -222,7 +242,7 @@ body {
     },
     {
       id: "css-boxmodel",
-      title: "CSS Box Model",
+      title: "Box Model",
       content: `
           <h1>CSS Box Model</h1>
           <p>Di CSS, semua elemen HTML dapat dianggap sebagai "kotak". Konsep Box Model ini sangat penting karena ini adalah cara CSS mengatur tata letak dan ukuran elemen.</p>
@@ -264,7 +284,7 @@ div.box-saya {
     },
     {
       id: "css-text-fonts",
-      title: "CSS Text & Fonts",
+      title: "Text & Fonts",
       content: `
           <h1>CSS Text & Fonts</h1>
           <p>CSS memiliki banyak properti untuk menata teks dan font.</p>
@@ -315,7 +335,7 @@ a {
     },
     {
       id: "css-layout-position",
-      title: "CSS Layout: Position",
+      title: "Layout: Position",
       content: `
       <h1>CSS Layout: Properti <code>position</code></h1>
       <p>Properti <code>position</code> adalah salah satu properti paling mendasar dalam tata letak CSS. Properti ini menentukan bagaimana sebuah elemen diposisikan di dalam halaman.</p>
@@ -344,7 +364,7 @@ a {
     },
     {
       id: "css-layout-flexbox",
-      title: "CSS Layout: Flexbox",
+      title: "Layout: Flexbox",
       content: `
       <h1>CSS Layout: Pengenalan Flexbox</h1>
       <p>Flexbox (Flexible Box Model) adalah model tata letak satu dimensi (1D) yang merevolusi cara kita mengatur elemen dalam baris atau kolom.</p>
@@ -393,7 +413,7 @@ a {
     },
     {
       id: "css-units",
-      title: "CSS Units (Satuan)",
+      title: "Units (Satuan)",
       content: `
           <h1>CSS Units (Satuan Pengukuran)</h1>
           <p>Saat Anda menentukan ukuran (seperti <code>font-size</code>, <code>width</code>, atau <code>margin</code>), Anda perlu memberi tahu CSS "satuan" apa yang harus digunakan. Satuan ini terbagi menjadi dua kategori utama: <strong>Absolut</strong> dan <strong>Relatif</strong>.</p>
