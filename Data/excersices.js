@@ -706,32 +706,6 @@ export const Excersices = {
         `,
       },
       {
-        id: "css-ref-units",
-        title: "Satuan Ukuran (Units)",
-        content: `
-          <h1>Referensi Satuan Ukuran (Units)</h1>
-          <p>Satuan yang digunakan untuk menentukan ukuran (panjang, lebar, spasi, ukuran font).</p>
-          <h3>Satuan Absolut (Ukuran Tetap)</h3>
-          <table class="ref-table">
-            <thead><tr><th>Satuan</th><th>Deskripsi</th></tr></thead>
-            <tbody>
-              <tr><td><code>px</code></td><td>Pixel. Satuan ukuran tetap berdasarkan titik di layar.</td></tr>
-            </tbody>
-          </table>
-          <h3>Satuan Relatif (Ukuran Fleksibel)</h3>
-          <table class="ref-table">
-            <thead><tr><th>Satuan</th><th>Relatif Terhadap</th></tr></thead>
-            <tbody>
-              <tr><td><code>%</code></td><td>Ukuran elemen induk (parent).</td></tr>
-              <tr><td><code>em</code></td><td>Ukuran font dari elemen itu sendiri.</td></tr>
-              <tr><td><code>rem</code></td><td>Ukuran font dari elemen root (<code>&lt;html&gt;</code>). <strong>Sangat disarankan untuk font & spasi.</strong></td></tr>
-              <tr><td><code>vw</code></td><td>1% dari lebar viewport (jendela browser).</td></tr>
-              <tr><td><code>vh</code></td><td>1% dari tinggi viewport (jendela browser).</td></tr>
-            </tbody>
-          </table>
-        `,
-      },
-      {
         id: "css-exc-4",
         title: "Latihan Transisi (Hover)",
         icon: "fa-solid fa-wand-magic-sparkles",
@@ -1340,37 +1314,6 @@ console.log("Halo, " + nama);
               <iframe class="exc-output-frame" id="frame-js-exc-4" srcdoc=""></iframe>
             </div>
           </div>
-        `,
-      },
-      {
-        id: "js-ref-modules",
-        title: "ES6 Modules (import/export)",
-        content: `
-          <h1>Referensi ES6 Modules</h1>
-          <p>Sintaks untuk memecah kode JavaScript menjadi file-file terpisah dan dapat digunakan kembali.</p>
-          <table class="ref-table">
-            <thead><tr><th>Sintaks</th><th>Deskripsi</th></tr></thead>
-            <tbody>
-              <tr><td><code>export const ...</code></td><td>Mengekspos (export) variabel, fungsi, atau objek agar dapat diakses oleh file lain.</td></tr>
-              <tr><td><code>import { ... } from '...'</code></td><td>Mengimpor (import) variabel atau fungsi yang telah di-export dari file lain.</td></tr>
-              <tr><td><code>&lt;script type="module"&gt;</code></td><td>Atribut yang wajib ditambahkan pada tag <code>&lt;script&gt;</code> di HTML untuk mengaktifkan sistem modul.</td></tr>
-            </tbody>
-          </table>
-          <h3>Contoh File</h3>
-          <pre>
-// ---- file: utilitas.js ----
-export const PI = 3.14;
-export function sapa(nama) {
-  return "Halo, " + nama;
-}
-
-// ---- file: skrip_utama.js ----
-import { PI, sapa } from './utilitas.js';
-console.log(sapa("Dunia")); // Output: Halo, Dunia
-
-// ---- file: index.html ----
-&lt;script src="skrip_utama.js" type="module"&gt;&lt;/script&gt;
-          </pre>
         `,
       },
       {
