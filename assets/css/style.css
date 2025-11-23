@@ -719,8 +719,6 @@ body.dark-mode .exc-run-btn {
   }
 }
 
-
-
 /* Tombol Navigasi Halaman (Next/Prev) */
 .page-nav-buttons {
   display: flex;
@@ -746,4 +744,117 @@ body.dark-mode .exc-run-btn {
 
 body.dark-mode .page-nav-btn:hover {
   background-color: var(--bs-neowhite);
+}
+
+/* =========================================
+  RESPONSIVE DESIGN (MOBILE FRIENDLY)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* 1. Header: Agar menu tidak tumpuk-tumpuk */
+  header {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
+
+  /* Sembunyikan scrollbar agar rapi */
+  .header-left::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  /* 2. Layout Utama: Ubah dari Kiri-Kanan jadi Atas-Bawah */
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* 3. Sidebar: Buat lebar penuh di atas/bawah */
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px;
+  }
+
+  #sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Buat menu sidebar berjejer */
+  #sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  #sidebar-menu li {
+    flex: 1 1 auto;
+  }
+
+  .sidebar ul li a {
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+  }
+
+  /* 4. Konten Utama */
+  .content-area {
+    padding: 15px;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .content-area h1 {
+    font-size: 1.8em;
+  }
+
+  /* 5. Navigasi Pop-up (Tutorials, References, dll) */
+  .nested-navigation-content-data {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .nested-navigation-item {
+    margin-right: 0;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+  }
+
+  /* 6. Halaman Homepage */
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    width: 100%;
+  }
 }
