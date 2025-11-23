@@ -10,7 +10,7 @@ export const css = {
           <p>CSS adalah singkatan dari Cascading Style Sheet, CSS digunakan untuk mempercantik 
 penampilan HTML atau menentukan bagaimana elemen HTML ditampilkan, seperti 
 menentukan posisi, merubah warna teks atau background dan lain sebagainya.</p>
-          <p>Bayangkan HTML sebagai struktur dasar dari sebuah konten, sedangkan CSS adalah desainer yang membuat tampilan tersebut lebih menarik—mulai dari penggunaan font yang lebih rapi, sudut elemen yang membulat, hingga latar belakang berwarna merah cerah.</p>
+          <p>Bayangkan HTML sebagai struktur dasar dari sebuah konten, sedangkan CSS adalah desainer yang membuat tampilan tersebut lebih menarik, mulai dari penggunaan font yang lebih rapi, sudut elemen yang membulat, hingga latar belakang berwarna merah cerah.</p>
         `,
     },
     {
@@ -84,6 +84,23 @@ tersebut: </p>
         `,
     },
     {
+      id: "css-komentar",
+      title: "Komentar",
+      content: `
+          <h1>Komentar di CSS</h1>
+          <p>Komentar digunakan untuk memberi catatan pada kode. Komentar tidak akan ditampilkan di browser.</p>
+          <p>Komentar pada CSS dapat ditulis dengan <code>/*</code> dan diakhiri dengan <code>*/</code></p>
+          <pre>
+/* Ini adalah komentar
+  Bisa satu baris atau lebih
+*/
+
+p {
+  color: red; /* Ini komentar di samping kode */
+} </pre>
+        `,
+    },
+    {
       id: "css-selectors",
       title: "Selektor",
       content: `
@@ -119,25 +136,21 @@ p {
 } </pre>
         `,
     },
-
     {
-      id: "css-komentar",
-      title: "Komentar",
+      id: "css-properties",
+      title: "Property and Value",
       content: `
-          <h1>Komentar di CSS</h1>
-          <p>Komentar digunakan untuk memberi catatan pada kode. Komentar tidak akan ditampilkan di browser.</p>
-          <p>Komentar pada CSS dapat ditulis dengan <code>/*</code> dan diakhiri dengan <code>*/</code></p>
+          <h1>Property and Value</h1>
+          <p>Property adalah karakteristik yang diterapkan pada selector, seperti warna teks, warna latar belakang, jarak antar elemen, tepi batas, dan lainnya.</p>
+          <p>Untuk memberikan nilai pada property, kita menggunakan tanda dua titik ( : ). Setiap property harus diakhiri dengan tanda titik koma (;), jika tidak, maka browser tidak akan memahami maksud dari property tersebut.</p>
           <pre>
-/* Ini adalah komentar
-  Bisa satu baris atau lebih
-*/
-
-p {
-  color: red; /* Ini komentar di samping kode */
+.artikel h1 {
+  color : red;
+  background-color : blue;
+  font-size : 20px; 
 } </pre>
         `,
     },
-
     {
       id: "css-colors",
       title: "Colors",
@@ -199,7 +212,7 @@ div {
       id: "css-backgrounds",
       title: "Backgrounds",
       content: `
-          <h1>CSS Backgrounds (Latar Belakang)</h1>
+          <h1>Backgrounds (Latar Belakang)</h1>
           <p>Properti CSS background digunakan untuk mengatur efek latar belakang pada elemen.</p>
           
           <h3><code>background-color</code></h3>
@@ -244,7 +257,7 @@ body {
       id: "css-boxmodel",
       title: "Box Model",
       content: `
-          <h1>CSS Box Model</h1>
+          <h1>Box Model</h1>
           <p>Di CSS, semua elemen HTML dapat dianggap sebagai "kotak". Konsep Box Model ini sangat penting karena ini adalah cara CSS mengatur tata letak dan ukuran elemen.</p>
           <p>Box Model terdiri dari empat lapisan:</p>
           <ol>
@@ -280,6 +293,128 @@ div.box-saya {
   background-color: lightblue;
 }</pre>
           <p><strong>Penting:</strong> Saat Anda mengatur <code>width</code> dan <code>height</code>, itu hanya berlaku untuk area <strong>Content</strong>. Ukuran total elemen di layar sebenarnya adalah <strong>Content + Padding + Border</strong>.</p>
+        `,
+    },
+    {
+      id: "css-margin",
+      title: "Margin",
+      content: `
+          <h1>Margin</h1>
+          <p>Margin properti digunakan untuk memberi jarak antar elemen atau tag HTML. Misalnya, jarak antar <code>&lt;div&gt;</code> dan tag-tag HTML lainnya.</p>
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;style&gt;
+      .box { 
+        background-color:green; 
+        color: yellow; 
+        width:100px; 
+        height:100px; 
+        margin-bottom:50px; /* Memberi jarak bawah 50px */
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=box&gt;Box Pertama&lt;/div&gt;
+    &lt;div class=box&gt;Box Kedua&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+        `,
+    },
+    {
+      id: "css-padding",
+      title: "Padding",
+      content: `
+          <h1>Padding</h1>
+          <p>Sebelumnya, kita sudah memberikan jarak antar elemen HTML dalam contoh sebelumnya, namun perhatikan antara teks (box ke x) dengan garis pinggir kotak, tidak ada jarak sama sekali, terlihat rapat ke sisi box tersebut. Oleh karena itu, kita menggunakan property padding untuk memberikan jarak antara konten elemen dengan elemen tersebut.</p>
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;style&gt;
+      .box{ 
+        background-color:green; 
+        color: yellow; 
+        width:100px; 
+        height:100px; 
+        margin-bottom:50px; 
+        padding-left:20px; /* Menambahkan padding kiri sebesar 20px */
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=box&gt;Box Pertama&lt;/div&gt;
+    &lt;div class=box&gt;Box Kedua&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+        `,
+    },
+    {
+      id: "css-shorthand",
+      title: "CSS Shorthand",
+      content: `
+          <h1>CSS Shorthand</h1>
+          <p>Kita bisa menggunakan CSS Shorthand yang menggabungkan semua nilai (top, right, bottom, dan left) ke dalam satu property.</p>
+          <p>Contohnya, kita bisa menggunakan CSS Shorthand untuk properti margin seperti berikut:</p>
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;style&gt;
+      .box { 
+        background-color:green; 
+        color: yellow; 
+        width:100px; 
+        height:100px; 
+        margin : 20px 30px 50px 40px;  /* Yang mana mewakili: margin : top  right  bottom left;  */
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=box&gt;Box Pertama&lt;/div&gt;
+    &lt;div class=box&gt;Box Kedua&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
+        `,
+    },
+    {
+      id: "css-border",
+      title: "Border",
+      content: `
+          <h1>Border</h1>
+          <p>Property border digunakan untuk membuat garis di sekitar elemen. Secara umum, ada tiga sifat yang harus diatur, yaitu color, style dan width, dan semua bisa diset dengan menggunakan CSS Shorthand.</p>
+          <pre>border : width  style  color; </pre>
+          <pre>border : 5px  solid  black; </pre><br>
+
+          <h3>Contoh:</h3>
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;style&gt;
+      p {
+        border : 5px  solid  black;
+        padding : 10px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Isi Konten&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt; </pre>
         `,
     },
     {

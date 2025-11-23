@@ -202,6 +202,34 @@ export const html = {
         `,
     },
     {
+      id: "html-comments",
+      title: "Komentar",
+      content: `
+          <h1>HTML Komentar</h1>
+          <p>Komentar HTML (HTML Comments) adalah catatan atau teks yang Anda tambahkan ke dalam kode HTML, tetapi <strong>tidak akan ditampilkan</strong> oleh browser di halaman web.</p>
+          <p>Komentar sangat berguna untuk:</p>
+          <ul>
+            <li>Meninggalkan catatan untuk diri sendiri atau pengembang lain tentang cara kerja kode.</li>
+            <li>"Menonaktifkan" sementara sebagian kode untuk tujuan pengujian (debugging) tanpa harus menghapusnya.</li>
+          </ul>
+          <h3>Sintaks Komentar</h3>
+          <p>Komentar dimulai dengan <code>&lt;!--</code> dan diakhiri dengan <code>--&gt;</code>.</p>
+          <pre>
+&lt;!-- Ini adalah komentar satu baris --&gt;
+
+&lt;p&gt;Ini adalah paragraf yang akan tampil.&lt;/p&gt;
+
+&lt;!-- 
+  Ini adalah komentar
+  yang mencakup
+  beberapa baris.
+--&gt;
+
+&lt;!-- &lt;p&gt;Paragraf ini tidak akan tampil.&lt;/p&gt; --&gt;
+          </pre>
+        `,
+    },
+    {
       id: "html-links",
       title: "Hyperlink",
       content: `
@@ -348,210 +376,6 @@ export const html = {
           </ul>
 
           <p>Tag <code>&lt;div&gt;</code> sering digunakan sebagai wadah (container) untuk elemen-elemen lain untuk kemudian ditata dengan CSS, sedangkan <code>&lt;span&gt;</code> digunakan untuk menampung sebagian kecil teks di dalam baris.</p>
-        `,
-    },
-    {
-      id: "html-forms",
-      title: "Forms",
-      content: `
-          <h1>HTML Forms (Formulir)</h1>
-          <p>Formulir HTML digunakan untuk mengumpulkan input dari pengguna. Input pengguna ini paling sering dikirim ke server untuk diproses.</p>
-          <p>Formulir didefinisikan dengan tag <code>&lt;form&gt;</code>.</p>
-          
-          <h3>Elemen <code>&lt;input&gt;</code></h3>
-          <p>Elemen <code>&lt;input&gt;</code> adalah elemen formulir yang paling penting. Tampilannya bervariasi tergantung atribut <code>type</code>.</p>
-
-          <h3>Elemen <code>&lt;label&gt;</code></h3>
-          <p>Tag <code>&lt;label&gt;</code> mendefinisikan label untuk elemen input. Ini penting untuk aksesibilitas; pengguna pembaca layar akan membacakan label saat fokus pada input.</p>
-
-          <pre>
-&lt;form action="/proses-data.php" method="POST"&gt;
-  
-  &lt;!-- Input Teks --&gt;
-  &lt;label for="nama"&gt;Nama Lengkap:&lt;/label&gt;&lt;br&gt;
-  &lt;input type="text" id="nama" name="nama_user"&gt;&lt;br&gt;&lt;br&gt;
-  
-  &lt;!-- Input Radio Button --&gt;
-  &lt;p&gt;Jenis Kelamin:&lt;/p&gt;
-  &lt;input type="radio" id="pria" name="jenis_kelamin" value="Pria"&gt;
-  &lt;label for="pria"&gt;Pria&lt;/label&gt;&lt;br&gt;
-  &lt;input type="radio" id="wanita" name="jenis_kelamin" value="Wanita"&gt;
-  &lt;label for="wanita"&gt;Wanita&lt;/label&gt;&lt;br&gt;&lt;br&gt;
-  
-  &lt;!-- Input Checkbox --&gt;
-  &lt;input type="checkbox" id="setuju" name="setuju" value="Ya"&gt;
-  &lt;label for="setuju"&gt; Saya setuju dengan syarat dan ketentuan.&lt;/label&gt;&lt;br&gt;&lt;br&gt;
-  
-  &lt;!-- Tombol Submit --&gt;
-  &lt;input type="submit" value="Kirim"&gt;
-  
-&lt;/form&gt;</pre>
-        `,
-    },
-    {
-      id: "html-forms-advanced",
-      title: "Elemen Form Lanjutan",
-      content: `
-          <h1>Elemen Form Lanjutan</h1>
-          <p>Selain input teks dan tombol radio, formulir HTML memiliki elemen yang lebih kuat untuk mengumpulkan data, seperti menu dropdown (<code>&lt;select&gt;</code>) dan kotak teks multi-baris (<code>&lt;textarea&gt;</code>).</p>
-          
-          <h2><code>&lt;select&gt;</code> (Menu Dropdown)</h2>
-          <p>Tag <code>&lt;select&gt;</code> digunakan untuk membuat daftar pilihan (menu dropdown). Setiap pilihan di dalam daftar didefinisikan oleh tag <code>&lt;option&gt;</code>.</p>
-          <p>Ini sangat berguna ketika Anda memiliki banyak pilihan dan ingin menghemat ruang layar.</p>
-          <pre>
-&lt;label for="jurusan"&gt;Pilih Jurusan Anda:&lt;/label&gt;
-&lt;select id="jurusan" name="jurusan_user"&gt;
-  &lt;option value=""&gt;--Pilih Opsi--&lt;/option&gt;
-  &lt;option value="informatika"&gt;Teknik Informatika&lt;/option&gt;
-  &lt;option value="sipil"&gt;Teknik Sipil&lt;/option&gt;
-  &lt;option value="mesin"&gt;Teknik Mesin&lt;/option&gt;
-&lt;/select&gt;
-          </pre>
-
-          <h2><code>&lt;textarea&gt;</code> (Area Teks)</h2>
-          <p>Jika <code>&lt;input type="text"&gt;</code> hanya untuk satu baris, <code>&lt;textarea&gt;</code> adalah untuk input multi-baris. Ini sangat ideal untuk kotak "Komentar", "Pesan", atau "Alamat".</p>
-          <p>Anda dapat mengontrol ukurannya dengan atribut <code>rows</code> (jumlah baris) dan <code>cols</code> (jumlah kolom/lebar).</p>
-          <pre>
-&lt;label for="pesan"&gt;Tulis Pesan Anda:&lt;/label&gt;&lt;br&gt;
-&lt;textarea 
-  id="pesan" 
-  name="pesan_user" 
-  rows="5" 
-  cols="40"
-  placeholder="Ketik pesan Anda di sini..."
-&gt;&lt;/textarea&gt;
-          </pre>
-          <div class="tip-box">
-            <p><strong>Catatan:</strong> Tidak seperti tag <code>&lt;input&gt;</code>, tag <code>&lt;textarea&gt;</code> memiliki tag penutup (<code>&lt;/textarea&gt;</code>). Teks <em>placeholder</em> (teks petunjuk) harus diatur menggunakan atribut <code>placeholder</code>, bukan di antara tag.</p>
-          </div>
-        `,
-    },
-    {
-      id: "html-semantic",
-      title: "Semantik",
-      content: `
-          <h1>HTML Semantik</h1>
-          <p>Elemen semantik adalah elemen HTML yang memiliki <strong>makna</strong> atau arti yang jelas bagi browser dan pengembang.</p>
-          <p>Contoh elemen <strong>non-semantik</strong>: <code>&lt;div&gt;</code> dan <code>&lt;span&gt;</code>. Keduanya tidak memberi tahu apa-apa tentang konten di dalamnya.</p>
-          <p>Contoh elemen <strong>semantik</strong>: <code>&lt;form&gt;</code>, <code>&lt;table&gt;</code>, dan <code>&lt;article&gt;</code>. Keduanya dengan jelas mendefinisikan kontennya.</p>
-          
-          <h3>Elemen Layout Semantik (HTML5)</h3>
-          <p>HTML5 memperkenalkan elemen-elemen baru untuk struktur layout halaman yang lebih bermakna:</p>
-          <ul>
-            <li><code>&lt;header&gt;</code>: Mendefinisikan header untuk dokumen atau bagian (biasanya berisi logo, navigasi).</li>
-            <li><code>&lt;nav&gt;</code>: Mendefinisikan wadah untuk link navigasi utama.</li>
-            <li><code>&lt;main&gt;</code>: Menentukan konten utama dan unik dari dokumen.</li>
-            <li><code>&lt;section&gt;</code>: Mendefinisikan bagian (section) dalam dokumen.</li>
-            <li><code>&lt;article&gt;</code>: Mendefinisikan konten mandiri (seperti posting blog atau berita).</li>
-            <li><code>&lt;aside&gt;</code>: Mendefinisikan konten di samping (seperti sidebar).</li>
-            <li><code>&lt;footer&gt;</code>: Mendefinisikan footer untuk dokumen atau bagian (biasanya berisi info hak cipta, kontak).</li>
-          </ul>
-          
-          <p>Menggunakan elemen semantik membantu mesin pencari (SEO) dan pembaca layar (aksesibilitas) untuk memahami struktur halaman web Anda.</p>
-        `,
-    },
-    {
-      id: "html-comments",
-      title: "Komentar",
-      content: `
-          <h1>HTML Komentar</h1>
-          <p>Komentar HTML (HTML Comments) adalah catatan atau teks yang Anda tambahkan ke dalam kode HTML, tetapi <strong>tidak akan ditampilkan</strong> oleh browser di halaman web.</p>
-          <p>Komentar sangat berguna untuk:</p>
-          <ul>
-            <li>Meninggalkan catatan untuk diri sendiri atau pengembang lain tentang cara kerja kode.</li>
-            <li>"Menonaktifkan" sementara sebagian kode untuk tujuan pengujian (debugging) tanpa harus menghapusnya.</li>
-          </ul>
-          <h3>Sintaks Komentar</h3>
-          <p>Komentar dimulai dengan <code>&lt;!--</code> dan diakhiri dengan <code>--&gt;</code>.</p>
-          <pre>
-&lt;!-- Ini adalah komentar satu baris --&gt;
-
-&lt;p&gt;Ini adalah paragraf yang akan tampil.&lt;/p&gt;
-
-&lt;!-- 
-  Ini adalah komentar
-  yang mencakup
-  beberapa baris.
---&gt;
-
-&lt;!-- &lt;p&gt;Paragraf ini tidak akan tampil.&lt;/p&gt; --&gt;
-          </pre>
-        `,
-    },
-    {
-      id: "html-text-formatting-basic",
-      title: "Pemformatan Teks Dasar",
-      content: `
-          <h1>Pemformatan Teks Dasar (Style Teks)</h1>
-          <p>Selain tag paragraf (<code>&lt;p&gt;</code>) dan heading (<code>&lt;h1&gt;</code>), HTML memiliki banyak tag <em>inline</em> yang dirancang khusus untuk memberi "gaya" atau makna semantik pada bagian-bagian kecil dari teks Anda.</p>
-          
-          <h3>Perbedaan Semantik vs. Visual</h3>
-          <p>Beberapa tag memiliki makna semantik (makna khusus), sementara yang lain murni untuk visual.</p>
-          <ul>
-            <li><code><strong>&lt;strong&gt;</strong></code>: Menandakan teks yang memiliki <strong>kepentingan serius</strong>. Browser menampilkannya sebagai <strong>tebal</strong>.</li>
-            <li><code><b></code>: Murni visual untuk <b>menebalkan</b> teks tanpa menyiratkan kepentingan khusus.</li>
-            <li><code><em>&lt;em&gt;</em></code>: Menandakan teks yang ingin <strong>ditekankan</strong> (emphasis). Browser menampilkannya sebagai <em>miring</em>.</li>
-            <li><code><i></code>: Murni visual untuk membuat <i>miring</i> teks (sering digunakan untuk istilah teknis atau nama).</li>
-          </ul>
-
-          <h3>Tag Pemformatan Umum Lainnya</h3>
-          <table class="ref-table">
-            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
-            <tbody>
-              <tr><td><code>&lt;mark&gt;</code></td><td>Mendefinisikan teks yang ditandai atau <mark>disorot</mark> (highlighted).</td></tr>
-              <tr><td><code>&lt;del&gt;</code></td><td>Mendefinisikan teks yang telah <del>dihapus</del> dari dokumen.</td></tr>
-              <tr><td><code>&lt;ins&gt;</code></td><td>Mendefinisikan teks yang <ins>disisipkan</ins> ke dalam dokumen.</td></tr>
-              <tr><td><code>&lt;u&gt;</code></td><td>Mendefinisikan teks yang <u>digarisbawahi</u> (murni visual, sebaiknya dihindari agar tidak dikira link).</td></tr>
-              <tr><td><code>&lt;small&gt;</code></td><td>Mendefinisikan teks yang <small>lebih kecil</small> (sering untuk hak cipta atau catatan kaki).</td></tr>
-            </tbody>
-          </table>
-
-          <pre>
-<p>Gunakan <strong>&lt;strong&gt;</strong> untuk hal penting.</p>
-<p>Gunakan <em>&lt;em&gt;</em> untuk penekanan.</p>
-<p>Harga lama: <del>$100</del>, harga baru: <ins>$80</ins>!</p>
-          </pre>
-        `,
-    },
-    {
-      id: "html-text-formatting-advanced",
-      title: "Pemformatan Teks Lanjutan",
-      content: `
-          <h1>Pemformatan Teks Lanjutan</h1>
-          <p>Selain <code>&lt;strong&gt;</code> dan <code>&lt;em&gt;</code>, HTML menyediakan tag untuk pemformatan yang lebih spesifik, seperti Subscript, Superscript, dan Simbol Khusus.</p>
-          
-          <h3>Subscript (<code>&lt;sub&gt;</code>) dan Superscript (<code>&lt;sup&gt;</code>)</h3>
-          <ul>
-            <li><strong><code>&lt;sub&gt;</code> (Subscript):</strong> Mendefinisikan teks yang ditempatkan sedikit <strong>di bawah</strong> garis normal. Biasa digunakan untuk rumus kimia.</li>
-            <li><strong><code>&lt;sup&gt;</code> (Superscript):</strong> Mendefinisikan teks yang ditempatkan sedikit <strong>di atas</strong> garis normal. Biasa digunakan untuk catatan kaki (footnote) atau rumus matematika.</li>
-          </ul>
-          <pre>
-&lt;!-- Contoh Subscript --&gt;
-<p>Rumus kimia untuk air adalah H&lt;sub&gt;2&lt;/sub&gt;O.</p>
-
-&lt;!-- Contoh Superscript --&gt;
-<p>Rumus matematika terkenal: E = mc&lt;sup&gt;2&lt;/sup&gt;.</p>
-          </pre>
-
-          <h3>Simbol Khusus (HTML Entities)</h3>
-          <p>Beberapa karakter, seperti <code>&lt;</code> atau <code>&gt;</code>, memiliki makna khusus di HTML. Untuk menampilkannya sebagai teks, kita harus menggunakan "HTML Entities" (Entitas HTML).</p>
-          <p>Entitas selalu dimulai dengan ampersand (<code>&amp;</code>) dan diakhiri dengan titik koma (<code>;</code>).</p>
-          
-          <p><strong>Contoh Umum:</strong></p>
-          <ul>
-            <li>Untuk menampilkan <code>&lt;</code>, gunakan <code>&amp;lt;</code></li>
-            <li>Untuk menampilkan <code>&gt;</code>, gunakan <code>&amp;gt;</code></li>
-            <li>Untuk menampilkan <code>&amp;</code>, gunakan <code>&amp;amp;</code></li>
-            <li>Untuk menampilkan simbol Hak Cipta (©), gunakan <code>&amp;copy;</code></li>
-            <li>Untuk spasi ekstra (Non-Breaking Space), gunakan <code>&amp;nbsp;</code></li>
-          </ul>
-          <pre>
-&lt;!-- SALAH: Browser akan mengira ini tag --&gt;
-&lt;p&gt;Jika x < 10, maka...&lt;/p&gt;
-
-&lt;!-- BENAR: Gunakan entitas --&gt;
-&lt;p&gt;Jika x &amp;lt; 10, maka...&lt;/p&gt;
-          </pre>
         `,
     },
     {
@@ -708,6 +532,30 @@ export const html = {
         `,
     },
     {
+      id: "html-semantic",
+      title: "Semantik",
+      content: `
+          <h1>HTML Semantik</h1>
+          <p>Elemen semantik adalah elemen HTML yang memiliki <strong>makna</strong> atau arti yang jelas bagi browser dan pengembang.</p>
+          <p>Contoh elemen <strong>non-semantik</strong>: <code>&lt;div&gt;</code> dan <code>&lt;span&gt;</code>. Keduanya tidak memberi tahu apa-apa tentang konten di dalamnya.</p>
+          <p>Contoh elemen <strong>semantik</strong>: <code>&lt;form&gt;</code>, <code>&lt;table&gt;</code>, dan <code>&lt;article&gt;</code>. Keduanya dengan jelas mendefinisikan kontennya.</p>
+          
+          <h3>Elemen Layout Semantik (HTML5)</h3>
+          <p>HTML5 memperkenalkan elemen-elemen baru untuk struktur layout halaman yang lebih bermakna:</p>
+          <ul>
+            <li><code>&lt;header&gt;</code>: Mendefinisikan header untuk dokumen atau bagian (biasanya berisi logo, navigasi).</li>
+            <li><code>&lt;nav&gt;</code>: Mendefinisikan wadah untuk link navigasi utama.</li>
+            <li><code>&lt;main&gt;</code>: Menentukan konten utama dan unik dari dokumen.</li>
+            <li><code>&lt;section&gt;</code>: Mendefinisikan bagian (section) dalam dokumen.</li>
+            <li><code>&lt;article&gt;</code>: Mendefinisikan konten mandiri (seperti posting blog atau berita).</li>
+            <li><code>&lt;aside&gt;</code>: Mendefinisikan konten di samping (seperti sidebar).</li>
+            <li><code>&lt;footer&gt;</code>: Mendefinisikan footer untuk dokumen atau bagian (biasanya berisi info hak cipta, kontak).</li>
+          </ul>
+          
+          <p>Menggunakan elemen semantik membantu mesin pencari (SEO) dan pembaca layar (aksesibilitas) untuk memahami struktur halaman web Anda.</p>
+        `,
+    },
+    {
       id: "html-semantic-layout",
       title: "Template Layout Semantik",
       content: `
@@ -765,6 +613,158 @@ export const html = {
           <div class="info-box">
             <p><strong>Catatan:</strong> Elemen semantik ini secara visual tidak berbeda dengan <code>&lt;div&gt;</code>. Anda tetap harus menatanya menggunakan CSS (misalnya menggunakan Flexbox atau Grid) untuk membuatnya terlihat seperti layout yang Anda inginkan.</p>
           </div>
+        `,
+    },
+    {
+      id: "html-forms",
+      title: "Forms",
+      content: `
+          <h1>HTML Forms (Formulir)</h1>
+          <p>Formulir HTML digunakan untuk mengumpulkan input dari pengguna. Input pengguna ini paling sering dikirim ke server untuk diproses.</p>
+          <p>Formulir didefinisikan dengan tag <code>&lt;form&gt;</code>.</p>
+          
+          <h3>Elemen <code>&lt;input&gt;</code></h3>
+          <p>Elemen <code>&lt;input&gt;</code> adalah elemen formulir yang paling penting. Tampilannya bervariasi tergantung atribut <code>type</code>.</p>
+
+          <h3>Elemen <code>&lt;label&gt;</code></h3>
+          <p>Tag <code>&lt;label&gt;</code> mendefinisikan label untuk elemen input. Ini penting untuk aksesibilitas; pengguna pembaca layar akan membacakan label saat fokus pada input.</p>
+
+          <pre>
+&lt;form action="/proses-data.php" method="POST"&gt;
+  
+  &lt;!-- Input Teks --&gt;
+  &lt;label for="nama"&gt;Nama Lengkap:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" id="nama" name="nama_user"&gt;&lt;br&gt;&lt;br&gt;
+  
+  &lt;!-- Input Radio Button --&gt;
+  &lt;p&gt;Jenis Kelamin:&lt;/p&gt;
+  &lt;input type="radio" id="pria" name="jenis_kelamin" value="Pria"&gt;
+  &lt;label for="pria"&gt;Pria&lt;/label&gt;&lt;br&gt;
+  &lt;input type="radio" id="wanita" name="jenis_kelamin" value="Wanita"&gt;
+  &lt;label for="wanita"&gt;Wanita&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+  
+  &lt;!-- Input Checkbox --&gt;
+  &lt;input type="checkbox" id="setuju" name="setuju" value="Ya"&gt;
+  &lt;label for="setuju"&gt; Saya setuju dengan syarat dan ketentuan.&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+  
+  &lt;!-- Tombol Submit --&gt;
+  &lt;input type="submit" value="Kirim"&gt;
+  
+&lt;/form&gt;</pre>
+        `,
+    },
+    {
+      id: "html-forms-advanced",
+      title: "Elemen Form Lanjutan",
+      content: `
+          <h1>Elemen Form Lanjutan</h1>
+          <p>Selain input teks dan tombol radio, formulir HTML memiliki elemen yang lebih kuat untuk mengumpulkan data, seperti menu dropdown (<code>&lt;select&gt;</code>) dan kotak teks multi-baris (<code>&lt;textarea&gt;</code>).</p>
+          
+          <h2><code>&lt;select&gt;</code> (Menu Dropdown)</h2>
+          <p>Tag <code>&lt;select&gt;</code> digunakan untuk membuat daftar pilihan (menu dropdown). Setiap pilihan di dalam daftar didefinisikan oleh tag <code>&lt;option&gt;</code>.</p>
+          <p>Ini sangat berguna ketika Anda memiliki banyak pilihan dan ingin menghemat ruang layar.</p>
+          <pre>
+&lt;label for="jurusan"&gt;Pilih Jurusan Anda:&lt;/label&gt;
+&lt;select id="jurusan" name="jurusan_user"&gt;
+  &lt;option value=""&gt;--Pilih Opsi--&lt;/option&gt;
+  &lt;option value="informatika"&gt;Teknik Informatika&lt;/option&gt;
+  &lt;option value="sipil"&gt;Teknik Sipil&lt;/option&gt;
+  &lt;option value="mesin"&gt;Teknik Mesin&lt;/option&gt;
+&lt;/select&gt;
+          </pre>
+
+          <h2><code>&lt;textarea&gt;</code> (Area Teks)</h2>
+          <p>Jika <code>&lt;input type="text"&gt;</code> hanya untuk satu baris, <code>&lt;textarea&gt;</code> adalah untuk input multi-baris. Ini sangat ideal untuk kotak "Komentar", "Pesan", atau "Alamat".</p>
+          <p>Anda dapat mengontrol ukurannya dengan atribut <code>rows</code> (jumlah baris) dan <code>cols</code> (jumlah kolom/lebar).</p>
+          <pre>
+&lt;label for="pesan"&gt;Tulis Pesan Anda:&lt;/label&gt;&lt;br&gt;
+&lt;textarea 
+  id="pesan" 
+  name="pesan_user" 
+  rows="5" 
+  cols="40"
+  placeholder="Ketik pesan Anda di sini..."
+&gt;&lt;/textarea&gt;
+          </pre>
+          <div class="tip-box">
+            <p><strong>Catatan:</strong> Tidak seperti tag <code>&lt;input&gt;</code>, tag <code>&lt;textarea&gt;</code> memiliki tag penutup (<code>&lt;/textarea&gt;</code>). Teks <em>placeholder</em> (teks petunjuk) harus diatur menggunakan atribut <code>placeholder</code>, bukan di antara tag.</p>
+          </div>
+        `,
+    },
+    {
+      id: "html-text-formatting-basic",
+      title: "Pemformatan Teks Dasar",
+      content: `
+          <h1>Pemformatan Teks Dasar (Style Teks)</h1>
+          <p>Selain tag paragraf (<code>&lt;p&gt;</code>) dan heading (<code>&lt;h1&gt;</code>), HTML memiliki banyak tag <em>inline</em> yang dirancang khusus untuk memberi "gaya" atau makna semantik pada bagian-bagian kecil dari teks Anda.</p>
+          
+          <h3>Perbedaan Semantik vs. Visual</h3>
+          <p>Beberapa tag memiliki makna semantik (makna khusus), sementara yang lain murni untuk visual.</p>
+          <ul>
+            <li><code><strong>&lt;strong&gt;</strong></code>: Menandakan teks yang memiliki <strong>kepentingan serius</strong>. Browser menampilkannya sebagai <strong>tebal</strong>.</li>
+            <li><code><b></code>: Murni visual untuk <b>menebalkan</b> teks tanpa menyiratkan kepentingan khusus.</li>
+            <li><code><em>&lt;em&gt;</em></code>: Menandakan teks yang ingin <strong>ditekankan</strong> (emphasis). Browser menampilkannya sebagai <em>miring</em>.</li>
+            <li><code><i></code>: Murni visual untuk membuat <i>miring</i> teks (sering digunakan untuk istilah teknis atau nama).</li>
+          </ul>
+
+          <h3>Tag Pemformatan Umum Lainnya</h3>
+          <table class="ref-table">
+            <thead><tr><th>Tag</th><th>Deskripsi</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;mark&gt;</code></td><td>Mendefinisikan teks yang ditandai atau <mark>disorot</mark> (highlighted).</td></tr>
+              <tr><td><code>&lt;del&gt;</code></td><td>Mendefinisikan teks yang telah <del>dihapus</del> dari dokumen.</td></tr>
+              <tr><td><code>&lt;ins&gt;</code></td><td>Mendefinisikan teks yang <ins>disisipkan</ins> ke dalam dokumen.</td></tr>
+              <tr><td><code>&lt;u&gt;</code></td><td>Mendefinisikan teks yang <u>digarisbawahi</u> (murni visual, sebaiknya dihindari agar tidak dikira link).</td></tr>
+              <tr><td><code>&lt;small&gt;</code></td><td>Mendefinisikan teks yang <small>lebih kecil</small> (sering untuk hak cipta atau catatan kaki).</td></tr>
+            </tbody>
+          </table>
+
+          <pre>
+<p>Gunakan <strong>&lt;strong&gt;</strong> untuk hal penting.</p>
+<p>Gunakan <em>&lt;em&gt;</em> untuk penekanan.</p>
+<p>Harga lama: <del>$100</del>, harga baru: <ins>$80</ins>!</p>
+          </pre>
+        `,
+    },
+    {
+      id: "html-text-formatting-advanced",
+      title: "Pemformatan Teks Lanjutan",
+      content: `
+          <h1>Pemformatan Teks Lanjutan</h1>
+          <p>Selain <code>&lt;strong&gt;</code> dan <code>&lt;em&gt;</code>, HTML menyediakan tag untuk pemformatan yang lebih spesifik, seperti Subscript, Superscript, dan Simbol Khusus.</p>
+          
+          <h3>Subscript (<code>&lt;sub&gt;</code>) dan Superscript (<code>&lt;sup&gt;</code>)</h3>
+          <ul>
+            <li><strong><code>&lt;sub&gt;</code> (Subscript):</strong> Mendefinisikan teks yang ditempatkan sedikit <strong>di bawah</strong> garis normal. Biasa digunakan untuk rumus kimia.</li>
+            <li><strong><code>&lt;sup&gt;</code> (Superscript):</strong> Mendefinisikan teks yang ditempatkan sedikit <strong>di atas</strong> garis normal. Biasa digunakan untuk catatan kaki (footnote) atau rumus matematika.</li>
+          </ul>
+          <pre>
+&lt;!-- Contoh Subscript --&gt;
+<p>Rumus kimia untuk air adalah H&lt;sub&gt;2&lt;/sub&gt;O.</p>
+
+&lt;!-- Contoh Superscript --&gt;
+<p>Rumus matematika terkenal: E = mc&lt;sup&gt;2&lt;/sup&gt;.</p>
+          </pre>
+
+          <h3>Simbol Khusus (HTML Entities)</h3>
+          <p>Beberapa karakter, seperti <code>&lt;</code> atau <code>&gt;</code>, memiliki makna khusus di HTML. Untuk menampilkannya sebagai teks, kita harus menggunakan "HTML Entities" (Entitas HTML).</p>
+          <p>Entitas selalu dimulai dengan ampersand (<code>&amp;</code>) dan diakhiri dengan titik koma (<code>;</code>).</p>
+          
+          <p><strong>Contoh Umum:</strong></p>
+          <ul>
+            <li>Untuk menampilkan <code>&lt;</code>, gunakan <code>&amp;lt;</code></li>
+            <li>Untuk menampilkan <code>&gt;</code>, gunakan <code>&amp;gt;</code></li>
+            <li>Untuk menampilkan <code>&amp;</code>, gunakan <code>&amp;amp;</code></li>
+            <li>Untuk menampilkan simbol Hak Cipta (©), gunakan <code>&amp;copy;</code></li>
+            <li>Untuk spasi ekstra (Non-Breaking Space), gunakan <code>&amp;nbsp;</code></li>
+          </ul>
+          <pre>
+&lt;!-- SALAH: Browser akan mengira ini tag --&gt;
+&lt;p&gt;Jika x < 10, maka...&lt;/p&gt;
+
+&lt;!-- BENAR: Gunakan entitas --&gt;
+&lt;p&gt;Jika x &amp;lt; 10, maka...&lt;/p&gt;
+          </pre>
         `,
     },
   ],
