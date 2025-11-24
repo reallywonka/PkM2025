@@ -208,31 +208,31 @@ body {
       <p>UCD adalah filosofi yang menempatkan <strong>kebutuhan pengguna</strong> sebagai pusat dari setiap keputusan desain. Salah satu kerangka kerja (framework) UCD yang paling populer adalah <strong>Design Thinking</strong>, yang umumnya memiliki lima fase:</p>
       
       <ol>
-        <li><strong>1. Empathize (Empati)</strong>
+        <li><strong>Empathize (Empati)</strong>
           <p>Fase di mana Anda berusaha memahami pengguna Anda secara mendalam. Tujuannya bukan untuk berasumsi, tetapi untuk benar-benar mengerti masalah, kebutuhan, dan motivasi mereka.
           <br><strong>Aktivitas:</strong> Wawancara pengguna, survei, observasi, membuat "User Persona".</p>
         </li>
       
-        <li><strong>2. Define (Definisi)</strong>
+        <li><strong>Define (Definisi)</strong>
           <p>Setelah mengumpulkan wawasan dari fase empati, Anda menganalisis dan mensintesis temuan tersebut untuk mendefinisikan masalah inti (core problem) yang akan Anda selesaikan.
           <br><strong>Aktivitas:</strong> Membuat "Problem Statement" (pernyataan masalah), "User Journey Map".</p>
         </li>
       
-        <li><strong>3. Ideate (Ideasi)</strong>
+        <li><strong>Ideate (Ideasi)</strong>
           <p>Ini adalah fase curah pendapat (brainstorming). Anda menghasilkan sebanyak mungkin ide atau solusi untuk masalah yang telah didefinisikan. Kuantitas lebih penting daripada kualitas di tahap ini.
           <br><strong>Aktivitas:</strong> "Crazy 8s", membuat "User Flow" (alur pengguna), "Sitemap" (peta situs).</p>
         </li>
       
-        <li><strong>4. Prototype (Purwarupa)</strong>
+        <li><strong>Prototype (Purwarupa)</strong>
           <p>Anda memilih ide-ide terbaik dan mulai membangun versi "draf" dari solusi Anda. Ini bisa berupa apa saja, dari sketsa kertas hingga simulasi digital yang dapat diklik. Tujuannya adalah membuat sesuatu yang nyata untuk diuji.
           <br><strong>Aktivitas:</strong> Membuat Wireframe, Mockup, dan Prototipe Interaktif.</p>
         </li>
       
-        <li><strong>5. Test (Uji)</strong>
+        <li><strong>Test (Uji)</strong>
           <p>Anda menguji purwarupa Anda dengan pengguna sungguhan untuk mendapatkan umpan balik. Fase ini sangat penting untuk menemukan kekurangan dalam desain Anda sebelum menghabiskan waktu dan uang untuk pengembangan (coding).
           <br><strong>Aktivitas:</strong> "Usability Testing" (Uji Ketergunaan).</p>
         </li>
-      </ol>
+      </ol><br>
       <div class="info-box">
         <h3>Bukan Proses yang Lurus</h3>
         <p>Penting untuk diingat bahwa proses ini bersifat <strong>iteratif</strong> (berulang), bukan linear. Hasil dari fase Uji (Test) sering kali membawa Anda kembali ke fase Ideasi (Ideate) atau bahkan Define (Definisi) untuk memperbaiki solusi Anda.</p>

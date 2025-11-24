@@ -4,9 +4,9 @@ export const javascript = {
   lessons: [
     {
       id: "js-intro",
-      title: "JS Pendahuluan",
+      title: "Pendahuluan",
       content: `
-          <h1>JavaScript Pendahuluan</h1>
+          <h1>Pendahuluan</h1>
           <p>JavaScript adalah bahasa pemrograman paling populer di dunia.</p>
           <p>JavaScript adalah bahasa pemrograman untuk Web.</p>
           <p>JavaScript dapat memperbarui dan mengubah baik HTML maupun CSS.</p>
@@ -15,9 +15,9 @@ export const javascript = {
     },
     {
       id: "js-output",
-      title: "JS Output (Keluaran)",
+      title: "Output",
       content: `
-          <h1>JavaScript Output</h1>
+          <h1>Output JavaScript</h1>
           <p>JavaScript dapat "menampilkan" data dengan cara yang berbeda:</p>
           
           <h3>1. Menulis ke Elemen HTML (<code>innerHTML</code>)</h3>
@@ -45,9 +45,9 @@ alert("Selamat datang di website kami!"); </pre>
     },
     {
       id: "js-variables",
-      title: "JS Variabel",
+      title: "Variabel",
       content: `
-          <h1>JavaScript Variabel</h1>
+          <h1>Variabel pada JavaScript</h1>
           <p>Variabel adalah "wadah" untuk menyimpan nilai data.</p>
           <p>Dalam JavaScript, ada tiga cara untuk mendeklarasikan variabel:</p>
           <ul>
@@ -80,7 +80,7 @@ let NamaSaya = "Ani"; // (PascalCase, biasanya untuk Class) </pre>
     },
     {
       id: "js-events",
-      title: "JS Events (Kejadian)",
+      title: "Events",
       content: `
           <h1>JavaScript Events</h1>
           <p>HTML events adalah "kejadian" yang terjadi pada elemen HTML. JavaScript dapat <strong>bereaksi</strong> terhadap kejadian ini.</p>
@@ -111,9 +111,9 @@ function tampilkanPesan() {
     },
     {
       id: "js-dom-manipulation",
-      title: "JS DOM Manipulation",
+      title: "DOM Manipulation",
       content: `
-          <h1>JS DOM Manipulation</h1>
+          <h1>DOM Manipulation</h1>
           <p>JavaScript dapat memanipulasi <strong>DOM (Document Object Model)</strong>. DOM adalah representasi pohon dari semua elemen di halaman HTML Anda.</p>
           <p>Dengan memanipulasi DOM, Anda dapat mengubah konten HTML, mengubah atribut, dan bahkan mengubah style CSS secara dinamis.</p>
 
@@ -149,9 +149,9 @@ judul.style.backgroundColor = "#f1f1f1"; </pre>
     },
     {
       id: "js-functions",
-      title: "JS Functions",
+      title: "Functions",
       content: `
-          <h1>JS Functions (Fungsi)</h1>
+          <h1>Functions (Fungsi)</h1>
           <p>Fungsi adalah blok kode yang dirancang untuk melakukan tugas tertentu. Fungsi akan dieksekusi (dijalankan) ketika "dipanggil".</p>
           <p>Keuntungan utama menggunakan fungsi adalah <strong>reusability</strong> (dapat digunakan kembali). Anda menulis kode sekali, dan menggunakannya berkali-kali.</p>
           
@@ -196,7 +196,7 @@ console.log(tambah(10, 10));  // Output: 20 </pre>
     },
     {
       id: "js-operators",
-      title: "JS Operators",
+      title: "Operators",
       content: `
           <h1>JavaScript Operators</h1>
           <p>Operators adalah simbol khusus yang digunakan untuk melakukan operasi pada nilai (variabel).</p>
@@ -251,9 +251,9 @@ console.log(nilai == "100");  // Output: true (karena nilai dianggap sama) </pre
     },
     {
       id: "js-conditionals",
-      title: "JS Conditionals (if/else)",
+      title: "Conditionals (if/else)",
       content: `
-          <h1>JS Conditionals (Logika Kondisional)</h1>
+          <h1>Conditionals (Logika Kondisional)</h1>
           <p>Kondisional digunakan untuk melakukan tindakan berbeda berdasarkan kondisi yang berbeda.</p>
           
           <h3>Pernyataan <code>if</code></h3>
@@ -297,9 +297,9 @@ if (nilaiHuruf === "A") {
     },
     {
       id: "js-loops",
-      title: "JS Loops (Perulangan)",
+      title: "Loops",
       content: `
-          <h1>JS Loops (Perulangan)</h1>
+          <h1>Loops pada JavaScript</h1>
           <p>Bayangkan Anda harus menulis <code>console.log("Halo!");</code> sebanyak 100 kali. Tentu melelahkan. Perulangan (loops) adalah cara kita menyuruh JavaScript untuk menjadi "pekerja" yang melakukan tugas berulang-ulang secara otomatis.</p>
           <p>Ada dua "pekerja" utama yang bisa kita suruh:</p>
           
@@ -355,9 +355,9 @@ console.log("Selesai! Butuh " + jumlahPutaran + " putaran untuk dapat angka 5.")
     },
     {
       id: "js-arrays",
-      title: "JS Arrays (Kumpulan Data)",
+      title: "Arrays",
       content: `
-          <h1>JS Arrays (Kumpulan Data)</h1>
+          <h1>Arrays (Kumpulan Data) pada JavaScript</h1>
           <p>Variabel biasa itu seperti kotak kecil yang hanya bisa menyimpan <strong>satu</strong> barang. <code>let nama = "Budi";</code>.</p>
           <p>Tapi bagaimana jika kita ingin menyimpan daftar belanjaan? Atau daftar nilai siswa? Kita butuh "laci" atau "rak buku". Itulah <strong>Array</strong>.</p>
           <p>Array adalah variabel spesial yang bisa menampung <strong>banyak</strong> nilai dalam urutan yang rapi. Kita membuatnya dengan kurung siku <code>[]</code>.</p>
@@ -407,9 +407,9 @@ Tugas hari ini: Belajar JS
     },
     {
       id: "js-objects",
-      title: "JS Objects (Data Berstruktur)",
+      title: "Objects",
       content: `
-          <h1>JS Objects (Data Berstruktur)</h1>
+          <h1>Objects (Data Berstruktur)</h1>
           <p>Jika Array adalah "daftar belanjaan" (berurutan), maka <strong>Object</strong> adalah "formulir data diri" (tidak berurutan, tapi memiliki label).</p>
           <p>Array bagus untuk daftar, tapi buruk untuk data yang kompleks. Bayangkan data siswa:</p>
           <code>let siswa = ["Budi", "Santoso", 17, "Bandung"];</code>
@@ -463,9 +463,9 @@ console.log( daftarSiswa[0].nama ); // Output: "Budi"
     },
     {
       id: "js-modern-interaction",
-      title: "JS Interaksi Modern",
+      title: "Interaksi Modern",
       content: `
-          <h1>JS Interaksi Modern: Event Listener</h1>
+          <h1>Interaksi Modern: Event Listener</h1>
           <p>Di materi "Events", Anda belajar menambahkan event langsung di HTML:</p>
           <code>&lt;button onclick="tampilkanPesan()"&gt;Klik Saya&lt;/button&gt;</code>
           <p>Ini cara yang "kurang rapi" karena mencampurkan HTML (struktur) dengan JavaScript (perilaku).</p>
@@ -521,9 +521,9 @@ Saya suka Mangga
     },
     {
       id: "js-form-handling",
-      title: "JS Form Handling",
+      title: "Form Handling",
       content: `
-          <h1>JS Form Handling (Mengelola Input)</h1>
+          <h1>Form Handling (Mengelola Input)</h1>
           <p>Ini adalah salahT satu tugas paling umum JavaScript: mengambil data yang diketik pengguna di dalam formulir.</p>
           <p>Kita akan menggabungkan semua yang telah kita pelajari: <code>getElementById</code>, <code>addEventListener</code>, dan properti <code>.value</code>.</p>
           <p>Properti <code>.value</code> adalah cara kita "membaca" apa yang ada di dalam kotak input.</p>
@@ -563,9 +563,9 @@ tombolKirim.addEventListener("click", sapaPengguna);
     },
     {
       id: "js-es6-syntax",
-      title: "JS ES6+ (Sintaks Modern)",
+      title: "ES6+",
       content: `
-          <h1>JS ES6+ (Sintaks Modern)</h1>
+          <h1>ES6+ (Sintaks Modern)</h1>
           <p>Seiring waktu, JavaScript berevolusi. Versi ES6 (dirilis 2015) memperkenalkan cara penulisan yang lebih singkat dan kuat. Anda akan <strong>pasti</strong> melihat ini di semua tutorial modern.</p>
           <p>Dua hal terpenting yang harus Anda kenali adalah:</p>
 
@@ -611,9 +611,9 @@ console.log(sapaanBaru);
     },
     {
       id: "js-async-intro",
-      title: "JS Asynchronous (Menunggu)",
+      title: "Asynchronous",
       content: `
-          <h1>JS Asynchronous (Menunggu)</h1>
+          <h1>JavaScript Asynchronous (Menunggu)</h1>
           <p>Secara default, JavaScript adalah <strong>Synchronous</strong> (sinkron). Artinya, ia menjalankan kode baris per baris, dari atas ke bawah. Ia tidak akan pindah ke baris 2 sebelum baris 1 selesai.</p>
           <p>Tapi, bagaimana jika baris 1 adalah tugas yang LAMA? (Misal: men-download gambar 100MB). Apakah seluruh website harus "freeze" (macet) menunggu?</p>
           <p>Di sinilah <strong>Asynchronous</strong> (asinkron) berperan. JavaScript bisa "mendelegasikan" tugas yang lama itu ke browser, lalu lanjut mengerjakan tugas lain. Ia tidak mau menunggu.</p>
@@ -645,7 +645,7 @@ Output Console akan menjadi:
     },
     {
       id: "js-fetch-api",
-      title: "JS Fetch API (Ambil Data Luar)",
+      title: "Fetch API",
       content: `
           <h1>"Final Boss" Pemula: Fetch API</h1>
           <p>Ini adalah puncak dari semua yang telah kita pelajari. <strong>API</strong> (Application Programming Interface) adalah cara satu website "berbicara" dengan website lain untuk meminta data.</p>
@@ -689,9 +689,9 @@ console.log("Permintaan sedang diproses...");
     },
     {
       id: "js-modules",
-      title: "JS Modules: import & export",
+      title: "Modules: import & export",
       content: `
-          <h1>JS Modules: <code>import</code> & <code>export</code></h1>
+          <h1>JavaScript Modules: <code>import</code> & <code>export</code></h1>
           <p>Saat proyek Anda semakin besar, menyimpan semua kode JavaScript Anda dalam satu file raksasa akan sangat merepotkan. <strong>ES6 Modules</strong> adalah cara modern untuk memecah kode Anda menjadi file-file terpisah yang dapat digunakan kembali.</p>
           <p>Situs web pembelajaran ini sendiri (termasuk file <code>Data</code> Anda) dibangun menggunakan sistem Modul!</p>
 

@@ -309,7 +309,8 @@ body.dark-mode {
   --border-color: #555761;
 }
 
-body.dark-mode .logo img {
+body.dark-mode .logo img,
+body.dark-mode .homepage-logo {
   filter: invert(1);
 }
 
