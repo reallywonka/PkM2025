@@ -171,7 +171,7 @@ h1 {
 p {
   color: navy;
 }</pre>
-
+<br>
           <h3>2. HEX (Hexadecimal)</h3>
           <p>Ini adalah cara paling umum. Nilai HEX adalah representasi RGB (Red, Green, Blue) yang diawali dengan tanda pagar <code>#</code>.</p>
           <p>Formatnya adalah <code>#RRGGBB</code>, di mana RR (merah), GG (hijau), dan BB (biru) adalah nilai heksadesimal antara 00 dan FF.</p>
@@ -188,7 +188,7 @@ p {
 body {
   background-color: #FFFFFF;
 }</pre>
-          
+<br>      
           <h3>3. RGB (Red, Green, Blue)</h3>
           <p>Cara ini mendefinisikan warna menggunakan fungsi <code>rgb()</code> dengan nilai intensitas Merah, Hijau, dan Biru, masing-masing dari 0 hingga 255.</p>
           <pre>
@@ -205,51 +205,6 @@ p {
 /* Merah dengan 50% transparansi */
 div {
   background-color: rgba(255, 0, 0, 0.5);
-}</pre>
-        `,
-    },
-    {
-      id: "css-backgrounds",
-      title: "Backgrounds",
-      content: `
-          <h1>Backgrounds (Latar Belakang)</h1>
-          <p>Properti CSS background digunakan untuk mengatur efek latar belakang pada elemen.</p>
-          
-          <h3><code>background-color</code></h3>
-          <p>Properti ini sudah kita bahas di materi Warna. Ini mengatur warna latar belakang solid.</p>
-          <pre>
-body {
-  background-color: #f1f1f1;
-}</pre>
-
-          <h3><code>background-image</code></h3>
-          <p>Properti ini digunakan untuk mengatur gambar sebagai latar belakang. Gunakan <code>url()</code> untuk menunjuk ke lokasi gambar.</p>
-          <pre>
-body {
-  background-image: url("images/pattern.png");
-}</pre>
-
-          <h3><code>background-repeat</code></h3>
-          <p>Secara default, gambar latar akan diulang (repeat) secara horizontal dan vertikal. Properti ini mengontrol perilaku tersebut.</p>
-          <ul>
-            <li><code>repeat</code>: (Default) Diulang ke semua arah.</li>
-            <li><code>no-repeat</code>: Gambar hanya ditampilkan sekali.</li>
-            <li><code>repeat-x</code>: Gambar diulang hanya secara horizontal.</li>
-            <li><code>repeat-y</code>: Gambar diulang hanya secara vertikal.</li>
-          </ul>
-          <pre>
-body {
-  background-image: url("images/logo.png");
-  background-repeat: no-repeat;
-}</pre>
-          
-          <h3><code>background-position</code></h3>
-          <p>Digunakan untuk mengatur posisi awal gambar latar belakang. Nilai umumnya adalah <code>left</code>, <code>right</code>, <code>center</code>, <code>top</code>, <code>bottom</code>, atau kombinasi keduanya (misal: <code>center top</code>).</p>
-          <pre>
-body {
-  background-image: url("images/logo.png");
-  background-repeat: no-repeat;
-  background-position: center top;
 }</pre>
         `,
     },
@@ -293,6 +248,28 @@ div.box-saya {
   background-color: lightblue;
 }</pre>
           <p><strong>Penting:</strong> Saat Anda mengatur <code>width</code> dan <code>height</code>, itu hanya berlaku untuk area <strong>Content</strong>. Ukuran total elemen di layar sebenarnya adalah <strong>Content + Padding + Border</strong>.</p>
+        `,
+    },
+    {
+      id: "css-width_height",
+      title: "Width & Height",
+      content: `
+          <h1>Width & Height (Ukuran Elemen)</h1>
+          <p>Properti <code>height</code> dan <code>width</code> digunakan untuk menentukan tinggi dan lebar suatu elemen. Nilai height dan width tidak termasuk padding, border, atau margin. Properti ini hanya mengatur ukuran area yang ada di dalam padding, border, dan margin dari elemen tersebut. </p>
+          <p>Nilai yang bisa digunakan untuk CSS <code>height</code> dan <code>width</code> adalah sebagai berikut:</p>
+          <ul>
+            <li><code>auto</code> : Nilai default, Browser akan menentukan tinggi dan lebar elemen secara otomatis.</li>
+            <li><code>length</code> : Menentukan tinggi atau lebar dalam satuan tertentu seperti px, cm, em, dan lainnya.</li>
+            <li><code>%</code> : Menentukan tinggi atau lebar dalam bentuk persentase dari elemen induk (containing block).</li>
+            <li><code>initial</code> : Mengembalikan tinggi atau lebar ke nilai default-nya.</li>
+            <li><code>inherit</code> : Mewarisi nilai tinggi atau lebar dari elemen induknya.</li>
+          </ul>
+          <pre>
+.kotak {
+  width: 50%; /* Setengah lebar layar/induk */
+  height: 200px;
+  max-width: 600px; /* Lebar maksimal agar tidak terlalu lebar di layar besar */
+} </pre>
         `,
     },
     {
@@ -385,6 +362,71 @@ div.box-saya {
     &lt;div class=box&gt;Box Kedua&lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt; </pre>
+        `,
+    },
+    {
+      id: "css-backgrounds",
+      title: "Backgrounds",
+      content: `
+          <h1>Backgrounds (Latar Belakang)</h1>
+          <p>Properti CSS background digunakan untuk mengatur efek latar belakang pada elemen.</p>
+          <h3>1. <code>background-color</code></h3>
+          <p>Properti ini sudah kita bahas di materi Warna. Ini mengatur warna latar belakang solid.</p>
+          <pre>
+body {
+  background-color: #f1f1f1;
+}</pre>
+<br>
+          <h3>2. <code>background-image</code></h3>
+          <p>Properti ini digunakan untuk mengatur gambar sebagai latar belakang. Gunakan <code>url()</code> untuk menunjuk ke lokasi gambar.</p>
+          <pre>
+body {
+  background-image: url("images/pattern.png");
+}</pre>
+<br>
+          <h3>3. <code>background-repeat</code></h3>
+          <p>Secara default, gambar latar akan diulang (repeat) secara horizontal dan vertikal. Properti ini mengontrol perilaku tersebut.</p>
+          <ul>
+            <li><code>repeat</code>: (Default) Diulang ke semua arah.</li>
+            <li><code>no-repeat</code>: Gambar hanya ditampilkan sekali.</li>
+            <li><code>repeat-x</code>: Gambar diulang hanya secara horizontal.</li>
+            <li><code>repeat-y</code>: Gambar diulang hanya secara vertikal.</li>
+          </ul>
+          <pre>
+body {
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+}</pre>
+<br>
+          <h3>4. <code>background-position</code></h3>
+          <p>Digunakan untuk mengatur posisi awal gambar latar belakang. Nilai umumnya adalah <code>left</code>, <code>right</code>, <code>center</code>, <code>top</code>, <code>bottom</code>, atau kombinasi keduanya (misal: <code>center top</code>).</p>
+          <pre>
+body {
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+} </pre>
+        `,
+    },
+    {
+      id: "css-bg-shorthand",
+      title: "Background Shorthand",
+      content: `
+          <h1>Background Shorthand</h1>
+          <p>Shorthand property juga dapat digunakan untuk backgrounds. Agar kode lebih singkat, semua properti latar dapat ditulis dalam satu properti juga.</p>
+          <p>Daripada seperti ini:</p>
+          <pre>
+body {
+  background-color: #ffffff;
+  background-image: url("bg_shorthand.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+} </pre>
+          <p>Kita bisa menulisnya seperti ini:</p>
+          <pre>
+body {
+  background: #ffffff url("bg_shorthand.png") no-repeat right top;
+} </pre>
         `,
     },
     {
@@ -598,6 +640,93 @@ p {
           </ul>
           <p><code>vw</code> dan <code>vh</code> sangat berguna untuk membuat elemen yang ukurannya pas di layar, seperti "hero section" di halaman depan.</p>
         `,
+    },
+    {
+      id: "css-pseudo-class",
+      title: "Pseudo-Class",
+      content: `
+      <p>Terkadang, kamu harus memilih bagian tertentu dari sebuah halaman web yang sebenarnya tidak memiliki tag khusus, tetapi masih bisa dikenali dengan mudah, misalnya baris pertama dalam sebuah paragraf atau sebuah tautan saat kursor berada di atasnya. CSS menyediakan beberapa selector untuk hal-hal semacam ini, yaitu pseudo-class dan pseudo-element.</p>
+      <h1>Pseudo-Classes</h1>
+      <p>Pseudo-class digunakan untuk mengubah gaya elemen hanya saat elemen tersebut berada dalam <strong>keadaan (state)</strong> tertentu pada selector. Misalnya, efek yang muncul ketika cursor berada di atas suatu elemen (hover), efek ketika cursor mengklik suatu elemen, dan masih banyak lagi.</p>      
+      <h3>Ciri-ciri:</h3>
+      <p>Menggunakan satu titik dua (<code>:</code>) setelah selektor.</p>
+
+      <h3>1. Interaksi Mouse (Hover)</h3>
+      <pre>
+/* Saat mouse melayang di atas tombol */
+button:hover {
+  background-color: gold;
+  cursor: pointer;
+}
+
+/* Saat tombol sedang ditekan */
+button:active {
+  transform: scale(0.95); /* Efek membal */
+}
+      </pre>
+<br>
+      <h3>2. Interaksi Input</h3>
+      <pre>
+/* Saat kolom input sedang diketik/dipilih */
+input:focus {
+  border: 2px solid blue;
+  background-color: #f0f8ff;
+  outline: none;
+}
+      </pre>
+<br>
+      <h3>3. Struktur (Urutan)</h3>
+      <p>Berguna untuk memberi warna tabel selang-seling.</p>
+      <pre>
+/* Memilih anak PERTAMA */
+li:first-child { font-weight: bold; }
+
+/* Memilih baris GENAP (2, 4, 6...) */
+tr:nth-child(even) { background-color: #eee; }
+      </pre>
+    `,
+    },
+    {
+      id: "css-pseudo-elements",
+      title: "Pseudo-Elements",
+      content: `
+      <h1>Pseudo-Elements</h1>
+      <p>Digunakan untuk menata <strong>bagian spesifik</strong> dari elemen atau menyisipkan konten hiasan tanpa menambah HTML baru.</p>
+      <h3>Ciri-ciri:</h3>
+      <p>Standar modern menggunakan dua titik dua (<code>::</code>), meski satu titik dua masih bisa jalan di browser lama.</p>
+      <h3>1. ::before dan ::after (Hiasan)</h3>
+      <p>Wajib menggunakan properti <code>content</code>. Sering dipakai untuk ikon atau pita.</p>
+      <pre>
+/* Menambah teks/ikon SEBELUM elemen */
+h2::before {
+  content: "💡"; 
+  margin-right: 10px;
+}
+
+/* Menambah sesuatu SETELAH elemen */
+.harga::after {
+  content: " (Termasuk Pajak)";
+  font-size: 0.8em;
+  color: gray;
+}
+      </pre>
+<br>
+      <h3>2. Tipografi Majalah</h3>
+      <pre>
+/* Huruf pertama jadi besar (Drop Cap) */
+p::first-letter {
+  font-size: 3em;
+  float: left;
+  margin-right: 5px;
+  color: crimson;
+}
+
+/* Baris pertama saja */
+p::first-line {
+  font-weight: bold;
+}
+      </pre>
+    `,
     },
   ],
 };
