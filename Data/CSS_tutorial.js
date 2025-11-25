@@ -662,8 +662,7 @@ button:hover {
 /* Saat tombol sedang ditekan */
 button:active {
   transform: scale(0.95); /* Efek membal */
-}
-      </pre>
+} </pre>
 <br>
       <h3>2. Interaksi Input</h3>
       <pre>
@@ -672,8 +671,7 @@ input:focus {
   border: 2px solid blue;
   background-color: #f0f8ff;
   outline: none;
-}
-      </pre>
+} </pre>
 <br>
       <h3>3. Struktur (Urutan)</h3>
       <p>Berguna untuk memberi warna tabel selang-seling.</p>
@@ -682,8 +680,7 @@ input:focus {
 li:first-child { font-weight: bold; }
 
 /* Memilih baris GENAP (2, 4, 6...) */
-tr:nth-child(even) { background-color: #eee; }
-      </pre>
+tr:nth-child(even) { background-color: #eee; } </pre>
     `,
     },
     {
@@ -708,8 +705,7 @@ h2::before {
   content: " (Termasuk Pajak)";
   font-size: 0.8em;
   color: gray;
-}
-      </pre>
+} </pre>
 <br>
       <h3>2. Tipografi Majalah</h3>
       <pre>
@@ -724,8 +720,7 @@ p::first-letter {
 /* Baris pertama saja */
 p::first-line {
   font-weight: bold;
-}
-      </pre>
+} </pre>
     `,
     },
   ],

@@ -391,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoBtn = document.getElementById("logo-btn");
   logoBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "Index.html";
+    window.location.href = "index.html";
   });
 
   generateNavMenus();
