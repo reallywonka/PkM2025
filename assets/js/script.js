@@ -18,7 +18,7 @@ const tutorials = {
 const topicPageMap = {
   html: "HTML_topic.html",
   css: "CSS_topic.html",
-  javascript: "JS_topic.html",
+  javascript: "JavaScript_topic.html",
   design: "UIUX_topic.html",
 };
 

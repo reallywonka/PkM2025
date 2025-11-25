@@ -803,7 +803,7 @@ body.dark-mode .page-nav-btn:hover {
     padding-top: 5px;
   }
 
-  /* --- 2. Navigasi Pop-up (PERBAIKAN RATA TENGAH TOTAL) --- */
+  /* --- 2. Navigasi Pop-up (Rata Tengah) --- */
   .nested-navigation {
     top: 100%;
     position: relative;
@@ -816,7 +816,6 @@ body.dark-mode .page-nav-btn:hover {
     align-items: center;
   }
 
-  /* Judul Besar Kuning (Tutorials, References, Exercises) */
   .nested-navigation-content h1 {
     text-align: center;
     width: 100%;
@@ -841,14 +840,12 @@ body.dark-mode .page-nav-btn:hover {
     padding-bottom: 15px;
   }
 
-  /* Sub-judul (HTML, CSS, JS) */
   .nested-navigation-item h2 {
     text-align: center;
     width: 100%;
     margin-top: 10px;
   }
 
-  /* Link (Learn HTML, dll) */
   .nested-navigation-item a,
   .nested-navigation-item .nav-topic-btn {
     text-align: center;
@@ -882,11 +879,71 @@ body.dark-mode .page-nav-btn:hover {
     border: 1px solid var(--border-color);
   }
 
-  /* Efek Sentuh */
+  .content-area {
+    padding: 15px;
+    overflow-y: visible;
+    height: auto;
+  }
+
+  /* --- 4. PERBAIKAN AREA LATIHAN (EXERCISE) --- */
+  .exc-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    border: 1px solid var(--border-color);
+  }
+
+  .exc-editor {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 300px;
+  }
+
+  .exc-output {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .CodeMirror {
+    min-height: 250px;
+  }
+
+  /* Tombol Run */
+  .exc-run-btn,
+  .exc-run-js-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  /* --- 5. PERBAIKAN TOMBOL NAVIGASI (NEXT/BACK) --- */
+  .page-nav-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .page-nav-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Efek Sentuh Umum */
   .menu-btn:active,
   #home-start-btn:active,
-  .tech-item:active {
+  .tech-item:active,
+  .exc-run-btn:active,
+  .page-nav-btn:active {
     opacity: 0.6;
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
 }
